@@ -1,0 +1,44 @@
+.content
+	.contact-pane
+		p {{profile.currentProfile.name}}'s friends.
+		.contact(ng-repeat="person in profile.currentProfileFriends")
+			a(ng-href="/work/angular/#!users/{{person.url}}")
+				.contact-image
+					img(ng-src='{{person.image}}')
+				.contact-info
+					.contact-info-name {{person.name}}
+					.contact-info-last-online {{person.Status}}
+	.profile-space
+		.cont
+			.profile-top
+				.profile-top-image
+					img(ng-src='{{profile.currentProfile.image}}')
+				.profile-top-info
+					.profile-top-info-name
+						h2 {{profile.currentProfile.name}} 
+					.profile-top-info-date
+						h3 {{profile.currentProfile.PM}} 
+					.profile-top-info-dob
+						p {{profile.currentProfile.DOB}} 
+					.profile-top-info-status
+						p {{profile.currentProfile.status}}
+			.profile-main
+				.profile-main-input
+					h3 Board
+					form#post(ng-submit="profile.addPost()" name="form")
+						input( type="text"
+						placeholder="Tell the world something new..." ng-model="profile.postText" required)
+						input(type="submit" value="Post" ng-disabled="form.$invalid")
+				.profile-main-board
+					h3 Previous Boards
+					.profile-main-board-post(ng-repeat="posts in profile.posts")
+						.profile-main-board-post-image
+							img(ng-src="{{posts.posterImage}}")
+						.profile-main-board-post-info
+							.profile-main-board-post-info-name
+								h4 {{posts.posterId}}
+							.profile-main-board-post-info-post
+								p {{posts.message}}
+							.profile-main-board-post-info-date
+								p 
+									small {{posts.date}}

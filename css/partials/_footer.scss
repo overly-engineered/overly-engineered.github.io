@@ -1,0 +1,15 @@
+$footerHeight : 100px;
+.container.content {
+	margin-bottom: $footerHeight;
+}
+.container.content:after {
+	content: "";
+  	display: block;
+}
+footer .container.content:after{
+	height: $footerHeight;
+}
+.copyright {
+	text-align: right;
+	margin-right: 10px;
+}

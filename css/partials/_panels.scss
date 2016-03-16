@@ -1,0 +1,74 @@
+.panel {
+	position:relative;
+	display:block;
+	width:100%;
+	svg {
+		width:100%;
+		height:100%;
+		z-index:5;
+		position:absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		margin:auto;
+		stroke-dasharray:1000;
+		stroke-dashoffset:1000;
+	}
+	.panel__text {
+		position:absolute;
+		width:75%;
+		height:32%;
+		top:0px;
+		color:white;
+		text-align: center;
+		overflow:auto;
+		margin:auto;
+		top: 0; left: 0; bottom: 0; right: 0;
+		h2{
+			font-weight: 900;
+			font-size: 30px;
+			color:white;
+		}
+		p.cta {
+			//border:1px solid white;
+			padding:15px 20px;
+			width:150px;
+			height:50px;
+			position: relative;
+			margin:0 auto;
+			color:white;
+		}
+
+	}
+	.panel__image {
+		width:100%;
+		filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.3704 0.572 0.0576 0 0 0.1704 0.774 0.0576 0 0 0.1704 0.572 0.2576 0 0 0 0 0 1 0" /></filter></svg>#filter');
+  		-webkit-filter:saturate(100%);
+        filter:saturate(100%);
+		transition:2s all ease;
+		img{
+			width:100%;
+		}
+	}
+	
+	&:hover, &:focus {
+		.panel__image {
+			filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="1 0 0 0 0 0 1.01 0 0 0 0 0 1 0 0 0 0 0 1 0" /></filter></svg>#filter');
+  			-webkit-filter:saturate(100%);
+          	filter:saturate(100%);
+		}
+		.panel__text {
+			svg {
+				animation: dash 2s linear forwards;
+			}
+		}
+		svg {
+			animation: dash 1.5s linear forwards;
+			}
+	}
+	@keyframes dash {
+  		to {
+    		stroke-dashoffset: 0;
+  		}
+	}
+}
