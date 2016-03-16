@@ -1,0 +1,70 @@
+@media screen and (min-width: 17.5em) and (max-width: 28em) {
+
+	.container, .container-full {
+
+		@for $i from 1 through 12 {
+			.col-#{$i} {
+				width: 100%;
+			}
+		}
+
+	}
+
+}
+@media screen and (min-width: 28em) and (max-width: 40em) {
+	.container, .container-full {
+
+		.col-4.wideContent {
+			width:100% !important;
+		}
+	}
+}
+@media screen and (min-width: 28em) and (max-width: 43.75em) {
+
+	.container, .container-full {
+
+		@for $i from 1 through 12 {
+			.col-#{$i} {
+				width: 100%;
+			}
+			
+		}
+		.col-4.wideContent {
+			width: calc(100% / 3);
+		}
+		.col-2, .col-3, .col-4, .col-6, .col-8, .col-10{
+				width: 50%;
+			}
+	}
+}
+
+//break above 45
+@media screen and (min-width: 43.75em) and (max-width: 56em) {
+
+	.container, .container-full {
+
+		.col-6 {
+			width:50%;
+		}
+		.col-3 {
+			width: 50%;
+		}
+	}
+}
+@media screen and (min-width: 56em) and (max-width: 75em) {
+
+	.container, .container-full {
+
+		@for $i from 1 through 12 {
+			.col-#{$i} {
+				width: ($i/12) * 100%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.container {
+		margin: 0 auto;
+	}
+}
