@@ -41,7 +41,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    baseURL:'/work/ember/'
+    ENV.baseURL = '/ember/work/';
+    ENV.locationType = 'none';
   }
 
   return ENV;
