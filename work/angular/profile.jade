@@ -27,16 +27,14 @@
 					h3 Board
 					form#post(ng-submit="addPost()" name="form")
 						input( type="text"
-						placeholder="Tell the world something new..." ng-model="profile.postText" required)
-						input(type="submit" value="Post" ng-disabled="form.$invalid")
+						placeholder="Tell the world something new..." ng-model="newMessageText" required)
+						input(type="submit" ng-disabled="form.$invalid")
 				.profile-main-board
 					h3 Previous Boards
-					.profile-main-board-post(ng-repeat="posts in profile.posts")
-						.profile-main-board-post-image
-							img(ng-src="{{posts.posterImage}}")
+					.profile-main-board-post(ng-repeat="posts in currentProfilePosts")
 						.profile-main-board-post-info
 							.profile-main-board-post-info-name
-								h4 {{posts.posterId}}
+								h4 {{posts.posterName}}
 							.profile-main-board-post-info-post
 								p {{posts.message}}
 							.profile-main-board-post-info-date
