@@ -43,9 +43,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.users = obj;
     $scope.currentUserId = 0;
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
-    $scope.currentProfile = $firebaseArray(ref.child($scope.id));
-    var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
-    $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
+    // $scope.currentProfile = $firebaseArray(ref.child($scope.id));
+    // var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
+    // $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
     
     $scope.addPost = function(){
         var date = new Date().toLocaleDateString('en-GB');
