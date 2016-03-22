@@ -1,14 +1,6 @@
 /* use strict */
 var mApp = angular.module('fBookApp', ['ngRoute', 'ngResource', 'firebase']);
 
-mApp.factory('myService', function($http, $firebaseObject){
-    return {
-        var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com");
-        getdata: function(callback){
-            $http.get('data.json').success(callback);
-        }
-    }
-});
 mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider
