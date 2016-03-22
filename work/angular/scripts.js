@@ -29,6 +29,8 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
 }]);
 mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', function($scope, $firebaseObject, $firebaseArray, $routeParams) {
 
+    $scope.id = 0;
+    
     if (typeof $routeParams.id == 'undefined'){
         $scope.id = "";
     }else {
