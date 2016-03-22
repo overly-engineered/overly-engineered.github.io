@@ -61,15 +61,15 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     obj.$loaded().then(function(){
         
    });
-    currentProfileFriendsID.$loaded().then(function(){
-        $scope.currentProfileFriends = [];
-        angular.forEach(currentProfileFriendsID, function(value, key) {
-            angular.forEach(obj, function(values, keys) {
-                if(values.id == value.$value){
-                    $scope.currentProfileFriends.push(values);
-                }
-            });
-        });
-   });
+   //  currentProfileFriendsID.$loaded().then(function(){
+   //      $scope.currentProfileFriends = [];
+   //      angular.forEach(currentProfileFriendsID, function(value, key) {
+   //          angular.forEach(obj, function(values, keys) {
+   //              if(values.id == value.$value){
+   //                  $scope.currentProfileFriends.push(values);
+   //              }
+   //          });
+   //      });
+   // });
 
 }]);
