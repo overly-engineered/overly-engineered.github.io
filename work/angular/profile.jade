@@ -1,7 +1,7 @@
 .content
 	.contact-pane
 		p {{profile.currentProfile.name}}'s friends.
-		.contact(ng-repeat="person in profile.currentProfileFriends")
+		.contact(ng-repeat="person in currentUserFriends")
 			a(ng-href="/work/angular/#!users/{{person.url}}")
 				.contact-image
 					img(ng-src='{{person.image}}')
