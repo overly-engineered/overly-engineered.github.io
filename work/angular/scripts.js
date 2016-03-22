@@ -1,8 +1,9 @@
 /* use strict */
-var mApp = angular.module('fBookApp', ['ngRoute', 'ngResource']);
+var mApp = angular.module('fBookApp', ['ngRoute', 'ngResource', 'firebase']);
 
-mApp.factory('myService', function($http){
+mApp.factory('myService', function($http, $firebaseObject){
     return {
+        var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com");
         getdata: function(callback){
             $http.get('data.json').success(callback);
         }
@@ -34,74 +35,47 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
     //$locationProvider.html5Mode(true);
 
 }]);
-mApp.controller('profileController', [ '$scope', '$filter', '$http', '$routeParams', 'myService', function ($scope, $filter, $http, $routeParams, myService) {
-    var profile = this;
-    profile.id = 0;
-      profile.interArray = function(arrToGet){
-          var arrToFill = [];
-            angular.forEach(arrToGet, function (value, key) {
-                this.push(value);
-            }, arrToFill);
-          return arrToFill;
-        };
-    profile.addPost = function () {
-            var date = new Date();
-            profile.postdate = date.toLocaleDateString();
-            profile.posts.push({
-                 posterId: profile.currentUser.name,
-                 message: profile.postText,
-                 date: profile.postdate,
-                 posterImage: profile.currentUser.image
-            });
-            profile.postText = '';
-      };
-    profile.getFriends = function(arrToGet, arrToFilter){
-        var arrToFill = [];
-        angular.forEach(arrToGet, function (value, key) {
-            var currentUserFriends = $filter('filter')(profile.users, { id: value })[0];
-            this.push(currentUserFriends);
-        }, arrToFill);
-        return arrToFill;
-    };
-    profile.getPosts = function(arrToGet){
-        var arrToFill = [];
-        angular.forEach(arrToGet, function (value, key) {
-            var id = value.posterId;
-            var poster = $filter('filter')(profile.users, { id: id })[0];
-            // value.posterId = poster.name;
-            // value.posterImage = poster.image;
-            arrToFill.push({
-                posterId: poster.name,
-                posterImage: poster.image,
-                message: value.message,
-                date: value.date
-            })
-        }, arrToFill); 
-        return arrToFill;
-    };
-    
-    if (typeof $routeParams.id == 'undefined'){
-        console.log('not set');
-        profile.id = "";
-    }else {
-        console.log('set');
-        profile.id = $routeParams.id;
-        console.log(profile.id);
-    }
-    
-    myService.getdata(function(data){
-        profile.userData = data;
-        profile.users = profile.interArray(profile.userData.users);
-        var currentUser = $filter('filter')(profile.users, { loggedIn: true })[0];
-        profile.currentUser = currentUser;
-        var currentProfileid = profile.id;
-        var currentProfile = $filter('filter')(profile.users, { url: currentProfileid })[0];
-        profile.currentProfile = currentProfile;     
-        profile.currentProfileFriends = profile.getFriends(profile.currentProfile.contacts, profile.users);
-        console.log(profile.currentProfile.posts);
-        profile.posts = profile.getPosts(profile.currentProfile.posts);
-        console.log(profile.posts);
-        
-    });
+mApp.controller('profileController', function($scope, $firebaseObject, $firebaseArray, $routeParams) {
 
-}]);
+    if (typeof $routeParams.id == 'undefined'){
+        $scope.id = "";
+    }else {
+        $scope.id = $routeParams.id;
+    }
+
+    var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com/");
+  // create a synchronized array
+    var obj = $firebaseArray(ref);
+    $scope.users = obj;
+    $scope.currentUserId = 0;
+    $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
+    $scope.currentProfile = $firebaseArray(ref.child($scope.id));
+    var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
+    $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
+    
+    $scope.addPost = function(){
+        var date = new Date().toLocaleDateString('en-GB');
+        if($scope.newMessageText.value != ''){
+            $scope.currentProfilePosts.$add({
+            message: $scope.newMessageText,
+            date : date,
+            posterName: $scope.currentUser.name
+         });
+            $scope.newMessageText = '';
+        }
+    };
+    obj.$loaded().then(function(){
+        
+   });
+    currentProfileFriendsID.$loaded().then(function(){
+        $scope.currentProfileFriends = [];
+        angular.forEach(currentProfileFriendsID, function(value, key) {
+            angular.forEach(obj, function(values, keys) {
+                if(values.id == value.$value){
+                    $scope.currentProfileFriends.push(values);
+                }
+            });
+        });
+   });
+
+});
