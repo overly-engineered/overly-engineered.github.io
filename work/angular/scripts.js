@@ -30,7 +30,7 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
 mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', function($scope, $firebaseObject, $firebaseArray, $routeParams) {
 
     $scope.id = 0;
-    
+
     if (typeof $routeParams.id == 'undefined'){
         $scope.id = "";
     }else {
@@ -42,8 +42,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     var obj = $firebaseArray(ref);
     $scope.users = obj;
     $scope.currentUserId = 0;
+    console.log($scope.id);
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
-    // $scope.currentProfile = $firebaseArray(ref.child($scope.id));
+    $scope.currentProfile = $firebaseArray(ref.child($scope.id));
     // var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
     // $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
     
