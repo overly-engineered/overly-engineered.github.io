@@ -15,7 +15,7 @@
 					img(ng-src='{{currentProfile.image}}')
 				.profile-top-info
 					.profile-top-info-name
-						h2 {{currentProfile.name}} 
+						h2(ng-model="{{currentProfile.name}}")
 					.profile-top-info-date
 						h3 {{currentProfile.PM}} 
 					.profile-top-info-dob
