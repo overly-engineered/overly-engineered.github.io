@@ -12,10 +12,10 @@
 		.cont
 			.profile-top
 				.profile-top-image
-					img(ng-src='{{currentProfile.image}}')
+					img(ng-src='{{currentProfilePublic.image}}')
 				.profile-top-info
 					.profile-top-info-name
-						h2(ng-model="{{currentProfile.name}}")
+						h2 {{currentProfilePublic.name}} 
 					.profile-top-info-date
 						h3 {{currentProfile.PM}} 
 					.profile-top-info-dob
