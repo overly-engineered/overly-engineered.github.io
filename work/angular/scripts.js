@@ -32,7 +32,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.id = 0;
 
     if (typeof $routeParams.id == 'undefined'){
-        $scope.id = "";
+        $scope.id = 0;
     }else {
         $scope.id = $routeParams.id;
     }
