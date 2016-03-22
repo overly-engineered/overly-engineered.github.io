@@ -46,8 +46,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
     $scope.currentProfile = $firebaseArray(ref.child($scope.id));
     console.log($scope.currentProfile);
-    // var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
-    // $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
+    var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
+    $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
     
     $scope.addPost = function(){
         var date = new Date().toLocaleDateString('en-GB');
@@ -63,15 +63,15 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     obj.$loaded().then(function(){
         
    });
-   //  currentProfileFriendsID.$loaded().then(function(){
-   //      $scope.currentProfileFriends = [];
-   //      angular.forEach(currentProfileFriendsID, function(value, key) {
-   //          angular.forEach(obj, function(values, keys) {
-   //              if(values.id == value.$value){
-   //                  $scope.currentProfileFriends.push(values);
-   //              }
-   //          });
-   //      });
-   // });
+    currentProfileFriendsID.$loaded().then(function(){
+        $scope.currentProfileFriends = [];
+        angular.forEach(currentProfileFriendsID, function(value, key) {
+            angular.forEach(obj, function(values, keys) {
+                if(values.id == value.$value){
+                    $scope.currentProfileFriends.push(values);
+                }
+            });
+        });
+   });
 
 }]);

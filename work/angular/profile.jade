@@ -1,7 +1,7 @@
 .content
 	.contact-pane
-		p {{profile.currentProfile.name}}'s friends.
-		.contact(ng-repeat="person in currentUserFriends")
+		p {{currentProfilePublic.name}}'s friends.
+		.contact(ng-repeat="person in currentProfileFriends")
 			a(ng-href="/work/angular/#!users/{{person.url}}")
 				.contact-image
 					img(ng-src='{{person.image}}')
@@ -17,15 +17,15 @@
 					.profile-top-info-name
 						h2 {{currentProfilePublic.name}} 
 					.profile-top-info-date
-						h3 {{currentProfile.PM}} 
+						h3 {{currentProfilePublic.PM}} 
 					.profile-top-info-dob
-						p {{currentProfile.DOB}} 
+						p {{currentProfilePublic.DOB}} 
 					.profile-top-info-status
-						p {{currentProfile.status}}
+						p {{currentProfilePublic.status}}
 			.profile-main
 				.profile-main-input
 					h3 Board
-					form#post(ng-submit="profile.addPost()" name="form")
+					form#post(ng-submit="addPost()" name="form")
 						input( type="text"
 						placeholder="Tell the world something new..." ng-model="profile.postText" required)
 						input(type="submit" value="Post" ng-disabled="form.$invalid")
