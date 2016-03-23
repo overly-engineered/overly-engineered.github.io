@@ -46,7 +46,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
     $scope.currentProfile = $firebaseArray(ref.child($scope.id));
-    console.log($scope.currentProfile);
     var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
     $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
     
@@ -60,8 +59,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             $scope.newMessageText = '';
     };
     $scope.updateStatus = function(){
-        console.log($scope.currentUserref);
-        console.log($scope.newStatus);
+        console.log($scope.newStatus.name);
         $scope.currentUserref.update({
             Status : $scope.newStatus
         });
