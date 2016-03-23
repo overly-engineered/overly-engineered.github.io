@@ -40,13 +40,14 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
     if(cookie == null){
         $cookies['angularUser'] = 0;
+        var cookie = $cookies['angularUser'];
     }
-
+    console.log(cookie);
     var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com/");
   // create a synchronized array
     var obj = $firebaseArray(ref);
     $scope.users = obj;
-    $scope.currentUserId = $cookies['angularUser'];
+    $scope.currentUserId = cookie;
     $scope.currentUserref = ref.child($scope.currentUserId);
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
