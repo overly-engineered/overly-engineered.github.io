@@ -27,7 +27,7 @@
 							#contact-info-status-new(onClick="enterNewStatus()") 
 								small edit
 							form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
-								input(type="text" id="newStatus" ng-model="newStatus" placeholder="New Status" required)
+								input(type="text" id="newStatus" ng-model="$scope.newStatus" placeholder="New Status" required)
 								input(type="submit" ng-disabled="statusForm.$invalid")
 			.profile-main
 				.profile-main-input
