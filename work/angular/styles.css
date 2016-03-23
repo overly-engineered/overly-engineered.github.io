@@ -103,9 +103,12 @@ a{
 #main .contact-pane .contact-info *:hover {
   text-decoration:underline;
 }
-#main .contact-pane .contact-info-last-online {
+#main .contact-pane .contact-info-status {
   font-size: 10px;
   font-weight: 400;
+}
+#main .contact-pane .contact-info-status .hidden {
+  display: none;
 }
 #main .profile-space {
   width: 85%;

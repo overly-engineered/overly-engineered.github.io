@@ -75,3 +75,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
    });
 
 }]);
+
+newStatus = function(){
+    document.getElementById("newStatus").classList.toggle('hidden');
+    document.getElementById("contact-info-status-current").classList.toggle('hidden');
+    document.getElementById("contact-info-status-new").classList.toggle('hidden');
+}
