@@ -120,6 +120,7 @@ a{
   min-height: 100%;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 10px;
 }
 #main .profile-space .profile-top {
   height: 200px;
@@ -132,7 +133,7 @@ a{
 #contact-info-status-new {
   cursor: pointer;
   border: 1px solid #e5e5e5;
-  max-width: 90px;
+  max-width: 100px;
   padding: 5px;
 }
 #main .profile-space .profile-top-image {
@@ -147,6 +148,8 @@ a{
   position: absolute;
   left: 0;
   right: 0;
+  top:0;
+  bottom: 0;
   margin: auto;
 }
 #main .profile-space .profile-top-info {
