@@ -22,8 +22,9 @@
 					.profile-top-info-dob
 						p {{currentProfilePublic.DOB}} 
 					.profile-top-info-status
-						p {{currentProfilePublic.status}}
-						#contact-info-status-new(onClick="newStatus()") X
+						p(id="contact-info-status-current") {{currentProfilePublic.Status}}
+						#contact-info-status-new(onClick="newStatus()") 
+							small edit
 						input(type="text" id="newStatus" placeholder="New Status" class="hidden")
 			.profile-main
 				.profile-main-input
