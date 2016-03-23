@@ -88,6 +88,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         console.log(item);
         $cookies['angularUser'] = item;
         $route.reload();
+        $scope.apply();
     };
 
 }]);
