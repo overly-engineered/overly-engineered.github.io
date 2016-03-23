@@ -36,7 +36,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.id = $routeParams.id;
     }
 
-    var cookie = $cookies.get('angularUser');
+    var cookie = $cookies['angularUser'];
 
     if(cookie == null){
         $cookies.put('angularUser', '0')
