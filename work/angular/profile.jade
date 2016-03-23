@@ -7,10 +7,7 @@
 					img(ng-src='{{person.image}}')
 				.contact-info
 					.contact-info-name {{person.name}}
-					.contact-info-status 
-						#contact-info-status-current{{person.Status}}
-						#contact-info-status-new(onClick="newStatus") X
-						input(type="text" id="newStatus" placeholder="New Status" class="hidden")
+					.contact-info-status {{person.Status}}
 		a(href="/work" title="Back to my main site") Back to my site
 	.profile-space
 		.cont
@@ -26,6 +23,8 @@
 						p {{currentProfilePublic.DOB}} 
 					.profile-top-info-status
 						p {{currentProfilePublic.status}}
+						#contact-info-status-new(onClick="newStatus") X
+						input(type="text" id="newStatus" placeholder="New Status" class="hidden")
 			.profile-main
 				.profile-main-input
 					h3 Board
