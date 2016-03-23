@@ -43,6 +43,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.users = obj;
     $scope.currentUserId = 0;
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
+    $scope.currentUserref = ref.child($scope.currentUserId);
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
     $scope.currentProfile = $firebaseArray(ref.child($scope.id));
     console.log($scope.currentProfile);
@@ -60,7 +61,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
     $scope.updateStatus = function(){
 
-        $scope.currentProfile.set({
+        $scope.currentUserref.set({
             Status : $scope.newStatus
         });
 
