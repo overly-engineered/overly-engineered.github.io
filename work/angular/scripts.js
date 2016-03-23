@@ -61,6 +61,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
     $scope.updateStatus = function(){
         console.log($scope.currentUserref);
+        console.log($scope.newStatus);
         $scope.currentUserref.update({
             Status : $scope.newStatus
         });
