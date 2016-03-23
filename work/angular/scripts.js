@@ -1,5 +1,5 @@
 /* use strict */
-var mApp = angular.module('fBookApp', ['ngRoute', 'ngResource', 'firebase']);
+var mApp = angular.module('fBookApp', ['ngRoute', 'ngResource', 'firebase', 'ngCookies']);
 
 mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $locationProvider.html5Mode(true).hashPrefix('!');
@@ -27,21 +27,26 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
     //$locationProvider.html5Mode(true);
 
 }]);
-mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', function($scope, $firebaseObject, $firebaseArray, $routeParams) {
+mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies) {
 
     $scope.id = 0;
-
     if (typeof $routeParams.id == 'undefined'){
         $scope.id = 0;
     }else {
         $scope.id = $routeParams.id;
     }
 
+    var cookie = $cookies.get('angularUser');
+
+    if(cookie == null){
+        $cookies.put('angularUser', '0')
+    }
+
     var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com/");
   // create a synchronized array
     var obj = $firebaseArray(ref);
     $scope.users = obj;
-    $scope.currentUserId = 0;
+    $scope.currentUserId = $cookies.get(angularUser);
     $scope.currentUserref = ref.child($scope.currentUserId);
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
