@@ -46,7 +46,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
   // create a synchronized array
     var obj = $firebaseArray(ref);
     $scope.users = obj;
-    $scope.currentUserId = $cookies.get(angularUser);
+    $scope.currentUserId = $cookies['angularUser'];
     $scope.currentUserref = ref.child($scope.currentUserId);
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
