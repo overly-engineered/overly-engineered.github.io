@@ -59,11 +59,10 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             $scope.newMessageText = '';
     };
     $scope.updateStatus = function(){
-        console.log($scope.newStatus);
         $scope.currentUserref.update({
             Status : $scope.newStatus
         });
-
+        enterNewStatus();
     };
     obj.$loaded().then(function(){
         
