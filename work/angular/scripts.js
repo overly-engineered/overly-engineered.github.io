@@ -84,9 +84,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
    });
 
     $scope.switchUser = function(item){
-        debugger;
         console.log(item);
         $cookies['angularUser'] = item;
+        $route.reload();
     };
 
 }]);
