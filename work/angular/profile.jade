@@ -9,6 +9,14 @@
 					.contact-info-name {{person.name}}
 					.contact-info-status {{person.Status}}
 		a(href="/work" title="Back to my main site") Back to my site
+
+	.switch-user
+		form#switchuser(name="switchUser")
+			select(ng-change="switchUser(userSwitch)" ng-model="userSwitch")
+				option(value='0') Jamie
+				option(value="1") Misko
+				option(value="2") Jordan
+				option(value="3") Yehuda
 	.profile-space
 		.cont
 			.profile-top(ng-controller="profileController")
