@@ -39,7 +39,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     var cookie = $cookies['angularUser'];
 
     if(cookie == null){
-        $cookies.put('angularUser', '0')
+        $cookies.['angularUser'] = 0;
     }
 
     var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com/");
