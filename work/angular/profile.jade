@@ -23,7 +23,7 @@
 						p {{currentProfilePublic.DOB}} 
 					.profile-top-info-status
 						p(id="contact-info-status-current") {{currentProfilePublic.Status}}
-						.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
+						.profile-top-info-status-update
 							#contact-info-status-new(onClick="enterNewStatus()") 
 								small Change Status
 							form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
