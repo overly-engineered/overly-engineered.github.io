@@ -24,7 +24,7 @@
 					.profile-top-info-status
 						p(id="contact-info-status-current") {{currentProfilePublic.Status}}
 						.profile-top-info-status-update(ng-if="currentProfilePublic.loggedIn")
-							#contact-info-status-new(onClick="newStatus()") 
+							#contact-info-status-new(onClick="enterNewStatus()") 
 								small edit
 							form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 								input(type="text" id="newStatus" ng-model="newStatus" placeholder="New Status" required)
