@@ -51,14 +51,19 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     
     $scope.addPost = function(){
         var date = new Date().toLocaleDateString('en-GB');
-        if($scope.newMessageText.value != ''){
             $scope.currentProfilePosts.$add({
             message: $scope.newMessageText,
             date : date,
             posterName: $scope.currentUser.name
          });
             $scope.newMessageText = '';
-        }
+    };
+    $scope.updateStatus = function(){
+
+        $scope.currentProfilePublic.update({
+            Status : $scope.newStatus
+        });
+
     };
     obj.$loaded().then(function(){
         

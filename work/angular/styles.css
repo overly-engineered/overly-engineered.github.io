@@ -126,6 +126,10 @@ a{
   border-bottom: 1px solid #e5e5e5;
   position: relative;
 }
+#contact-info-status-new {
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+}
 #main .profile-space .profile-top-image {
   width: 30%;
   height: 180px;

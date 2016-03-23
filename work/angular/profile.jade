@@ -23,9 +23,10 @@
 						p {{currentProfilePublic.DOB}} 
 					.profile-top-info-status
 						p(id="contact-info-status-current") {{currentProfilePublic.Status}}
-						#contact-info-status-new(onClick="newStatus()") 
-							small edit
-						input(type="text" id="newStatus" placeholder="New Status" class="hidden")
+						.profile-top-info-status-update(ng-if="currentProfilePublic.loggedIn")
+							#contact-info-status-new(onClick="newStatus()") 
+								small edit
+							input(type="text" id="newStatus" ng-model="newStatus" placeholder="New Status" class="hidden")
 			.profile-main
 				.profile-main-input
 					h3 Board
