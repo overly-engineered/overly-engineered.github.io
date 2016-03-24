@@ -25,7 +25,8 @@
 					img(ng-src='{{currentProfilePublic.image}}')
 				.profile-top-info
 					.profile-top-info-name
-						h2 {{currentProfilePublic.name}} 
+						h2 {{currentProfilePublic.name}}
+							small {{currentProfilePublic.DOB}}
 					.profile-top-info-date
 						h3(id="contact-info-PM-current") {{currentProfilePublic.PM}}
 						.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
@@ -34,8 +35,6 @@
 							form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
 								input(type="text" ng-model="newPM" placeholder="New Personal Message" required)
 								input(type="submit" ng-disabled="pmForm.$invalid")
-					.profile-top-info-dob
-						p {{currentProfilePublic.DOB}} 
 					.profile-top-info-status
 						p(id="contact-info-status-current") {{currentProfilePublic.Status}}
 						.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
@@ -47,7 +46,7 @@
 			.profile-main
 				.profile-main-input
 					h3 Board
-					form#post(ng-submit="addPost()" name="form" ng-show="currentProfileFriendsID.indexOf(currentUser.id)!=-1")
+					form#post(ng-submit="addPost()" name="form")
 						input( type="text"
 						placeholder="Tell the world something new..." ng-model="newMessageText" required)
 						input(type="submit" ng-disabled="form.$invalid")
