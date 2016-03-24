@@ -87,16 +87,11 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.switchUser = function(item){
         console.log(item);
         $cookies['angularUser'] = item;
-        CheckScopeBeforeApply();
+        // $scope.$apply( function() {
+        //     var url = '/work/angular/user/'+item;
+        //     $location.url(url);
+        // });
     };
-
-    function CheckScopeBeforeApply() {
-    if(!$scope.$$phase) {
-        $scope.$apply( function() {
-            var url = '/work/angular/user/'+item;
-            $location.url(url);
-        });
-    }
 };
 
 }]);
