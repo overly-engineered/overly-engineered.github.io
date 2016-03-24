@@ -90,7 +90,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $route.reload();
         $scope.$apply( function() {
             var url = '/work/angular/user/'+item;
-            $location.path(url);
+            $location.url(url);
         });
     };
 
