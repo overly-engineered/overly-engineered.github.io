@@ -30,17 +30,17 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
 mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', '$window', '$location', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route, $window, $location) {
 
     $scope.id = 0;
-    if (typeof $routeParams.id == 'undefined'){
-        $scope.id = 0;
-    }else {
-        $scope.id = $routeParams.id;
-    }
 
     var cookie = $cookies['angularUser'];
 
     if(cookie == null){
         $cookies['angularUser'] = 0;
         var cookie = $cookies['angularUser'];
+    }
+    if (typeof $routeParams.id == 'undefined'){
+        $scope.id = cookie;
+    }else {
+        $scope.id = $routeParams.id;
     }
     console.log(cookie);
     var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com/");
