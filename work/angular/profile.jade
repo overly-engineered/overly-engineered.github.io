@@ -26,7 +26,7 @@
 				.profile-top-info
 					.profile-top-info-name
 						h2 {{currentProfilePublic.name}} - 
-							sub {{currentProfilePublic.DOB}}
+							span(style="font-size:.5em;") {{currentProfilePublic.DOB}}
 					.profile-top-info-date
 						h3(id="contact-info-PM-current") {{currentProfilePublic.PM}}
 						.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
