@@ -96,10 +96,10 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             console.log('after phase');
             $scope.$apply( function() {
                 var url = '/work/angular/user/'+item;
-                $window.location.href = '/index.html';
+                $window.location.href = url;
             });
         }
-    }, 1000);
+    }, 100);
 };
 
 }]);
