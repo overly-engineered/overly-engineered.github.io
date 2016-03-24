@@ -27,7 +27,7 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
     //$locationProvider.html5Mode(true);
 
 }]);
-mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route) {
+mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', '$window', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route, $window) {
 
     $scope.id = 0;
     if (typeof $routeParams.id == 'undefined'){
@@ -99,7 +99,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 $window.location.href = '/index.html';
             });
         }
-    }, 100);
+    }, 1000);
 };
 
 }]);
