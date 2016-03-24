@@ -128,6 +128,13 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             return false;
         }
     };
+    $scope.friendRights = function(){
+        if($scope.currentUserFriends()){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     $scope.addFriend = function(){
@@ -137,6 +144,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.removeFriend = function(){
         var cur = $scope.currentUserContactsArray.$getRecord($scope.currentProfilePublic.id);
         $scope.currentUserContactsArray.$remove(cur);
+        var pur = $scope.currentProfile.FriendsID.$getRecord($scope.currentUser.id);
+        cuurentProfileFriendsID.$remove(pur);
 
     };
 
