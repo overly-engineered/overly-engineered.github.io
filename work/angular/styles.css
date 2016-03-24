@@ -127,10 +127,10 @@ a{
   border-bottom: 1px solid #e5e5e5;
   position: relative;
 }
-#contact-info-status-current{
+#contact-info-status-current, #contact-info-PM-current{
   margin-bottom: 0;
 }
-#contact-info-status-new {
+#contact-info-status-new, #contact-info-PM-new {
   cursor: pointer;
   border: 1px solid #e5e5e5;
   max-width: 100px;
