@@ -114,7 +114,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
     $scope.postRights = function(){
         debugger;
-        if($scope.currentProfileFriendsID.indexOf($scope.currentUserref.id)){
+        if(currentProfileFriendsID.indexOf($scope.currentUser.id)){
             console.log("true");
             return true;
         } else if($scope.currentUserref.id == $scope.currentProfilePublic.id){
