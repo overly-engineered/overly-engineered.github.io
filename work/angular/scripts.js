@@ -135,7 +135,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentUserContactsArray.$add($scope.currentProfilePublic.id);
     };
     $scope.removeFriend = function(){
-        $scope.currentUserContactsArray.$remove($scope.currentProfilePublic.id);
+        var cur = $scope.currentUserContactsArray.$getRecord($scope.currentProfilePublic.id);
+        $scope.currentUserContactsArray.$remove(cur);
+
     };
 
 }]);
