@@ -74,7 +74,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentUserref.update({
             PM : $scope.newPM
         });
-        enterNewStatus();
+        enterNewPM();
     };
     obj.$loaded().then(function(){
         
