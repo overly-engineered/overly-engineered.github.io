@@ -107,7 +107,7 @@ a{
   font-size: 10px;
   font-weight: 400;
 }
-#main .profile-top-info-status .hidden {
+#main .profile-top-info-status .hidden, #main .profile-top-info-PM-update .hidden{
   display: none;
 }
 #main .profile-space {
@@ -126,6 +126,9 @@ a{
   height: 200px;
   border-bottom: 1px solid #e5e5e5;
   position: relative;
+}
+.profile-top-info-date h3{
+  margin-bottom: 0;
 }
 #contact-info-status-current, #contact-info-PM-current{
   margin-bottom: 0;
