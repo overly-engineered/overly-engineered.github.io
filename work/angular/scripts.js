@@ -27,7 +27,7 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
     //$locationProvider.html5Mode(true);
 
 }]);
-mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$routeProvider', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $routeProvider) {
+mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', '$routeProvider', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route, $routeProvider) {
 
     $scope.id = 0;
     if (typeof $routeParams.id == 'undefined'){
