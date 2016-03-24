@@ -54,6 +54,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.currentProfile = $firebaseArray(ref.child($scope.id));
     var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
     $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
+    $scope.currentProfileFriends = [];
     
     $scope.addPost = function(){
         var date = new Date().toLocaleDateString('en-GB');
@@ -80,7 +81,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         
    });
     currentProfileFriendsID.$loaded().then(function(){
-        $scope.currentProfileFriends = [];
         angular.forEach(currentProfileFriendsID, function(value, key) {
             angular.forEach(obj, function(values, keys) {
                 if(values.id == value.$value){
