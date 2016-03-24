@@ -91,13 +91,15 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
     $scope.redirect = function(item) {
     console.log('before phase');
-    if(!$scope.$$phase) {
-        console.log('after phase');
-        $scope.$apply( function() {
-            var url = '/work/angular/user/'+item;
-            $window.location.href = '/index.html';
-        });
-    }
+    setTimeout(function(){
+        if(!$scope.$$phase) {
+            console.log('after phase');
+            $scope.$apply( function() {
+                var url = '/work/angular/user/'+item;
+                $window.location.href = '/index.html';
+            });
+        }
+    }, 100);
 };
 
 }]);
