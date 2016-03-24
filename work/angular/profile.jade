@@ -46,7 +46,7 @@
 			.profile-main
 				.profile-main-input
 					h3 Board
-					form#post(ng-submit="addPost()" name="form")
+					form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
 						input( type="text"
 						placeholder="Tell the world something new..." ng-model="newMessageText" required)
 						input(type="submit" ng-disabled="form.$invalid")

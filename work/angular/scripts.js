@@ -102,16 +102,25 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
 
     $scope.redirect = function(item) {
-    setTimeout(function(){
-        if(!$scope.$$phase) {
-            $scope.$apply( function() {
-                var url = '/work/angular/#!users/' +item;
-                var urlfin = decodeURIComponent(url)
-                $window.location.href = url;
-            });
+        setTimeout(function(){
+            if(!$scope.$$phase) {
+                $scope.$apply( function() {
+                    var url = '/work/angular/#!users/' +item;
+                    var urlfin = decodeURIComponent(url)
+                    $window.location.href = url;
+                });
+            }
+        }, 1000);
+    };
+    $scope.postRights = function(){
+        if($scope.currentProfileFriendsID.indexOf($scope.currentUserref.id)){
+            return true;
+        } else if($scope.currentUserref.id == $scope.currentProfilePublic.id){
+            return true;
+        } else {
+            return false;
         }
-    }, 1000);
-};
+    };
 
 }]);
 
