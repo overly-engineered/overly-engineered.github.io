@@ -49,6 +49,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.currentUserId = cookie;
     $scope.currentUserref = ref.child($scope.currentUserId);
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
+    $scope.currentUserContactsArray =$ firebaseArray(ref.child($scope.currentUserId).child('contacts'));
     $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
     $scope.currentProfile = $firebaseArray(ref.child($scope.id));
     var currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
