@@ -24,8 +24,9 @@
 				.profile-top-image
 					img(ng-src='{{currentProfilePublic.image}}')
 					form#addFriend(ng-submit="addFriend()" ng-show="!postRights()")
-						input(type="submit")
+						input(type="submit" value="Add as Contact")
 					form#addFriend(ng-submit="removeFriend()" ng-show="postRights()")
+						input(type="submit" value="Remove as Contact")
 				.profile-top-info
 					.profile-top-info-name
 						h2 {{currentProfilePublic.name}} 
@@ -45,7 +46,7 @@
 								small Change Status
 							form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 								input(type="text" ng-model="newStatus" placeholder="New Status" required)
-								input(type="submit" ng-disabled="statusForm.$invalid")
+								input(type="submit" ng-disabled="statusForm.$invalid" value="Post")
 			.profile-main
 				.profile-main-input
 					h3 Board
