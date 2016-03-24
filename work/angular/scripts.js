@@ -85,16 +85,19 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
    });
 
     $scope.switchUser = function(item){
-        console.log(item);
         $cookies['angularUser'] = item;
-        console.log('cookie set');
+        $scope.currentUserref.update({
+            loggedIn : false
+        });
+        $scope.newUserref = ref.child(item);
+        $scope.newUserref.update({
+            loggedIn : true
+        });
     };
 
     $scope.redirect = function(item) {
-    console.log('before phase');
     setTimeout(function(){
         if(!$scope.$$phase) {
-            console.log('after phase');
             $scope.$apply( function() {
                 var url = '/work/angular/#!users/' +item;
                 var urlfin = decodeURIComponent(url)
