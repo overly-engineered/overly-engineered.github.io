@@ -104,7 +104,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 $window.location.href = url;
             });
         }
-    }, 100);
+    }, 1000);
 };
 
 }]);
