@@ -95,8 +95,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         if(!$scope.$$phase) {
             console.log('after phase');
             $scope.$apply( function() {
-                var finitem = "/" + item;
-                var url = '/work/angular/#!users/'+ finitem;
+                var url = '/work/angular/#!users/'+ item;
                 $window.location.href = url;
             });
         }
