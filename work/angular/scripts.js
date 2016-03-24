@@ -119,7 +119,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 return true;
             }
         });
-        return false;
     }
     $scope.postRights = function(){
         debugger;
