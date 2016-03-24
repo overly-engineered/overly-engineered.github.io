@@ -112,9 +112,17 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             }
         }, 1000);
     };
+    $scope.currentUserFriends = function(){
+        angular.forEach(currentProfileFriendsID, function(value, key){
+            if(value.id == $scope.currentUserId){
+                return true;
+            }
+        });
+        return false;
+    }
     $scope.postRights = function(){
         debugger;
-        if(currentUserFriends()){
+        if(currentUserFriends()4){
             console.log("true");
             return true;
         } else if($scope.currentUser.id == $scope.currentProfilePublic.id){
@@ -126,14 +134,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         }
     };
 
-    $scope.currentUserFriends = function(){
-        angular.forEach(currentProfileFriendsID, function(value, key){
-            if(value.id == $scope.currentUserId){
-                return true;
-            }
-        });
-        return false;
-    }
+
 
 }]);
 
