@@ -90,7 +90,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         CheckScopeBeforeApply();
     };
 
-    $scope.CheckScopeBeforeApply = function(item) {
+    $scope.redirect = function(item) {
     if(!$scope.$$phase) {
         $scope.$apply( function() {
             var url = '/work/angular/user/'+item;
