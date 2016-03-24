@@ -89,7 +89,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $cookies['angularUser'] = item;
         $route.reload();
         $scope.$apply( function() {
-            winow.location.href('/work/angular/user/'+item);
+            var url = '/work/angular/user/'+item;
+            $location.path(url);
         });
     };
 
