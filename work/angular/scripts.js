@@ -113,13 +113,11 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         }, 1000);
     };
     $scope.currentUserFriends = function(){
-        angular.forEach($scope.currentProfileFriends, function(value, key){
+        angular.forEach($scope.currentProfile.contacts, function(value, key){
             debugger;
-            angular.forEach(value.contacts, function(values, keys){
-                if(value.id == $scope.currentUserId){
-                    return true;
-                }
-            })
+            if(values.id == $scope.currentUserId){
+                return true;
+            }
         });
         return false;
     }
