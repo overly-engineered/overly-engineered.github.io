@@ -132,6 +132,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.addFriend = function(){
         debugger;
         currentProfileFriendsID.$add($scope.currentUser.id);
+        currentUser.contacts.$add($scope.currentUser.id);
     };
     $scope.removeFriend = function(){
 
