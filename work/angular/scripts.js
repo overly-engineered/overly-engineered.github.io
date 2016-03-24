@@ -129,7 +129,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         }
     };
     $scope.friendRights = function(){
-        if($scope.currentUserFriends()){
+        if(!$scope.currentUserFriends() && $scope.currentUser.id == $scope.currentProfilePublic.id){
             return true;
         } else {
             return false;
@@ -144,7 +144,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.removeFriend = function(){
         var cur = $scope.currentUserContactsArray.$getRecord($scope.currentProfilePublic.id);
         $scope.currentUserContactsArray.$remove(cur);
-        var pur = $scope.currentProfile.FriendsID.$getRecord($scope.currentUser.id);
+        var pur = $scope.currentProfileFriendsID.$getRecord($scope.currentUser.id);
         cuurentProfileFriendsID.$remove(pur);
 
     };
