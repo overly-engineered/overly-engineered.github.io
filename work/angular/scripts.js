@@ -27,7 +27,7 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
     //$locationProvider.html5Mode(true);
 
 }]);
-mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', '$routeProvider', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route, $routeProvider) {
+mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route) {
 
     $scope.id = 0;
     if (typeof $routeParams.id == 'undefined'){
@@ -88,8 +88,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         console.log(item);
         $cookies['angularUser'] = item;
         $route.reload();
-        $scope.$apply( function() {
-            $location.path('/work/angular/user/'+item);
+        $scope.apply( function() {
+            winow.location.href('/work/angular/user/'+item);
         });
     };
 
