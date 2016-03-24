@@ -23,6 +23,9 @@
 			.profile-top(ng-controller="profileController")
 				.profile-top-image
 					img(ng-src='{{currentProfilePublic.image}}')
+					form#addFriend(ng-submit="addFriend()" ng-show="!postRights()")
+						input(type="submit")
+					form#addFriend(ng-submit="removeFriend()" ng-show="postRights()")
 				.profile-top-info
 					.profile-top-info-name
 						h2 {{currentProfilePublic.name}} 

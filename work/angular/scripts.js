@@ -42,7 +42,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     }else {
         $scope.id = $routeParams.id;
     }
-    console.log(cookie);
     var ref = new Firebase("https://fiery-inferno-6854.firebaseio.com/");
   // create a synchronized array
     var obj = $firebaseArray(ref);
@@ -122,19 +121,23 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         return bool;
     }
     $scope.postRights = function(){
-        if($scope.currentUserFriends()){
-            console.log("true");
-            return true;
-        } else if($scope.currentUser.id == $scope.currentProfilePublic.id){
-            console.log("true");
+        if($scope.currentUserFriends() || $scope.currentUser.id == $scope.currentProfilePublic.id){
             return true;
         } else {
-            console.log("false");
             return false;
         }
     };
 
 
+    $scope.addFriend = function(){
+        debugger;
+        $scope.currentProfile.contacts.$add({
+            id: $scope.currentProfilePublic.id
+        });
+    };
+    $scope.removeFriend = function(){
+
+    };
 
 }]);
 
