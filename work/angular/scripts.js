@@ -81,7 +81,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         
    });
     $scope.currentProfileFriendsID.$loaded().then(function(){
-        angular.forEach(currentProfileFriendsID, function(value, key) {
+        angular.forEach($scope.currentProfileFriendsID, function(value, key) {
             angular.forEach(obj, function(values, keys) {
                 if(values.id == value.$value){
                     $scope.currentProfileFriends.push(values);
@@ -114,7 +114,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
     $scope.currentUserFriends = function(){
         var bool = false;
-        angular.forEach(currentProfileFriendsID, function(value, key){
+        angular.forEach($scope.currentProfileFriendsID, function(value, key){
             if(value.$value == $scope.currentUserId){
                 bool = true;
             }
@@ -138,7 +138,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
 
     $scope.addFriend = function(){
-        currentProfileFriendsID.$add($scope.currentUser.id);
+        $scope.currentProfileFriendsID.$add($scope.currentUser.id);
         $scope.currentUserContactsArray.$add($scope.currentProfilePublic.id);
     };
     $scope.removeFriend = function(){
