@@ -131,11 +131,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.friendRights = function(){
         debugger;
         if($scope.currentUserFriends()){
-            return '1';
-        } else if($scope.currentUser.id == $scope.currentProfilePublic.id){
-            return '3';
+            return true;
         } else {
-            return '2';
+            return false;
         }
     }
 
