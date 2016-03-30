@@ -164,11 +164,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
 enterNewStatus = function(){
     document.getElementById("contact-info-status-new").classList.toggle('hidden');
-    document.getElementById("contact-info-status-current").classList.toggle('hidden');
     document.getElementById("status").classList.toggle('hidden');
 }
 enterNewPM = function(){
     document.getElementById("contact-info-PM-new").classList.toggle('hidden');
-    document.getElementById("contact-info-PM-current").classList.toggle('hidden');
     document.getElementById("PM").classList.toggle('hidden');
 }
