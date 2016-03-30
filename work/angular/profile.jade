@@ -1,5 +1,5 @@
-.content
-	.contact-pane
+.section
+	.col.s12.m4
 		p {{currentProfilePublic.name}}'s friends.
 		.contact(ng-repeat="person in currentProfileFriends")
 			a(ng-href="/work/angular/#!users/{{person.url}}")
@@ -9,8 +9,6 @@
 					.contact-info-name {{person.name}}
 					.contact-info-status {{person.Status}}
 		a(href="/work" title="Back to my main site") Back to my site
-
-	.switch-user
 		form#switchuser
 			select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch")
 				option(value="") ---Select User---
@@ -18,7 +16,7 @@
 				option(value="1") Misko
 				option(value="2") Jordan
 				option(value="3") Yehuda
-	.profile-space
+	.col.s12.m8
 		.cont
 			.profile-top(ng-controller="profileController")
 				.profile-top-image
