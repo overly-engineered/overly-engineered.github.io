@@ -7,31 +7,33 @@
 			.contact.row(ng-repeat="person in currentProfileFriends" style="display:inline-block; margin-bottom:0px;")
 				a(ng-href="/work/angular/#!users/{{person.url}}")
 					.contact-image.col.s4
-						img(ng-src='{{person.image}}' style="height:75px;")
+						img(ng-src='{{person.image}}' style="height:75px;" class="circle")
 					.contact-info.col.s8
 						.contact-info-name {{person.name}}
 						.contact-info-status {{person.Status}}
 			form#switchuser
-				select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch")
-					option(value="") ---Select User---
-					option(value='0') Jamie
-					option(value="1") Misko
-					option(value="2") Jordan
-					option(value="3") Yehuda
+				.input-field.col.s12
+					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch")
+						option(value="" disabled selected) ---Select User---
+						option(value='0') Jamie
+						option(value="1") Misko
+						option(value="2") Jordan
+						option(value="3") Yehuda
+					label Select a user
 	.row
 		.col.s12
 			.card
 				.profile-top.row(ng-controller="profileController")
 					.row(style="position: relative;margin: 7.5px;")
 						.profile-top-image.col.s12.m4
-							img(ng-src='{{currentProfilePublic.image}}' class="responsive-img")
+							img(ng-src='{{currentProfilePublic.image}}' class="responsive-img circle")
 							form#addFriend(ng-submit="addFriend(); redirect(currentProfilePublic.id);")
-								input(type="submit" value="Add as Contact" ng-if="friendRights() == '2'")
+								button(type="submit" value="Add as Contact" ng-if="friendRights() == '2'" class="waves-effect waves-light btn red")
 							form#addFriend(ng-submit="removeFriend();  redirect(currentUser.id);")
-								input(type="submit" value="Remove as Contact" ng-if="friendRights() == '1'")
+								input(type="submit" value="Remove as Contact" ng-if="friendRights() == '1'" class="waves-effect waves-light btn")
 						.profile-top-info.col.s12.m8
 							.profile-top-info-name
-								h4 {{currentProfilePublic.name}} 
+								h4.blue-text {{currentProfilePublic.name}} 
 									span(style="font-size:.5em;") - {{currentProfilePublic.DOB}}
 								h5(id="contact-info-PM-current") {{currentProfilePublic.PM}}
 								p(id="contact-info-status-current") {{currentProfilePublic.Status}}
@@ -58,14 +60,14 @@
 									button(onClick="enterNewStatus()" class="btn waves-effect waves-light red") X
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
-						h3 Board
+						h5.blue-text Board
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
 							.input-field.s12
 								textarea(type="text" id="new_Post" ng-model="newMessageText" class="materialize-textarea" required)
 								label(for="new_Post" style="left:0;") Tell the world something new...
 							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green") Post
 					.profile-main-board.col.s12(style="padding-bottom:10px;")
-						h3 Previous Boards
+						h5.blue-text Previous Boards
 						.profile-main-board-post(ng-repeat="posts in currentProfilePosts")
 							.profile-main-board-post-info
 								.col.s9

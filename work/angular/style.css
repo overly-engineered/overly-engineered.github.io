@@ -11,3 +11,6 @@
 .profile-main-board-post:last-child{
 	border: 0;
 }
+.contact:hover *{
+	text-decoration: underline;
+}
