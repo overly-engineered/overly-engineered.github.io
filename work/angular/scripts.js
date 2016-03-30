@@ -160,6 +160,16 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentProfileFriendsID.$remove(pur);
     };
 
+    $scope.addUser = function(){
+        console.log('addUser');
+        console.log($scope.addUserName);
+        console.log($scope.addUserDOB);
+        console.log($scope.addUserPM);
+        $scope.users.$add({
+            name: 'Jess'
+        });
+    };
+
 }]);
 
 enterNewStatus = function(){
@@ -177,4 +187,8 @@ showFriends = function(){
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
     $(".button-collapse").sideNav();
+});
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 80 // Creates a dropdown of 15 years to control year
   });

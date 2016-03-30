@@ -20,6 +20,7 @@
 						option(value="1") Misko
 						option(value="2") Jordan
 						option(value="3") Yehuda
+					select(ng-model="userSwitch" ng-options="user.id as user.name for user in users")
 	.row
 		.col.s12
 			.card
