@@ -22,7 +22,7 @@
 			.card
 				.profile-top.row(ng-controller="profileController")
 					.profile-top-image.col.s12.m4
-						img(ng-src='{{currentProfilePublic.image}}')
+						img(ng-src='{{currentProfilePublic.image}}' class="responsive-img")
 						form#addFriend(ng-submit="addFriend(); redirect(currentProfilePublic.id);")
 							input(type="submit" value="Add as Contact" ng-if="friendRights() == '2'")
 						form#addFriend(ng-submit="removeFriend();  redirect(currentUser.id);")
@@ -47,7 +47,7 @@
 							form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 								input(type="text" ng-model="newStatus" placeholder="New Status" required)
 								input(type="submit" ng-disabled="statusForm.$invalid" value="Post")
-				.profile-main
+				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
