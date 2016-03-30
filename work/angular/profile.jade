@@ -14,13 +14,8 @@
 							.contact-info-status {{person.Status}}
 			form#switchuser(style="margin-bottom:0;")
 				.input-field
-					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch" class="browser-default")
-						option(value="" disabled selected) ---Select User---
-						option(value='0') Jamie
-						option(value="1") Misko
-						option(value="2") Jordan
-						option(value="3") Yehuda
-					select(ng-model="userSwitch" ng-options="user.id as user.name for user in users")
+					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" id="userSwitcher" ng-model="userSwitch" ng-options="user.id as user.name for user in users")
+					label(for="userSwitcher") Switch Users
 	.row
 		.col.s12
 			.card
