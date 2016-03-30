@@ -7,12 +7,20 @@ html
 	body
 		#main(ng-app="fBookApp")
 			nav(ng-controller="profileController" class="light-blue" role="navigation")
-				a#logo-container
-					span.brand-logo FBook
-				ul.user.right.hide-on-med-and-down
-					li.name 
-						a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
+				.nav-wrapper
+					a#logo-container
+						span.brand-logo FBook
+					ul.user.right.hide-on-med-and-down
+						li.name
+							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
+						li.add
+							a(class="waves-effect waves-light btn modal-trigger" href="#addUserModal")
+					#addUserModal.modal.bottom-sheet
+						.modal-content
+							h5 Modal Header
+							p Lorem ipsum Nulla Excepteur ad Ut fugiat ad culpa fugiat in et Excepteur.
 			.container(ng-view)
+		footer.page-footer
 			a(href="/work" title="Back to my main site") Back to my site
 				
 		script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js")
