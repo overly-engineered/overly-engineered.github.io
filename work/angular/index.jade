@@ -30,7 +30,7 @@ html
 						.row
 							h5.blue-text Add user
 						.row
-							form#newUser(ng-submit="addUser()" name="addUserForm")
+							form#newUser(ng-submit="alert('');addUser();" name="addUserForm")
 								.row
 									.input-field
 										label(for="new_name") Name
@@ -38,11 +38,11 @@ html
 								.row
 									.input-field
 										label(for="dob") D.O.B
-										input.datepicker(type="date" id="dob" ng-model="addUserDOB")
+										input.datepicker(type="date" id="dob" ng-model="addUserDOB" required)
 								.row
 									.input-field
 										label(for="new_PM") Personal Message
-										input(type="text" id="new_PM" required ng-model="addUserPM")
+										input(type="text" id="new_PM" ng-model="addUserPM" required)
 								.row
 									.input-field
 										button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
