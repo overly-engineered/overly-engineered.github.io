@@ -6,9 +6,9 @@ html
 	body
 		#main(ng-app="fBookApp")
 			nav(ng-controller="profileController" class="light-blue" role="navigation")
-				h1#logo-container F
-					span Book
-				ul.user
+				a#logo-container
+					span.brand-logo FBook
+				ul.user.right.hide-on-med-and-down
 					li.name 
 						a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 			.container(ng-view)
