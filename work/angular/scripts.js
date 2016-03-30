@@ -155,7 +155,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         });
         angular.forEach($scope.currentProfileFriendsID, function(value, key){
             debugger;
-            if(value.$value == $scope.currentProfilePublic.id){
+            if(value.$value == $scope.currentUser.id){
                 pur = $scope.currentProfileFriendsID.$getRecord(value.$id);
             }
         });
