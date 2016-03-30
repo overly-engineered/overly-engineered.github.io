@@ -8,3 +8,6 @@
 .profile-main-board-post h4 {
 	margin-top: 0;
 }
+.profile-main-board-post:last-child{
+	border: 0;
+}

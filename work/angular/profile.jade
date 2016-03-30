@@ -1,17 +1,16 @@
 .section
 	.row
-		.col.s12.m4
+		.col.s12
 			.row
 				.col.s12
 					p {{currentProfilePublic.name}}'s friends:
-			.contact.row(ng-repeat="person in currentProfileFriends")
+			.contact.row(ng-repeat="person in currentProfileFriends" style="display:inline-block;")
 				a(ng-href="/work/angular/#!users/{{person.url}}")
 					.contact-image.col.s4
-						img(ng-src='{{person.image}}' class="responsive-img")
+						img(ng-src='{{person.image}}' style="height:75px;")
 					.contact-info.col.s8
 						.contact-info-name {{person.name}}
 						.contact-info-status {{person.Status}}
-			a(href="/work" title="Back to my main site") Back to my site
 			form#switchuser
 				select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch")
 					option(value="") ---Select User---
@@ -46,7 +45,7 @@
 										input(type="text" ng-model="newPM" id="new_PM" required)
 										label(for="new_PM") New Personal Message
 									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light") Change PM
-									button(type="submit" onClick="enterNewPM()" class="btn waves-effect waves-light red") X
+									button(onClick="enterNewPM()" class="btn waves-effect waves-light red") X
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
@@ -56,7 +55,7 @@
 										input(type="text" ng-model="newStatus" id="new_Status" required)
 										label(for="new_Status") New Status
 									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light") Change Status
-									button(type="submit" onClick="enterNewStatus()" class="btn waves-effect waves-light red") X
+									button(onClick="enterNewStatus()" class="btn waves-effect waves-light red") X
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
