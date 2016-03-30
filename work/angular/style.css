@@ -1,7 +1,7 @@
-#contact-info-status-current{}
-#contact-info-status-new, #status{display: none;}
+#contact-info-status-new, #contact-info-status-current{}
+#status{display: none;}
 
-#contact-info-PM-new, #PM{display: none;}
-#contact-info-PM-current{}
+#PM{display: none;}
+#contact-info-PM-new, #contact-info-PM-current{}
 
 .hidden{display: none;}

@@ -40,7 +40,7 @@
 						.profile-top-info-date.col.s12.m6
 							.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-PM-new(onClick="enterNewPM()") 
-									button(waves-effect waves-light btn) Change PM
+									button(class='waves-effect waves-light btn') Change PM
 								form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
 									input(type="text" ng-model="newPM" id="newPM" required)
 									label(for="newPM") New Personal Message
@@ -48,7 +48,7 @@
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
-									button(waves-effect waves-light btn) Change Status
+									button(class='waves-effect waves-light btn') Change Status
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 									input(type="text" ng-model="newStatus" id="newStatus" required)
 									label(for="newStatus") New Status
