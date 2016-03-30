@@ -50,7 +50,7 @@
 									small Change Status
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 									input(type="text" ng-model="newStatus" placeholder="New Status" required)
-									button(type="submit" ng-disabled="statusForm.$invalid" value="Post")
+									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light")
 										i.material-icons.right send
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
