@@ -42,25 +42,27 @@
 								#contact-info-PM-new(onClick="enterNewPM()") 
 									button(class='waves-effect waves-light btn') Change PM
 								form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
-									input(type="text" ng-model="newPM" id="newPM" required)
-									label(for="newPM") New Personal Message
-									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light") Change
+									.input-field.s12
+										input(type="text" ng-model="newPM" id="new_PM" required)
+										label(for="new_PM") New Personal Message
+									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light") Change PM
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
 									button(class='waves-effect waves-light btn') Change Status
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
-									input(type="text" ng-model="newStatus" id="newStatus" required)
-									label(for="newStatus") New Status
-									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light") Change
+									.input-field.s12
+										input(type="text" ng-model="newStatus" id="new_Status" required)
+										label(for="new_Status") New Status
+									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light") Change Status
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
-							input( type="text"
-							id="newPost" ng-model="newMessageText" required)
-							label(for="newPost") Tell the world something new...
-							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green")
+							.input-field.s12
+								input( type="text" id="new_Post" ng-model="newMessageText" required)
+								label(for="new_Post") Tell the world something new...
+							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green") Post
 					.profile-main-board.col.s12
 						h3 Previous Boards
 						.profile-main-board-post(ng-repeat="posts in currentProfilePosts")
