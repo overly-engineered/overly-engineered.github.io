@@ -30,18 +30,22 @@ html
 									h5.blue-text Add user
 								.row
 									form#newUser(ng-submit="addUser()" name="addUserForm")
-										.input-field
-											label(for="new_name") Name
-											input(type="text" id="new_name" ng-model="addUserName" required)
-										.input-field
-											label(for="dob") D.O.B
-											input(type="date" id="dob" ng-model="addUserDOB")
-										.input-field
-											label(for="new_PM") Personal Message
-											input(type="text" id="new_PM" required ng-model="addUserPM")
-										.input-field
-											button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
-												i.material-icons.right done
+										.row
+											.input-field
+												label(for="new_name") Name
+												input(type="text" id="new_name" ng-model="addUserName" required)
+										.row
+											.input-field
+												label(for="dob") D.O.B
+												input(type="date" id="dob" ng-model="addUserDOB")
+										.row
+											.input-field
+												label(for="new_PM") Personal Message
+												input(type="text" id="new_PM" required ng-model="addUserPM")
+										.row
+											.input-field
+												button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
+													i.material-icons.right done
 
 			.container(ng-view)
 		footer.page-footer.light-blue
