@@ -40,23 +40,26 @@
 						.profile-top-info-date.col.s12.m6
 							.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-PM-new(onClick="enterNewPM()") 
-									small Change PM
+									button(waves-effect waves-light btn) Change PM
 								form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
-									input(type="text" ng-model="newPM" placeholder="New Personal Message" required)
+									input(type="text" ng-model="newPM" id="newPM" required)
+									label(for="newPM") New Personal Message
 									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light")
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
-									small Change Status
+									button(waves-effect waves-light btn) Change Status
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
-									input(type="text" ng-model="newStatus" placeholder="New Status" required)
+									input(type="text" ng-model="newStatus" id="newStatus" required)
+									label(for="newStatus") New Status
 									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light")
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
 							input( type="text"
-							placeholder="Tell the world something new..." ng-model="newMessageText" required)
+							id="newPost" ng-model="newMessageText" required)
+							label(for="newPost") Tell the world something new...
 							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green")
 					.profile-main-board.col.s12
 						h3 Previous Boards
