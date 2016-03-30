@@ -161,13 +161,15 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
 
     $scope.addUser = function(){
-        console.log('addUser');
+        debugger;
+        $('.button-collapse').sideNav('hide');
         console.log($scope.addUserName);
         console.log($scope.addUserDOB);
         console.log($scope.addUserPM);
         $scope.users.$add({
             name: 'Jess'
         });
+        $('#addUserModal').closeModal();
     };
 
 }]);
