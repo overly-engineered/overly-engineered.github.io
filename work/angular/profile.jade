@@ -1,5 +1,5 @@
 .section
-	.row
+	.row(style="margin-bottom:0;")
 		.col.s12
 			.row
 				.col.s12
@@ -11,8 +11,8 @@
 					.contact-info.col.s8
 						.contact-info-name {{person.name}}
 						.contact-info-status {{person.Status}}
-			form#switchuser
-				.input-field.col.s12
+			form#switchuser(style="margin-bottom:0;")
+				.input-field
 					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch" class="browser-default")
 						option(value="" disabled selected) ---Select User---
 						option(value='0') Jamie
