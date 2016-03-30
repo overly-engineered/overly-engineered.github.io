@@ -14,8 +14,7 @@
 							.contact-info-status {{person.Status}}
 			form#switchuser(style="margin-bottom:0;")
 				.input-field
-					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" id="userSwitcher" ng-model="userSwitch" ng-options="user.id as user.name for user in users")
-					label(for="userSwitcher") Switch Users
+					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" id="userSwitcher" ng-model="userSwitch" ng-options="user.id as user.name for user in users" class="browser-default")
 	.row
 		.col.s12
 			.card
