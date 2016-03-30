@@ -4,7 +4,7 @@
 			.row
 				.col.s12
 					p(onClick="showFriends()" id="seeFriends") See {{currentProfilePublic.name}}'s friends:
-			div#contactsToggle
+			div#contactsToggle(style="display:none;")
 				.contact.row(ng-repeat="person in currentProfileFriends" style="display:inline-block; margin-bottom:0px; width:250px;")
 					a(ng-href="/work/angular/#!users/{{person.url}}")
 						.contact-image.col.s4

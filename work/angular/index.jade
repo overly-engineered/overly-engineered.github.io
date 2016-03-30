@@ -10,12 +10,14 @@ html
 				.nav-wrapper
 					a#logo-container
 						span.brand-logo FBook
+					a(href="#" data-activates="mobileM" class="button-collapse")
+						i.material-icons menu
 					ul.user.right.hide-on-med-and-down
 						li.name
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
 							a(class="modal-trigger" href="#addUserModal") Add user
-					ul.side-nav#mobile-demo
+					ul.side-nav#mobileM
 						li.name
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
