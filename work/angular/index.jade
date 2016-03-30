@@ -23,7 +23,7 @@ html
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
 							a.modal-trigger(href="#addUserModal") Add user
-			#addUserModal.modal
+			#addUserModal.modal(ng-controller="profileController")
 				.modal-content.black-text
 					.container
 						.row
