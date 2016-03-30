@@ -40,7 +40,7 @@
 					.row(style="position: relative;margin: 7.5px;")
 						.profile-top-info-date.col.s12.m6
 							.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
-								#contact-info-PM-new(onClick="enterNewPM()") 
+								#contact-info-PM-new(onClick="enterNewPM()" style="padding-bottom: 10px;") 
 									button(class='waves-effect waves-light btn') Change PM
 										i.material-icons.right chat_bubble
 								form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
@@ -52,7 +52,7 @@
 									button(onClick="enterNewPM()" class="btn waves-effect waves-light red") X
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
-								#contact-info-status-new(onClick="enterNewStatus()") 
+								#contact-info-status-new(onClick="enterNewStatus()" style="padding-bottom: 10px;") 
 									button(class='waves-effect waves-light btn') Change Status
 										i.material-icons.right chat_bubble
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
