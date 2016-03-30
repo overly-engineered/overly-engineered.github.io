@@ -25,7 +25,7 @@
 					img(ng-src='{{currentProfilePublic.image}}')
 					form#addFriend(ng-submit="addFriend(); redirect(currentProfilePublic.id);")
 						input(type="submit" value="Add as Contact" ng-if="friendRights() == '2'")
-					form#addFriend(ng-submit="removeFriend();  redirect(currentProfilePublic.id);")
+					form#addFriend(ng-submit="removeFriend();  redirect(currentUser.id);")
 						input(type="submit" value="Remove as Contact" ng-if="friendRights() == '1'")
 				.profile-top-info
 					.profile-top-info-name
