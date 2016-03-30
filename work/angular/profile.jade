@@ -34,9 +34,9 @@
 							.profile-top-info-name
 								h2 {{currentProfilePublic.name}} 
 									span(style="font-size:.5em;") - {{currentProfilePublic.DOB}}
+								h3(id="contact-info-PM-current") {{currentProfilePublic.PM}}
 					.row
 						.profile-top-info-date.col.s12.m6
-							h3(id="contact-info-PM-current") {{currentProfilePublic.PM}}
 							.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-PM-new(onClick="enterNewPM()") 
 									small Change PM
