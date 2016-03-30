@@ -27,14 +27,18 @@ html
 						.modal-content.black-text
 							h5.blue-text Add user
 							form#newUser(ng-submit="addUser()" name="addUserForm")
-								input(type="text" id="new_name" ng-model="addUserName" required)
-								label(for="new_name") Name
-								label(for="dob") D.O.B
-								input(type="date" class="datepicker" id="dob" ng-model="addUserDOB")
-								input(type="text" id="new_PM" required ng-model="addUserPM")
-								label(for="new_PM") Personal Message
-								button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
-									i.material-icons.right done
+								.input-field
+									label(for="new_name") Name
+									input(type="text" id="new_name" ng-model="addUserName" required)
+								.input-field
+									label(for="dob") D.O.B
+									input(type="date" class="datepicker" id="dob" ng-model="addUserDOB")
+								.input-field
+									label(for="new_PM") Personal Message
+									input(type="text" id="new_PM" required ng-model="addUserPM")
+								.input-field
+									button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
+										i.material-icons.right done
 
 			.container(ng-view)
 		footer.page-footer.light-blue
