@@ -151,7 +151,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentProfileFriendsID.$remove(pur);
 
         var curKey = $scope.currentUserContactsArray.$indexFor($scope.currentProfilePublic.id);
-        
+        angular.forEach($scope.currentUserContactsArray, function(value, key){
+            console.log(value.$id);
+        });
 
     };
 
