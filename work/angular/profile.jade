@@ -47,6 +47,7 @@
 										input(type="text" ng-model="newPM" id="new_PM" required)
 										label(for="new_PM") New Personal Message
 									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light" style="padding-bottom:5px;") Change PM
+										i.material-icons.right done
 									button(onClick="enterNewPM()" class="btn waves-effect waves-light red") X
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
@@ -56,8 +57,8 @@
 									.input-field.s12
 										input(type="text" ng-model="newStatus" id="new_Status" required)
 										label(for="new_Status") New Status
-									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light" style="padding-bottom:5px;")
-										i.material-icons.right send
+									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light" style="padding-bottom:5px;") Change Status
+										i.material-icons.right done
 									button(onClick="enterNewStatus()" class="btn waves-effect waves-light red") X
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
@@ -67,6 +68,7 @@
 								textarea(type="text" id="new_Post" ng-model="newMessageText" class="materialize-textarea" required)
 								label(for="new_Post" style="left:0;") Tell the world something new...
 							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green") Post
+								i.material-icons.right send
 					.profile-main-board.col.s12(style="padding-bottom:10px;")
 						h5.blue-text Previous Boards
 						.profile-main-board-post(ng-repeat="posts in currentProfilePosts")
