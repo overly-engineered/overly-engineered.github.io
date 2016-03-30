@@ -7,28 +7,28 @@ html
 		base(href="/work/angular/")
 	body
 		#main(ng-app="fBookApp")
-			nav(ng-controller="profileController" class="light-blue" role="navigation")
+			nav.light-blue(ng-controller="profileController" role="navigation")
 				.nav-wrapper
 					a#logo-container
 						span.brand-logo FBook
-					a(href="#" data-activates="mobileM" class="button-collapse")
+					a.button-collapse(href="#" data-activates="mobileM")
 						i.material-icons menu
 					ul.user.right.hide-on-med-and-down
 						li.name
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
-							a(class="modal-trigger" href="#addUserModal") Add user
+							a.modal-trigger( href="#addUserModal") Add user
 					ul.side-nav#mobileM
 						li.name
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
-							a(class="modal-trigger" href="#addUserModal") Add user
+							a.modal-trigger(href="#addUserModal") Add user
 					#addUserModal.modal.bottom-sheet
 						.modal-content.black-text
 							h5 Modal Header
 							p Lorem ipsum Nulla Excepteur ad Ut fugiat ad culpa fugiat in et Excepteur.
 			.container(ng-view)
-		footer.page-footer
+		footer.page-footer.light-blue
 			a(href="/work" class="white-text" title="Back to my main site") Back to my site
 				
 		script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js")
