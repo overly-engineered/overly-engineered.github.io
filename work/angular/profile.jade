@@ -44,7 +44,7 @@
 								form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
 									input(type="text" ng-model="newPM" id="newPM" required)
 									label(for="newPM") New Personal Message
-									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light")
+									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light") Change
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
@@ -52,7 +52,7 @@
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 									input(type="text" ng-model="newStatus" id="newStatus" required)
 									label(for="newStatus") New Status
-									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light")
+									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light") Change
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
