@@ -145,16 +145,20 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     };
     $scope.removeFriend = function(){
         debugger;
-        var cur = $scope.currentUserContactsArray.$getRecord($scope.currentProfilePublic.id);
-        $scope.currentUserContactsArray.$remove(cur);
-        var pur = $scope.currentProfileFriendsID.$getRecord($scope.currentUser.id);
-        $scope.currentProfileFriendsID.$remove(pur);
-
-        var curKey = $scope.currentUserContactsArray.$indexFor($scope.currentProfilePublic.id);
+        var cur = null;
+        var pur = null;
         angular.forEach($scope.currentUserContactsArray, function(value, key){
-            console.log(value.$id);
+            if(value.$value == $scope.currentProfilePublic.id){
+                cur = $scope.currentUserContactsArray.$getRecord($scope.currentProfilePublic.id);
+            }
         });
-
+        angular.forEach($scope.currentProfileFriendsID, function(value, key){
+            if(value.$value == $scope.currentProfilePublic.id){
+                pur = $scope.currentProfileFriendsID.$getRecord($scope.currentUser.id);
+            }
+        });
+        $scope.currentUserContactsArray.$remove(cur);
+        $scope.currentProfileFriendsID.$remove(pur);
     };
 
 }]);
