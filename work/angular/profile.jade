@@ -4,7 +4,7 @@
 			.row
 				.col.s12
 					p {{currentProfilePublic.name}}'s friends:
-			.contac.row(ng-repeat="person in currentProfileFriends")
+			.contact.row(ng-repeat="person in currentProfileFriends")
 				a(ng-href="/work/angular/#!users/{{person.url}}")
 					.contact-image.col.s4
 						img(ng-src='{{person.image}}' class="responsive-img")
@@ -63,7 +63,7 @@
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
 							.input-field.s12
 								textarea(type="text" id="new_Post" ng-model="newMessageText" class="materialize-textarea" required)
-								label(for="new_Post") Tell the world something new...
+								label(for="new_Post" style="left:0;") Tell the world something new...
 							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green") Post
 					.profile-main-board.col.s12(style="padding-bottom:10px;")
 						h3 Previous Boards

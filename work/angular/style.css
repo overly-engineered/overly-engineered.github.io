@@ -3,4 +3,8 @@
 	border-bottom: 1px solid #eeeeee;
     margin-bottom: 19px;
     padding: 10px;
+    overflow: auto;
+}
+.profile-main-board-post h4 {
+	margin-top: 0;
 }
