@@ -170,3 +170,7 @@ enterNewPM = function(){
     document.getElementById("contact-info-PM-new").classList.toggle('hidden');
     document.getElementById("PM").classList.toggle('hidden');
 }
+
+$(document).ready(function(){
+    $('.modal-trigger').leanModal();
+  });
