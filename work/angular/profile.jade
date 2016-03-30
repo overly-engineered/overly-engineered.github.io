@@ -23,7 +23,7 @@
 		.col.s12
 			.card
 				.profile-top.row(ng-controller="profileController")
-					div(style="position: relative;margin: 7.5px;")
+					.row(style="position: relative;margin: 7.5px;")
 						.profile-top-image.col.s12.m4
 							img(ng-src='{{currentProfilePublic.image}}' class="responsive-img")
 							form#addFriend(ng-submit="addFriend(); redirect(currentProfilePublic.id);")
@@ -36,14 +36,14 @@
 									span(style="font-size:.5em;") - {{currentProfilePublic.DOB}}
 								h5(id="contact-info-PM-current") {{currentProfilePublic.PM}}
 								p(id="contact-info-status-current") {{currentProfilePublic.Status}}
-					div(style="position: relative;margin: 7.5px;")
+					.row(style="position: relative;margin: 7.5px;")
 						.profile-top-info-date.col.s12.m6
 							.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-PM-new(onClick="enterNewPM()") 
 									small Change PM
 								form#PM(ng-submit="updatePm()" name="pmForm" class="hidden")
 									input(type="text" ng-model="newPM" placeholder="New Personal Message" required)
-									input(type="submit" ng-disabled="pmForm.$invalid")
+									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light")
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
@@ -51,14 +51,13 @@
 								form#status(ng-submit="updateStatus()" name="statusForm" class="hidden")
 									input(type="text" ng-model="newStatus" placeholder="New Status" required)
 									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light")
-										i.material-icons.right send
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
 							input( type="text"
 							placeholder="Tell the world something new..." ng-model="newMessageText" required)
-							input(type="submit" ng-disabled="form.$invalid")
+							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green")
 					.profile-main-board.col.s12
 						h3 Previous Boards
 						.profile-main-board-post(ng-repeat="posts in currentProfilePosts")
@@ -70,4 +69,4 @@
 								.profile-main-board-post-info-date
 									p 
 										small {{posts.date}}
-								button(class="waves-effect waves-light btn" ng-click="currentProfilePosts.$remove(posts)") Delete Message
+								button(class="waves-effect waves-light btn red" ng-click="currentProfilePosts.$remove(posts)") Delete Message
