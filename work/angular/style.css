@@ -14,3 +14,7 @@
 .contact:hover *{
 	text-decoration: underline;
 }
+#seeFriends:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}

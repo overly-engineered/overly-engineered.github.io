@@ -171,6 +171,9 @@ enterNewPM = function(){
     document.getElementById("PM").classList.toggle('hidden');
 }
 
+showFriends = function(){
+    $('#contactsToggle').slideToggle("400");
+}
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
   });

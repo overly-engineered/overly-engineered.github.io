@@ -3,8 +3,8 @@
 		.col.s12
 			.row
 				.col.s12
-					p {{currentProfilePublic.name}}'s friends:
-			.contact.row(ng-repeat="person in currentProfileFriends" style="display:inline-block; margin-bottom:0px; width:100%;")
+					p(onClick="showFriends()" id="seeFriends") See {{currentProfilePublic.name}}'s friends:
+			.contact.row(ng-repeat="person in currentProfileFriends" id="contactsToggle" style="display:inline-block; margin-bottom:0px; width:250px; display:none;")
 				a(ng-href="/work/angular/#!users/{{person.url}}")
 					.contact-image.col.s4
 						img(ng-src='{{person.image}}' style="height:75px;" class="circle")
