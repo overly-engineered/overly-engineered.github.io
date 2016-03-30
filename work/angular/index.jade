@@ -15,6 +15,11 @@ html
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
 							a(class="modal-trigger" href="#addUserModal") Add user
+					ul.side-nav#mobile-demo
+						li.name
+							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
+						li.add
+							a(class="modal-trigger" href="#addUserModal") Add user
 					#addUserModal.modal.bottom-sheet
 						.modal-content.black-text
 							h5 Modal Header
