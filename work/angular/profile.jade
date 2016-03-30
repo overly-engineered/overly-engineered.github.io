@@ -46,6 +46,7 @@
 										input(type="text" ng-model="newPM" id="new_PM" required)
 										label(for="new_PM") New Personal Message
 									button(type="submit" ng-disabled="pmForm.$invalid" class="btn waves-effect waves-light") Change PM
+									button(type="submit" onClick="enterNewPM()" class="btn waves-effect waves-light red") X
 						.profile-top-info-status.col.s12.m6
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
@@ -55,23 +56,26 @@
 										input(type="text" ng-model="newStatus" id="new_Status" required)
 										label(for="new_Status") New Status
 									button(type="submit" ng-disabled="statusForm.$invalid" value="Post" class="btn waves-effect waves-light") Change Status
+									button(type="submit" onClick="enterNewStatus()" class="btn waves-effect waves-light red") X
 				.profile-main(style="overflow:auto;")
 					.profile-main-input.col.s12
 						h3 Board
 						form#post(ng-submit="addPost()" name="form" ng-show="postRights()")
 							.input-field.s12
-								input( type="text" id="new_Post" ng-model="newMessageText" required)
+								textarea(type="text" id="new_Post" ng-model="newMessageText" class="materialize-textarea" required)
 								label(for="new_Post") Tell the world something new...
 							button(type="submit" ng-disabled="form.$invalid" value="Post" class="btn waves-effect waves-light green") Post
-					.profile-main-board.col.s12
+					.profile-main-board.col.s12(style="padding-bottom:10px;")
 						h3 Previous Boards
 						.profile-main-board-post(ng-repeat="posts in currentProfilePosts")
 							.profile-main-board-post-info
-								.profile-main-board-post-info-name
-									h4.blue-text {{posts.posterName}}
-								.profile-main-board-post-info-post
-									p {{posts.message}}
-								.profile-main-board-post-info-date
-									p 
-										small {{posts.date}}
-								button(class="waves-effect waves-light btn red" ng-click="currentProfilePosts.$remove(posts)") Delete Message
+								.col.s9
+									.profile-main-board-post-info-name
+										h4.blue-text {{posts.posterName}}
+									.profile-main-board-post-info-post
+										p {{posts.message}}
+									.profile-main-board-post-info-date
+										p 
+											small {{posts.date}}
+								.col.s3	
+									button(class="waves-effect waves-light btn red" ng-click="currentProfilePosts.$remove(posts)") Delete
