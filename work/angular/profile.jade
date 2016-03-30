@@ -13,7 +13,7 @@
 						.contact-info-status {{person.Status}}
 			form#switchuser
 				.input-field.col.s12
-					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch")
+					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" ng-model="userSwitch" class="browser-default")
 						option(value="" disabled selected) ---Select User---
 						option(value='0') Jamie
 						option(value="1") Misko
