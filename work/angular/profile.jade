@@ -23,7 +23,7 @@
 		.col.s12
 			.card
 				.profile-top.row(ng-controller="profileController")
-					.row
+					div(style="position: relative;margin: 7.5px;")
 						.profile-top-image.col.s12.m4
 							img(ng-src='{{currentProfilePublic.image}}' class="responsive-img")
 							form#addFriend(ng-submit="addFriend(); redirect(currentProfilePublic.id);")
@@ -35,7 +35,8 @@
 								h2 {{currentProfilePublic.name}} 
 									span(style="font-size:.5em;") - {{currentProfilePublic.DOB}}
 								h3(id="contact-info-PM-current") {{currentProfilePublic.PM}}
-					.row
+								p(id="contact-info-status-current") {{currentProfilePublic.Status}}
+					div(style="position: relative;margin: 7.5px;")
 						.profile-top-info-date.col.s12.m6
 							.profile-top-info-PM-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-PM-new(onClick="enterNewPM()") 
@@ -44,7 +45,6 @@
 									input(type="text" ng-model="newPM" placeholder="New Personal Message" required)
 									input(type="submit" ng-disabled="pmForm.$invalid")
 						.profile-top-info-status.col.s12.m6
-							p(id="contact-info-status-current") {{currentProfilePublic.Status}}
 							.profile-top-info-status-update(ng-show="currentProfilePublic.loggedIn")
 								#contact-info-status-new(onClick="enterNewStatus()") 
 									small Change Status
