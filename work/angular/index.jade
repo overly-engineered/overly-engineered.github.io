@@ -23,14 +23,13 @@ html
 							a(ng-href="/work/angular/#!users/{{currentUser.url}}") {{currentUser.name}}
 						li.add
 							a.modal-trigger(href="#addUserModal") Add user
-			.container(ng-view)
 			#addUserModal.modal
 				.modal-content.black-text
 					.container
 						.row
 							h5.blue-text Add user
 						.row
-							form#newUser(ng-submit="alert('');addUser();" name="addUserForm")
+							form#newUser(ng-submit="addUser();" name="addUserForm")
 								.row
 									.input-field
 										label(for="new_name") Name
@@ -43,8 +42,11 @@ html
 									.input-field
 										label(for="new_PM") Personal Message
 										input(type="text" id="new_PM" ng-model="addUserPM" required)
-								button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
+								.row
+									.input-field
+										button(type="submit" class="btn waves-effect waves-light" style="padding-bottom:5px;" ng-disabled="addUserForm.$invalid") Add user
 											i.material-icons.right done
+			.container(ng-view)
 		footer.page-footer.light-blue
 			a(href="/work" class="white-text" title="Back to my main site") Back to my site
 				
