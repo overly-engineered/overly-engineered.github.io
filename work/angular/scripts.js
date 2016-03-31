@@ -194,6 +194,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                         "posterName" : $scope.addUserName}],
                 url: usernumber
             });
+            $scope.myContacts = $firebaseArray(ref.child($scope.currentUserI).child('contacts'));
+            $scope.myContacts.$add(usernumber);
         };
 
     });
