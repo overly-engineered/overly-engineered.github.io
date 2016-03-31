@@ -54,7 +54,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         angular.forEach(userArray, function(value, key){
             console.log(value.$id);
             if(key == $scope.id){
-                console.log(value.$name);
+                console.log(value.name);
                 console.log(value.$id);
             }
         }); 
