@@ -174,17 +174,11 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
         $scope.addUser = function(){
             debugger;
-            console.log($scope.addUserName);
             var birthdate = new Date($scope.addUserDOB).toLocaleDateString('en-GB');
-            console.log(birthdate);
-            console.log($scope.addUserPM);
             var usernumber = 0;
             angular.forEach($scope.users, function(value, key){
                 usernumber++;
             });
-            usernumber++;
-            var url = usernumber - 1;
-            console.log(usernumber);
             var joindate = new Date().toLocaleDateString('en-GB');
             $scope.users.$add({
                 name: $scope.addUserName,
@@ -198,7 +192,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 posts : [{"date" : joindate,
                         "message" : "My First Post.",
                         "posterName" : $scope.addUserName}],
-                url: url
+                url: usernumber
             });
         };
 
