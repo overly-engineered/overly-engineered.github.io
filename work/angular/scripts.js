@@ -183,7 +183,9 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 usernumber++;
             });
             usernumber++;
+            var url = usernumber - 1;
             console.log(usernumber);
+            var joindate = new Date().toLocaleDateString('en-GB');
             $scope.users.$add({
                 name: $scope.addUserName,
                 DOB : birthdate,
@@ -192,9 +194,11 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
                 Status: 'I am ' + $scope.addUserName + '',
                 id : usernumber,
-                contacts : [],
-                posts : [],
-                url: usernumber
+                contacts : ['0'],
+                posts : [{"date" : "05/05/1991",
+                        "message" : "My First Post.",
+                        "posterName" : "Harry Potter"}],
+                url: url
             });
             debugger;
             $scope.newUser = ref.child(usernumber);
