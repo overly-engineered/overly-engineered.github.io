@@ -46,16 +46,17 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
   // create a synchronized array
     var obj = $firebaseArray(ref);
     $scope.users = obj;
-    $scope.currentUserId = cookie;
+    $scope.currentUserId = null;
     var userArray = $firebaseArray(ref);
-    console.log(userArray);
     debugger;
     obj.$loaded().then(function(){
         angular.forEach(userArray, function(value, key){
             console.log(value.$id);
-            if(key == $scope.id){
-                console.log(value.name);
-                console.log(value.$id);
+            if(key == cookie){
+                $scope.currentUserId = value.$id;
+            }
+            if(key == cookie){
+                $scope.id = value.$id;
             }
         }); 
     });
