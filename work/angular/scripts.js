@@ -162,7 +162,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
     $scope.addUser = function(){
         debugger;
-        $('.button-collapse').sideNav('hide');
         console.log($scope.addUserName);
         var birthdate = new Date($scope.addUserDOB).toLocaleDateString('en-GB');
         console.log(birthdate);
@@ -171,6 +170,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         anuglar.forEach($scope.users, function(value, key){
             usernumber++;
         });
+        usernumber++;
         console.log(usernumber);
         $scope.users.$add({
             name: $scope.addUserName,
@@ -179,10 +179,11 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             loggedIn: 'false',
             image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
             status: 'I am ' + $scope.addUserName + '',
-            id: usernumber++;
+            id : usernumber,
+            contacts : ''.
+            posts : ''
 
         });
-        $('#addUserModal').closeModal();
     };
 
 }]);
@@ -203,7 +204,3 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
     $(".button-collapse").sideNav();
 });
-$('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 80 // Creates a dropdown of 15 years to control year
-  });
