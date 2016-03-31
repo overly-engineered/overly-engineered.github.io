@@ -52,7 +52,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     debugger;
     obj.$loaded().then(function(){
         angular.forEach(userArray, function(value, key){
-            console.log(value.$id);
             if(key == cookie){
                 $scope.currentUserId = value.$id;
             }
@@ -107,7 +106,13 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             $scope.currentUserref.update({
                 loggedIn : false
             });
-            $scope.newUserref = ref.child(item);
+            $scope.newUserrefitem = null;
+            angular.forEach(userArray, function(value, key){
+                if(key == item){
+                    $scope.newUserrefitem = value.$id;
+                }
+            });
+            $scope.newUserref = ref.child($scope.newUserrefitem);
             $scope.newUserref.update({
                 loggedIn : true
             });
