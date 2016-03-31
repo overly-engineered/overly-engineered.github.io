@@ -180,8 +180,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
             status: 'I am ' + $scope.addUserName + '',
             id : usernumber,
-            contacts : ,
-            posts : ,
+            contacts : '',
+            posts : '',
             url: usernumber
         });
         $scope.newUser = ref.child(usernumber);
