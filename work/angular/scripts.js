@@ -49,7 +49,6 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     $scope.currentUserId = null;
     $scope.currentProfileId = null;
     var userArray = $firebaseArray(ref);
-    debugger;
     obj.$loaded().then(function(){
         angular.forEach(userArray, function(value, key){
             if(key == cookie){
@@ -131,6 +130,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         };
         $scope.currentUserFriends = function(){
             var bool = false;
+            debugger;
             angular.forEach($scope.currentProfileFriendsID, function(value, key){
                 if(value.$value == $scope.currentUserId){
                     bool = true;
