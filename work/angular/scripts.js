@@ -160,7 +160,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentProfileFriendsID.$remove(pur);
     };
 
-    $scope.addUser = function(){
+    var addUser = function(){
         debugger;
         console.log($scope.addUserName);
         var birthdate = new Date($scope.addUserDOB).toLocaleDateString('en-GB');
