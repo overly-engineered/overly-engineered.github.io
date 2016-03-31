@@ -192,8 +192,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
                 Status: 'I am ' + $scope.addUserName + '',
                 id : usernumber,
-                contacts : '',
-                posts : '',
+                contacts : [],
+                posts : []],
                 url: usernumber
             });
             debugger;
