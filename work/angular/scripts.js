@@ -50,13 +50,16 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
     var userArray = $firebaseArray(ref);
     console.log(userArray);
     debugger;
-    angular.forEach(userArray, function(value, key){
-        console.log(value.$id);
-        if(key == $scope.id){
-            console.log(value.$name);
+    obj.$loaded().then(function(){
+        angular.forEach(userArray, function(value, key){
             console.log(value.$id);
-        }
+            if(key == $scope.id){
+                console.log(value.$name);
+                console.log(value.$id);
+            }
+        }); 
     });
+    
     $scope.currentUserref = ref.child($scope.currentUserId);
     $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
     $scope.currentUserContactsArray = $firebaseArray(ref.child($scope.currentUserId).child('contacts'));
@@ -87,9 +90,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         });
         enterNewPM();
     };
-    obj.$loaded().then(function(){
-        
-   });
+    
     $scope.currentProfileFriendsID.$loaded().then(function(){
         angular.forEach($scope.currentProfileFriendsID, function(value, key) {
             angular.forEach(obj, function(values, keys) {
