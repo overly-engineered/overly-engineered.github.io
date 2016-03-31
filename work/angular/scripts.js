@@ -165,6 +165,8 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $('.button-collapse').sideNav('hide');
         console.log($scope.addUserName);
         console.log($scope.addUserDOB);
+        var birthdate = new Date($scope.date).toLocaleDateString('en-GB');
+        console.log($scope.addUserDOB);
         console.log($scope.addUserPM);
         $scope.users.$add({
             name: 'Jess'
