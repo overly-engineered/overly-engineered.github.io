@@ -59,7 +59,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 $scope.id = value.$id;
             }
         });
-         $scope.currentUserref = ref.child($scope.currentUserId);
+        $scope.currentUserref = ref.child($scope.currentUserId);
         $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
         $scope.currentUserContactsArray = $firebaseArray(ref.child($scope.currentUserId).child('contacts'));
         $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
@@ -67,7 +67,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
         $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
         $scope.currentProfileFriends = [];
-            
+
         $scope.currentProfileFriendsID.$loaded().then(function(){
             angular.forEach($scope.currentProfileFriendsID, function(value, key) {
                 angular.forEach(obj, function(values, keys) {
@@ -77,131 +77,132 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 });
             });
         });
-    });
-    
-    $scope.addPost = function(){
-        var date = new Date().toLocaleDateString('en-GB');
-            $scope.currentProfilePosts.$add({
-            message: $scope.newMessageText,
-            date : date,
-            posterName: $scope.currentUser.name
-         });
-            $scope.newMessageText = '';
-    };
-    $scope.updateStatus = function(){
-        $scope.currentUserref.update({
-            Status : $scope.newStatus
-        });
-        enterNewStatus();
-    };
-    $scope.updatePm = function(){
-        $scope.currentUserref.update({
-            PM : $scope.newPM
-        });
-        enterNewPM();
-    };
+
+        $scope.addPost = function(){
+            var date = new Date().toLocaleDateString('en-GB');
+                $scope.currentProfilePosts.$add({
+                message: $scope.newMessageText,
+                date : date,
+                posterName: $scope.currentUser.name
+             });
+                $scope.newMessageText = '';
+        };
+        $scope.updateStatus = function(){
+            $scope.currentUserref.update({
+                Status : $scope.newStatus
+            });
+            enterNewStatus();
+        };
+        $scope.updatePm = function(){
+            $scope.currentUserref.update({
+                PM : $scope.newPM
+            });
+            enterNewPM();
+        };
 
 
-    $scope.switchUser = function(item){
-        $cookies['angularUser'] = item;
-        $scope.currentUserref.update({
-            loggedIn : false
-        });
-        $scope.newUserref = ref.child(item);
-        $scope.newUserref.update({
-            loggedIn : true
-        });
-    };
+        $scope.switchUser = function(item){
+            $cookies['angularUser'] = item;
+            $scope.currentUserref.update({
+                loggedIn : false
+            });
+            $scope.newUserref = ref.child(item);
+            $scope.newUserref.update({
+                loggedIn : true
+            });
+        };
 
-    $scope.redirect = function(item) {
-        setTimeout(function(){
-            if(!$scope.$$phase) {
-                $scope.$apply( function() {
-                    var url = '/work/angular/#!users/' +item;
-                    var urlfin = decodeURIComponent(url)
-                    $window.location.href = url;
-                });
-            }
-        }, 1000);
-    };
-    $scope.currentUserFriends = function(){
-        var bool = false;
-        angular.forEach($scope.currentProfileFriendsID, function(value, key){
-            if(value.$value == $scope.currentUserId){
-                bool = true;
-            }
-        });
-        return bool;
-    }
-    $scope.postRights = function(){
-        if($scope.currentUserFriends() || $scope.currentUser.id == $scope.currentProfilePublic.id){
-            return true;
-        } else {
-            return false;
+        $scope.redirect = function(item) {
+            setTimeout(function(){
+                if(!$scope.$$phase) {
+                    $scope.$apply( function() {
+                        var url = '/work/angular/#!users/' +item;
+                        var urlfin = decodeURIComponent(url)
+                        $window.location.href = url;
+                    });
+                }
+            }, 1000);
+        };
+        $scope.currentUserFriends = function(){
+            var bool = false;
+            angular.forEach($scope.currentProfileFriendsID, function(value, key){
+                if(value.$value == $scope.currentUserId){
+                    bool = true;
+                }
+            });
+            return bool;
         }
-    };
-    $scope.friendRights = function(){
-        if($scope.currentUserFriends()){
-            return "1";
-        } else if($scope.currentUser.id == $scope.currentProfilePublic.id){
-            return "3"
-        } else {
-            return "2";
+        $scope.postRights = function(){
+            if($scope.currentUserFriends() || $scope.currentUser.id == $scope.currentProfilePublic.id){
+                return true;
+            } else {
+                return false;
+            }
+        };
+        $scope.friendRights = function(){
+            if($scope.currentUserFriends()){
+                return "1";
+            } else if($scope.currentUser.id == $scope.currentProfilePublic.id){
+                return "3"
+            } else {
+                return "2";
+            }
         }
-    }
 
 
-    $scope.addFriend = function(){
-        $scope.currentProfileFriendsID.$add($scope.currentUser.id);
-        $scope.currentUserContactsArray.$add($scope.currentProfilePublic.id);
-    };
-    $scope.removeFriend = function(){    
-        var cur = null;
-        var pur = null;
-        angular.forEach($scope.currentUserContactsArray, function(value, key){
-            if(value.$value == $scope.currentProfilePublic.id){
-                cur = $scope.currentUserContactsArray.$getRecord(value.$id);
-            }
-        });
-        angular.forEach($scope.currentProfileFriendsID, function(value, key){
-            if(value.$value == $scope.currentUser.id){
-                pur = $scope.currentProfileFriendsID.$getRecord(value.$id);
-            }
-        });
-        $scope.currentUserContactsArray.$remove(cur);
-        $scope.currentProfileFriendsID.$remove(pur);
-    };
+        $scope.addFriend = function(){
+            $scope.currentProfileFriendsID.$add($scope.currentUser.id);
+            $scope.currentUserContactsArray.$add($scope.currentProfilePublic.id);
+        };
+        $scope.removeFriend = function(){    
+            var cur = null;
+            var pur = null;
+            angular.forEach($scope.currentUserContactsArray, function(value, key){
+                if(value.$value == $scope.currentProfilePublic.id){
+                    cur = $scope.currentUserContactsArray.$getRecord(value.$id);
+                }
+            });
+            angular.forEach($scope.currentProfileFriendsID, function(value, key){
+                if(value.$value == $scope.currentUser.id){
+                    pur = $scope.currentProfileFriendsID.$getRecord(value.$id);
+                }
+            });
+            $scope.currentUserContactsArray.$remove(cur);
+            $scope.currentProfileFriendsID.$remove(pur);
+        };
 
-    $scope.addUser = function(){
-        debugger;
-        console.log($scope.addUserName);
-        var birthdate = new Date($scope.addUserDOB).toLocaleDateString('en-GB');
-        console.log(birthdate);
-        console.log($scope.addUserPM);
-        var usernumber = 0;
-        angular.forEach($scope.users, function(value, key){
+        $scope.addUser = function(){
+            debugger;
+            console.log($scope.addUserName);
+            var birthdate = new Date($scope.addUserDOB).toLocaleDateString('en-GB');
+            console.log(birthdate);
+            console.log($scope.addUserPM);
+            var usernumber = 0;
+            angular.forEach($scope.users, function(value, key){
+                usernumber++;
+            });
             usernumber++;
-        });
-        usernumber++;
-        console.log(usernumber);
-        $scope.users.$add({
-            name: $scope.addUserName,
-            DOB : birthdate,
-            PM : $scope.addUserPM,
-            loggedIn: 'false',
-            image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
-            status: 'I am ' + $scope.addUserName + '',
-            id : usernumber,
-            contacts : '',
-            posts : '',
-            url: usernumber
-        });
-        $scope.newUser = ref.child(usernumber);
-        $scope.newUserContacts = $firebaseArray(ref.child(usernumber).child('contacts'));
-        $scope.newUserContacts.$add('0');
-        $scope.myContacts = $firebaseArray(ref.child('0').child('contacts'));
-        $scope.myContacts.$add(usernumber);
-    };
+            console.log(usernumber);
+            $scope.users.$add({
+                name: $scope.addUserName,
+                DOB : birthdate,
+                PM : $scope.addUserPM,
+                loggedIn: 'false',
+                image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
+                status: 'I am ' + $scope.addUserName + '',
+                id : usernumber,
+                contacts : '',
+                posts : '',
+                url: usernumber
+            });
+            $scope.newUser = ref.child(usernumber);
+            $scope.newUserContacts = $firebaseArray(ref.child(usernumber).child('contacts'));
+            $scope.newUserContacts.$add('0');
+            $scope.myContacts = $firebaseArray(ref.child('0').child('contacts'));
+            $scope.myContacts.$add(usernumber);
+        };
+
+    });
 
 }]);
 
