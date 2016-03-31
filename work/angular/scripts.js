@@ -195,17 +195,11 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 Status: 'I am ' + $scope.addUserName + '',
                 id : usernumber,
                 contacts : ['0'],
-                posts : [{"date" : "05/05/1991",
+                posts : [{"date" : joindate,
                         "message" : "My First Post.",
-                        "posterName" : "Harry Potter"}],
+                        "posterName" : $scope.addUserName}],
                 url: url
             });
-            debugger;
-            $scope.newUser = ref.child(usernumber);
-            $scope.newUserContacts = $firebaseArray(ref.child(usernumber).child('contacts'));
-            $scope.newUserContacts.$add('0');
-            $scope.myContacts = $firebaseArray(ref.child('0').child('contacts'));
-            $scope.myContacts.$add(usernumber);
         };
 
     });
