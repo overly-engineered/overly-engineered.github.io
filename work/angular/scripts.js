@@ -164,12 +164,23 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         debugger;
         $('.button-collapse').sideNav('hide');
         console.log($scope.addUserName);
-        console.log($scope.addUserDOB);
         var birthdate = new Date($scope.addUserDOB).toLocaleDateString('en-GB');
         console.log(birthdate);
         console.log($scope.addUserPM);
+        var usernumber = 0;
+        anuglar.forEach($scope.users, function(value, key){
+            usernumber++;
+        });
+        console.log(usernumber);
         $scope.users.$add({
-            name: 'Jess'
+            name: $scope.addUserName,
+            DOB : birthdate,
+            PM : $scope.addUserPM,
+            loggedIn: 'false',
+            image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
+            status: 'I am ' + $scope.addUserName + '',
+            id: usernumber++;
+
         });
         $('#addUserModal').closeModal();
     };
