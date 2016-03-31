@@ -58,17 +58,16 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             if(key == cookie){
                 $scope.id = value.$id;
             }
-        }); 
+        });
+         $scope.currentUserref = ref.child($scope.currentUserId);
+        $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
+        $scope.currentUserContactsArray = $firebaseArray(ref.child($scope.currentUserId).child('contacts'));
+        $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
+        $scope.currentProfile = $firebaseArray(ref.child($scope.id));
+        $scope.currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
+        $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
+        $scope.currentProfileFriends = [];
     });
-    
-    $scope.currentUserref = ref.child($scope.currentUserId);
-    $scope.currentUser = $firebaseObject(ref.child($scope.currentUserId));
-    $scope.currentUserContactsArray = $firebaseArray(ref.child($scope.currentUserId).child('contacts'));
-    $scope.currentProfilePublic = $firebaseObject(ref.child($scope.id));
-    $scope.currentProfile = $firebaseArray(ref.child($scope.id));
-    $scope.currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
-    $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
-    $scope.currentProfileFriends = [];
     
     $scope.addPost = function(){
         var date = new Date().toLocaleDateString('en-GB');
