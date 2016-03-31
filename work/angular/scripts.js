@@ -167,7 +167,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         console.log(birthdate);
         console.log($scope.addUserPM);
         var usernumber = 0;
-        anuglar.forEach($scope.users, function(value, key){
+        angular.forEach($scope.users, function(value, key){
             usernumber++;
         });
         usernumber++;
