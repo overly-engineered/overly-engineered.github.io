@@ -24,7 +24,7 @@
 						.profile-top-image.col.s12.m4
 							img(ng-src='{{currentProfilePublic.image}}' class="circle" style="width:175px; display:block; margin:auto; padding-top:10px;")
 							form#addFriend(ng-submit="addFriend(); redirect(currentProfilePublic.id);")
-								button(type="submit" value="Add as Contact" ng-if="friendRights() == '2'" class="waves-effect waves-light btn red")
+								input(type="submit" value="Add as Contact" ng-if="friendRights() == '2'" class="waves-effect waves-light btn red")
 							form#addFriend(ng-submit="removeFriend();  redirect(currentUser.id);")
 								input(type="submit" value="Remove as Contact" ng-if="friendRights() == '1'" class="waves-effect waves-light btn")
 						.profile-top-info.col.s12.m8

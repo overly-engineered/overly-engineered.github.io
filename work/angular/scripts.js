@@ -190,12 +190,13 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 PM : $scope.addUserPM,
                 loggedIn: 'false',
                 image: 'https://cdn2.iconfinder.com/data/icons/website-icons/512/User_Avatar-512.png',
-                status: 'I am ' + $scope.addUserName + '',
+                Status: 'I am ' + $scope.addUserName + '',
                 id : usernumber,
                 contacts : '',
                 posts : '',
                 url: usernumber
             });
+            debugger;
             $scope.newUser = ref.child(usernumber);
             $scope.newUserContacts = $firebaseArray(ref.child(usernumber).child('contacts'));
             $scope.newUserContacts.$add('0');
