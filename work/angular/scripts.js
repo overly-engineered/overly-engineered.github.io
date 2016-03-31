@@ -67,6 +67,16 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         $scope.currentProfileFriendsID = $firebaseArray(ref.child($scope.id).child('contacts'));
         $scope.currentProfilePosts = $firebaseArray(ref.child($scope.id).child('posts'));
         $scope.currentProfileFriends = [];
+            
+        $scope.currentProfileFriendsID.$loaded().then(function(){
+            angular.forEach($scope.currentProfileFriendsID, function(value, key) {
+                angular.forEach(obj, function(values, keys) {
+                    if(values.id == value.$value){
+                        $scope.currentProfileFriends.push(values);
+                    }
+                });
+            });
+        });
     });
     
     $scope.addPost = function(){
@@ -90,16 +100,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
         });
         enterNewPM();
     };
-    
-    $scope.currentProfileFriendsID.$loaded().then(function(){
-        angular.forEach($scope.currentProfileFriendsID, function(value, key) {
-            angular.forEach(obj, function(values, keys) {
-                if(values.id == value.$value){
-                    $scope.currentProfileFriends.push(values);
-                }
-            });
-        });
-   });
+
 
     $scope.switchUser = function(item){
         $cookies['angularUser'] = item;
