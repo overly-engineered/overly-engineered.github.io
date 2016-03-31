@@ -193,7 +193,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
                 Status: 'I am ' + $scope.addUserName + '',
                 id : usernumber,
                 contacts : [],
-                posts : []],
+                posts : [],
                 url: usernumber
             });
             debugger;
