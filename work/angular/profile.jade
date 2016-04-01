@@ -1,7 +1,7 @@
 .section
 	.row(style="margin-bottom:0;")
 		.col.s12
-			.row.mbo
+			.row.mb0
 				.col.s12
 					input(type="search" ng-model="userSearch" placeholder="Search users...")
 					ul(ng-show="userSearch.length")
@@ -18,7 +18,7 @@
 						.contact-info.col.s8
 							.contact-info-name {{person.name}}
 							.contact-info-status {{person.Status}}
-			form#switchuser.mb0()
+			form#switchuser.mb0
 				.input-field
 					p Switch User:
 					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" id="userSwitcher" ng-model="userSwitch" ng-options="user.id as user.name for user in users" class="browser-default")
