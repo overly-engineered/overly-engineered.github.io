@@ -3,6 +3,11 @@
 		.col.s12
 			.row
 				.col.s12
+					input(type="search" ng-model="userSearch" placeholder="Search users...")
+					ul
+						li(ng-repeat="user in users | filter:filterBySearch") {{user.name}} - {{user.Status}}
+			.row
+				.col.s12
 					p(onClick="showFriends()" id="seeFriends") See {{currentProfilePublic.name}}'s friends:
 			div#contactsToggle(style="display:none;")
 				.contact.row(ng-repeat="person in currentProfileFriends" style="display:inline-block; margin-bottom:0px; width:250px;")

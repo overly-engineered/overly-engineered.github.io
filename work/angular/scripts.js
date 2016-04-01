@@ -203,6 +203,16 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
             $scope.myContacts.$add(usernumber);
         };
 
+        $scope.userSearch = '';
+        $scope.$watch('userSearch', function (value){
+            regex = new RegExp('\\b' + escapeRegExp(value), 'i');
+        });
+
+        $scope.filterBySearch = function(user) {
+            if(!$scope.userSearch) return true;
+            return regex.test(user)
+        }
+
     });
 
 }]);
