@@ -27,6 +27,9 @@ mApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
     //$locationProvider.html5Mode(true);
 
 }]);
+function escapeRegExp(string){
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
 mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArray', '$routeParams', '$cookies', '$route', '$window', '$location', function($scope, $firebaseObject, $firebaseArray, $routeParams, $cookies, $route, $window, $location) {
 
     $scope.id = 0;
