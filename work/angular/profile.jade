@@ -5,7 +5,8 @@
 				.col.s12
 					input(type="search" ng-model="userSearch" placeholder="Search users...")
 					ul(ng-show="userSearch.length")
-						li(ng-repeat="user in users | filter:filterBySearch") {{user.name}} - {{user.Status}}
+						li(ng-repeat="user in users | filter:filterBySearch") 
+							a(ng-href="/work/angular/#!users/{{user.url}}") {{user.name}} - {{user.Status}}
 			.row
 				.col.s12
 					p(onClick="showFriends()" id="seeFriends") See {{currentProfilePublic.name}}'s friends:
