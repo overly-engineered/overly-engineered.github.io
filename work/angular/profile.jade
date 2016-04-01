@@ -1,15 +1,15 @@
 .section
 	.row(style="margin-bottom:0;")
 		.col.s12
-			.row
+			.row.mbo
 				.col.s12
 					input(type="search" ng-model="userSearch" placeholder="Search users...")
 					ul(ng-show="userSearch.length")
 						li(ng-repeat="user in users | filter:filterBySearch") 
 							a(ng-href="/work/angular/#!users/{{user.url}}") {{user.name}} - {{user.Status}}
-			.row
+			.row.mb0
 				.col.s12
-					p(onClick="showFriends()" id="seeFriends") See {{currentProfilePublic.name}}'s friends:
+					p(onClick="showFriends()" id="seeFriends" style="text-decoration:underline;") See {{currentProfilePublic.name}}'s friends:
 			div#contactsToggle(style="display:none;")
 				.contact.row(ng-repeat="person in currentProfileFriends" style="display:inline-block; margin-bottom:0px; width:250px;")
 					a(ng-href="/work/angular/#!users/{{person.url}}")
@@ -18,7 +18,7 @@
 						.contact-info.col.s8
 							.contact-info-name {{person.name}}
 							.contact-info-status {{person.Status}}
-			form#switchuser(style="margin-bottom:0;")
+			form#switchuser.mb0()
 				.input-field
 					p Switch User:
 					select(ng-change="switchUser(userSwitch); redirect(userSwitch);" id="userSwitcher" ng-model="userSwitch" ng-options="user.id as user.name for user in users" class="browser-default")
