@@ -213,7 +213,7 @@ mApp.controller('profileController', ['$scope', '$firebaseObject', '$firebaseArr
 
         $scope.filterBySearch = function(user) {
             if(!$scope.userSearch) return true;
-            return regex.test(user)
+            return regex.test(user.name)
         }
 
     });

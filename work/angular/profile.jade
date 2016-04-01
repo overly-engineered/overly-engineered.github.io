@@ -4,7 +4,7 @@
 			.row
 				.col.s12
 					input(type="search" ng-model="userSearch" placeholder="Search users...")
-					ul
+					ul(ng-show="userSearch.length")
 						li(ng-repeat="user in users | filter:filterBySearch") {{user.name}} - {{user.Status}}
 			.row
 				.col.s12
