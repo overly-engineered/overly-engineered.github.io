@@ -2,7 +2,7 @@
 *.css.map
 *.sublime-project
 *.sublime-workspace
-/node_modules
+node_modules
 npm-debug.log
 /tmp
 /common-tmp
