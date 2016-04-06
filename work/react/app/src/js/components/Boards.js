@@ -115,11 +115,10 @@ var Boards = React.createClass({
             document.cookie="boardsUsername="+CryptoJS.AES.encrypt('LoginUser.username', passphrase)+"; expires="+expires+"";
             var userRef = new Firebase('https://pettmanioreactjs.firebaseio.com/users/'+key);
             userRef.update({loggedIn : 'true'});
+            location.reload();
           } else {
             alert('Incorrect Password');
           }
-        } else {
-          alert('Username not found');
         }
       });
     });
