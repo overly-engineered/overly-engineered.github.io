@@ -71,13 +71,10 @@ var Boards = React.createClass({
       loggedIn :false
     }
   },
-  userExistsCallback : function(newUser) {
-      if (exists) {
-
-      } else {
+  addUser : function(newUser) {
         var ref = new Firebase(USERS_LOCATION);
         ref.push(newUser);
-      }
+        location.reload();
     },
   checkIfUserExists: function(newUser) {
     var usersRef = new Firebase(USERS_LOCATION);
@@ -86,7 +83,7 @@ var Boards = React.createClass({
       snapshot.forEach(function(childSnapshot) {
         var value = childSnapshot.val();
         if(value.username !== newUser.username){
-          userExistsCallback(newUser);
+          this.addUser(newUser);
         } else {
           alert('Username: ' + newUser.username + 'is already taken. \nPlease pick a different Username');
         }
