@@ -7,7 +7,7 @@ var UsernameLabel = React.createClass({
 
   render: function() {
     return (
-      <p className="username" style={this.props.display}>{this.props.username}</p>
+      <p className="username">{this.props.username}</p>
     );
   }
 
