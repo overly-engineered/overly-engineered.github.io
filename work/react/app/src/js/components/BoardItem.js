@@ -5,6 +5,10 @@ var React = require('react');
 
 var BoardItem = React.createClass({
 
+  handleBoard: function(){
+    this.props.viewBoard(this.props.key);
+  },
+
   render: function() {
     return (
       <li key={this.props.key} className="col-xs-12 col-sm-6 col-md-4">
@@ -14,14 +18,16 @@ var BoardItem = React.createClass({
               <h4>{this.props.title}</h4>
             </div>
           </div>
-          <img src={this.props.image} className="card-img-top" alt="" />
+          <div className="board-imageholder">
+            <img src={this.props.image} className="card-img-top board-image" alt={this.props.title} />
+          </div>
           <div className="card-block">
             <p className="card-text">
               {this.props.desc}
             </p>
           </div>
           <div className="card-block">
-            <a href="#" className="btn btn-primary">Button</a>
+            <a className="btn btn-primary" onClick={this.handleBoard}>View</a>
           </div>
         </div>
       </li>

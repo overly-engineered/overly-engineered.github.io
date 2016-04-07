@@ -9,7 +9,7 @@ var LogInButton = React.createClass({
     return (
       <div>
         <button type="button" className="btn btn-success nav-item" data-toggle="modal" data-target="#LogInModal"  name="Log in">Login</button>
-        <LogInForm  onLogin={this.props.onLogin}/>
+        <LogInForm  onLogin={this.props.onLogin} LogInError={this.props.LogInError}/>
       </div>
     );
   }

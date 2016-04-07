@@ -6,10 +6,11 @@ var SignUpForm = React.createClass({
 
   handleForm: function(e){
     e.preventDefault();
-    
+
     var newUser = {
       pass: this.refs.password.getDOMNode().value,
-      username: this.refs.username.getDOMNode().value
+      username: this.refs.username.getDOMNode().value,
+      posts: 0
     };
 
     this.refs.SignUp.getDOMNode().reset();
