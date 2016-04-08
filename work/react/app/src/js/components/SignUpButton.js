@@ -9,7 +9,7 @@ var SignUpButton = React.createClass({
     return (
       <div>
         <button type="button" className="btn btn-primary nav-item" data-toggle="modal" data-target="#SignUpModal" name="Sign up">Sign up</button>
-        <SignUpForm onNewUser={this.props.onNewUser}/>
+        <SignUpForm onNewUser={this.props.onNewUser} SignUpError={this.props.SignUpError}/>
       </div>
     );
   }

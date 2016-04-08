@@ -11,8 +11,8 @@ var BoardItem = React.createClass({
 
   render: function() {
     return (
-      <li key={this.props.key} className="col-xs-12 col-sm-6 col-md-4">
-        <div className="card">
+      <li key={this.props.key} className="col-xs-12 col-sm-6 col-md-4 mainView">
+        <div className="card" onClick={this.handleBoard}>
           <div className="card-block">
             <div className="card-title">
               <h4>{this.props.title}</h4>
@@ -27,7 +27,7 @@ var BoardItem = React.createClass({
             </p>
           </div>
           <div className="card-block">
-            <a className="btn btn-primary" onClick={this.handleBoard}>View</a>
+            <a className="btn btn-primary">View</a>
           </div>
         </div>
       </li>

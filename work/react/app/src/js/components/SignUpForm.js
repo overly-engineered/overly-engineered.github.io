@@ -18,6 +18,15 @@ var SignUpForm = React.createClass({
   },
 
   render: function() {
+
+    var SignUpError;
+    var errorStyle = { textAlign: 'left', marginTop: '1em' };
+    if(this.props.SignUpError) {
+      SignUpError = <div className="alert alert-danger" role="alert" style={errorStyle}><strong>Oh snap!</strong> Change a few things up and try signing up again.</div>
+    } else {
+      SignUpError = '';
+    };
+
     return (
       <div className="modal fade" id="SignUpModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -44,6 +53,9 @@ var SignUpForm = React.createClass({
                   <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
                   <button type="submit" className="btn btn-primary">Sign up</button>
                 </div>
+              </div>
+              <div>
+              {SignUpError}
               </div>
             </form>
           </div>

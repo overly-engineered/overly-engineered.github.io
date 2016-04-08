@@ -50,28 +50,6 @@ var Boards = React.createClass({
             });
           }
         }.bind(this));
-
-        // var usersRef = new Firebase(USERS_LOCATION);
-        // usersRef.once('value', function(snapshot) {
-        //   snapshot.forEach(function(childSnapshot) {
-        //     var key = childSnapshot.key();
-        //     var userRef = new Firebase('https://pettmanioreactjs.firebaseio.com/users/'+key);
-        //     userRef.once('value', function(userSnapshot){
-        //       var Val = userSnapshot.val();
-        //       if(Val.loggedIn == "true"){
-        //         loggedIn = true;
-        //         if(loggedIn){
-        //           this.setState({
-        //             loggedIn:true,
-        //             username: Val.username,
-        //             userKey: key,
-        //             postAmount: Val.posts
-        //           });
-        //         }
-        //       }
-        //     }.bind(this));
-        //   }.bind(this));
-        // }.bind(this));
       }
     }.bind(this));
   },
@@ -84,6 +62,9 @@ var Boards = React.createClass({
         passphrase = snapshot.val();
         var boardsView = document.cookie.replace(/(?:(?:^|.*;\s*)boardsView\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         var boardViewingKey = CryptoJS.AES.decrypt(boardsView, passphrase);
+        this.setState({
+          boardKey: boardViewingKey.toString(CryptoJS.enc.Utf8)
+        })
         this.viewBoard(boardViewingKey.toString(CryptoJS.enc.Utf8));
       }.bind(this));
     }
@@ -103,7 +84,9 @@ var Boards = React.createClass({
       LogInError: false,
       BoardCreateError: false,
       view: 'main',
-      boardData: null
+      boardData: null,
+      userKey: '',
+      postError : false
     }
   },
 
@@ -134,7 +117,7 @@ var Boards = React.createClass({
       });
     } else {
       this.setState({
-        LogInError:true
+        SignUpError:true
       });
     }
   },
@@ -149,7 +132,9 @@ var Boards = React.createClass({
         if(value.username !== newUser.username){
           addUserBool = true;
         } else {
-          alert('Username: ' + newUser.username + 'is already taken. \nPlease pick a different Username');
+          this.setState({
+            SignUpError: true
+          })
         }
       }.bind(this));
       if(addUserBool == true){
@@ -229,16 +214,24 @@ var Boards = React.createClass({
     var boardPostRef = new Firebase(boardPostURL);
     boardRef.on('value' ,function(snapshot){
       BoardData = snapshot.val();
+      BoardData.name = snapshot.key();
       var BoardPostData = [];
+      var SortedPostData = [];
       boardPostRef.on('value' ,function(childsnapshot){
         childsnapshot.forEach(function(itemSnap){
           var item = itemSnap.val();
+          item.name = itemSnap.key();
           BoardPostData.push(item);
+        });
+        SortedPostData = _.sortBy(BoardPostData, function(item){
+          item.date = new Date(item.date);
+          return -item.date
         });
         this.setState({
           view:'board',
           boardData : BoardData,
-          boardPostData : BoardPostData
+          boardPostData : SortedPostData,
+          boardKey : key
         });
         var enc = new Firebase(ENC_LOCATION);
         var passphrase;
@@ -257,8 +250,59 @@ var Boards = React.createClass({
     this.setState({
       view:'main',
       boardData: '',
-      boardPostData: ''
+      boardPostData: '',
+      boardkey: ''
     });
+  },
+  newPost:function(boardkey,newMessage){
+    if(newMessage.length > 10){
+      var boardPostURL = BOARDS_LOCATION + "/" + boardkey + "/posts";
+      var newPostref = new Firebase(boardPostURL);
+      var postDate = new Date().toString();
+      var newPost = {
+        message: newMessage,
+        date: postDate,
+        posterid: this.state.username
+      };
+      newPostref.push(newPost);
+      var userURL = USERS_LOCATION + "/" + this.state.userKey;
+      var userRef = new Firebase(userURL);
+      var userPosts;
+      userRef.once('value', function(snapshot){
+        var user = snapshot.val();
+        userPosts = user.posts;
+        userPosts++;
+        userRef.update({posts : userPosts});
+        this.setState({
+          postAmount: userPosts,
+          postError: false
+        });
+      }.bind(this));
+    } else {
+      this.setState({
+        postError: true
+      });
+    }
+  },
+  deletePost:function(postID, key){
+    var postURL = BOARDS_LOCATION + "/" + key + "/posts/" + postID;
+    var RemovePost = new Firebase(postURL);
+    RemovePost.remove();
+    var userURL = USERS_LOCATION + "/" + this.state.userKey;
+    var userRef = new Firebase(userURL);
+    var userPosts;
+    userRef.once('value', function(snapshot){
+      var user = snapshot.val();
+      userPosts = user.posts;
+      userPosts--;
+      userRef.update({posts : userPosts});
+      this.setState({
+        postAmount: userPosts,
+        postError: false
+      });
+      console.log(key);
+      this.viewBoard(key);
+    }.bind(this));
   },
   render: function() {
     return (
@@ -270,11 +314,22 @@ var Boards = React.createClass({
                 onLogOut={this.onLogOut}
                 onAddBoard={this.onAddBoard}
                 LogInError={this.state.LogInError}
+                SignUpError={this.state.SignUpError}
                 BoardCreateError={this.state.BoardCreateError}
                 validateForm={this.validateForm}
                 BoardCreateError={this.state.BoardCreateError}
                 postAmount={this.state.postAmount}/>
-        <MainSection Boarditems={this.state.Boarditems} view={this.state.view} viewBoard={this.viewBoard} boardData={this.state.boardData} boardPostData={this.state.boardPostData} viewMain={this.viewMain}/>
+        <MainSection Boarditems={this.state.Boarditems}
+                     view={this.state.view}
+                     viewBoard={this.viewBoard}
+                     boardData={this.state.boardData}
+                     boardPostData={this.state.boardPostData}
+                     viewMain={this.viewMain}
+                     newPost={this.newPost}
+                     username={this.state.username}
+                     postError={this.state.postError}
+                     loggedIn={this.state.loggedIn}
+                     deletePost={this.deletePost}/>
       </div>
     );
   }

@@ -11,8 +11,13 @@
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 1em;
 }
+.mainView .card-title h4{
+  cursor: pointer;
+}
+.mainView .board-image{
+  cursor: pointer;
+}
 .board-image{
-  /* Same as first example */
   min-height: 50px;
 }
 
@@ -51,4 +56,10 @@
 
 .board-imageholder{
   position: relative;
+}
+
+.postForm{
+    padding: 1rem;
+    background-color: #e5e5e5;
+    border-radius: .25rem;
 }

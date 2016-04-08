@@ -1,7 +1,8 @@
 /** @jsx React.DOM */
 'use strict';
 var React = require('react'),
-    BoardPost = require('./BoardPost')
+    BoardPost = require('./BoardPost'),
+    NewPostForm = require('./NewPostForm');
 
 
 var BoardView = React.createClass({
@@ -10,14 +11,24 @@ var BoardView = React.createClass({
     this.props.viewMain();
   },
 
+  deletePost:function(key){
+    this.props.deletePost(key, this.props.BoardItem.name)
+  },
   render: function() {
     var boardPosts = this.props.boardPosts.map(function(item) {
-      return <BoardPost date={item.date}
+      return <BoardPost key={item.name}
+                        date={item.date}
                         message={item.message}
-                        poster={item.posterid}/>
-    }.bind(this))
+                        poster={item.posterid}
+                        username={this.props.username}
+                        deletePost={this.deletePost}/>
+    }.bind(this));
+    var newPost;
+    if(this.props.loggedIn) {
+      newPost = <NewPostForm key={this.props.BoardItem.name} newPost={this.props.newPost} postError={this.props.postError}/>
+    }
     return (
-      <div>
+      <div key={this.props.BoardItem.name}>
         <div className="col-xs-12 col-sm-6 col-md-4">
           <div className="card">
             <div className="card-block">
@@ -36,12 +47,10 @@ var BoardView = React.createClass({
                 {this.props.BoardItem.description}
               </p>
             </div>
-            <div className="card-block">
-              <a className="btn btn-primary">View</a>
-            </div>
           </div>
         </div>
         <div className="col-xs-12 col-sm-6 col-md-8">
+          {newPost}
           {boardPosts}
         </div>
       </div>
