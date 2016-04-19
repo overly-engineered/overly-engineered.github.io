@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,900,300,100italic,300italic,400italic,700,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Oswald:700);
 html {
   box-sizing: border-box; }
@@ -13,12 +13,12 @@ html, body {
 
 body {
   background: #f1f2f2;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lora', serif;
   font-size: 16px;
   overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6, a {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lora', serif;
   font-weight: 300;
   margin-bottom: .6em;
   color: #444; }
@@ -31,7 +31,7 @@ p {
 
 a {
   color: #F6E000;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lora', serif;
   text-decoration: none; }
 
 strong {
