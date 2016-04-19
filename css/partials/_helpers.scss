@@ -1,8 +1,8 @@
 @mixin clearfix {
-	content: ""; 
-	visibility: hidden; 
-	display: block; 
-	height: 0; 
+	content: "";
+	visibility: hidden;
+	display: block;
+	height: 0;
 	clear: both;
 }
 .center {
@@ -58,9 +58,13 @@
 	min-height: 50%;
 }
 @mixin clearfix {
-	content: ""; 
-	visibility: hidden; 
-	display: block; 
-	height: 0; 
+	content: "";
+	visibility: hidden;
+	display: block;
+	height: 0;
 	clear: both;
+}
+
+.white-text {
+	color: white;
 }

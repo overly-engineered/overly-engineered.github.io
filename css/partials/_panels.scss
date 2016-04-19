@@ -2,22 +2,13 @@
 	position:relative;
 	display:block;
 	width:100%;
-	svg {
-		width:100%;
-		height:100%;
-		z-index:5;
-		position:absolute;
-		top:0;
-		left: 0;
-		right: 0;
-		margin:auto;
-		stroke-dasharray:1000;
-		stroke-dashoffset:1000;
+	&:hover {
+
 	}
 	.panel__text {
 		position:absolute;
-		width:75%;
-		height:32%;
+		width:100%;
+		height:40px;
 		top:0px;
 		color:white;
 		text-align: center;
@@ -28,6 +19,7 @@
 			font-weight: 900;
 			font-size: 30px;
 			color:white;
+			word-break: break-word;
 		}
 		p.cta {
 			//border:1px solid white;
@@ -42,20 +34,18 @@
 	}
 	.panel__image {
 		width:100%;
-		filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.3704 0.572 0.0576 0 0 0.1704 0.774 0.0576 0 0 0.1704 0.572 0.2576 0 0 0 0 0 1 0" /></filter></svg>#filter');
-  		-webkit-filter:saturate(100%);
-        filter:saturate(100%);
+		-webkit-filter:saturate(80%) blur(0.5px);
+		filter:saturate(80%) blur(0.5px);
 		transition:2s all ease;
 		img{
 			width:100%;
 		}
 	}
-	
+
 	&:hover, &:focus {
 		.panel__image {
-			filter:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="1 0 0 0 0 0 1.01 0 0 0 0 0 1 0 0 0 0 0 1 0" /></filter></svg>#filter');
-  			-webkit-filter:saturate(100%);
-          	filter:saturate(100%);
+			-webkit-filter:saturate(100%) blur(0px);
+			filter:saturate(100%) blur(0px);
 		}
 		.panel__text {
 			svg {
