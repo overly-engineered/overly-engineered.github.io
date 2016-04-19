@@ -36,9 +36,9 @@
 		width:100%;
 		img{
 			width:100%;
-			-webkit-filter:saturate(80%) blur(0.5px);
+			-webkit-filter:saturate(50%) blur(0.5px);
 			filter:saturate(80%) blur(0.5px);
-			transition:.2s all ease;
+			transition:.5s all ease;
 		}
 	}
 
