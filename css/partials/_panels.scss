@@ -34,16 +34,16 @@
 	}
 	.panel__image {
 		width:100%;
-		-webkit-filter:saturate(80%) blur(0.5px);
-		filter:saturate(80%) blur(0.5px);
-		transition:2s all ease;
 		img{
 			width:100%;
+			-webkit-filter:saturate(80%) blur(0.5px);
+			filter:saturate(80%) blur(0.5px);
+			transition:.2s all ease;
 		}
 	}
 
 	&:hover, &:focus {
-		.panel__image {
+		.panel__image img{
 			-webkit-filter:saturate(100%) blur(0px);
 			filter:saturate(100%) blur(0px);
 		}
