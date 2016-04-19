@@ -25,8 +25,8 @@ h1, h2, h3, h4, h5, h6, a{
 	margin-bottom: .6em;
 	color: $body-dark;
 }
-h1 {
-	font-family: 'Lato', sans-serif;
+h1 a{
+	font-family: 'Lato', sans-serif !important;
 }
 h2 {
 	font-size: 30px;
