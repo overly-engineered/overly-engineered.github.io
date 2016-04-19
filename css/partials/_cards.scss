@@ -1,0 +1,14 @@
+.card {
+  .card--image {
+    display: block;
+    img {
+      max-width: 100%;
+    }
+  }
+  .card--text {
+    h2 {
+      width:100%;
+      text-align: center;
+    }
+  }
+}
