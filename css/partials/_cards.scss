@@ -1,6 +1,8 @@
 @import 'colors';
 .card {
   background: white;
+  transition: .5s;
+  box-shadow: 0px 1px 10px -5px #444;
   .card--image {
     display: block;
     img {
@@ -8,9 +10,6 @@
     }
   }
   .card--text {
-    a:hover {
-      text-decoration: underline;
-    }
     h2 {
       width:100%;
       text-align: center;
@@ -18,5 +17,8 @@
       color: $body-dark;
       border-top: 1px solid $body-dark;
     }
+  }
+  &:hover {
+    box-shadow: 0px 1px 20px -5px $body-dark;
   }
 }
