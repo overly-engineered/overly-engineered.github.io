@@ -219,6 +219,15 @@ define('blog/tests/helpers/unstub-firebase', ['exports', 'firebase'], function (
     }
   }
 });
+define('blog/tests/models/application.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - models/application.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/application.js should pass jshint.');
+  });
+});
 define('blog/tests/models/posts.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -244,6 +253,15 @@ define('blog/tests/router.jshint', ['exports'], function (exports) {
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'router.js should pass jshint.');
+  });
+});
+define('blog/tests/routes/application.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/application.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/application.js should pass jshint.');
   });
 });
 define('blog/tests/routes/posts.jshint', ['exports'], function (exports) {
