@@ -11,6 +11,6 @@ npm-debug.log
 .node_modules-tmp
 .bower_components-tmp
 /coverage
-/bower_components/*
-/tests/*
-/tmp/*
+/work/ember-app/bower_components/*
+/work/ember-app/tests/*
+/work/ember-app/tmp/*
