@@ -1,0 +1,19 @@
+<section>
+
+  {{#each model as |post|}}
+
+    <div>
+      {{#link-to 'uniquePost' post.id}}{{post.blogHeading}}{{/link-to}}
+    </div>
+    <div class="">
+      {{post.blogExcerpt}}
+    </div>
+    <div class="">
+      {{post.blogDate}}
+    </div>
+    <div class="">
+      {{post.id}}
+    </div>
+
+  {{/each}}
+</section>
