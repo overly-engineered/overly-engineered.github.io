@@ -1,29 +1,25 @@
-<section>
-
-  {{#each model as |post|}}
-    <div class="col-6">
-      <div class="card">
-        <div class="card--image">
-          <img src={{post.blogImage}} alt={{post.blogHeading}}/>
+{{#each model as |post|}}
+  <div class="col-6">
+    <div class="card">
+      <div class="card--image">
+        <img src={{post.blogImage}} alt={{post.blogHeading}}/>
+      </div>
+      <div class="card--text">
+        <h3 class="npb">
+          {{#link-to 'uniquePost' post.id}}{{post.blogHeading}}{{/link-to}}
+        </h3>
+        <div class="blog-postDate">
+          {{post.blogDate}}
         </div>
-        <div class="card--text">
-          <h3 class="npb">
-            {{#link-to 'uniquePost' post.id}}{{post.blogHeading}}{{/link-to}}
-          </h3>
-          <div class="blog-postDate">
-            {{post.blogDate}}
-          </div>
-          <div class="blog-excerpt">
-            <p>
-              {{post.blogExcerpt}}
-            </p>
-          </div>
-          <div class="blog-link npt">
-            {{#link-to 'uniquePost' post.id}}Read more{{/link-to}}
-          </div>
+        <div class="blog-excerpt">
+          <p>
+            {{post.blogExcerpt}}
+          </p>
         </div>
-
+        <div class="blog-link npt">
+          {{#link-to 'uniquePost' post.id}}Read more{{/link-to}}
+        </div>
       </div>
     </div>
-  {{/each}}
-</section>
+  </div>
+{{/each}}

@@ -219,13 +219,13 @@ define('ember-app/tests/helpers/unstub-firebase', ['exports', 'firebase'], funct
     }
   }
 });
-define('ember-app/tests/models/post.jshint', ['exports'], function (exports) {
+define('ember-app/tests/models/posts.jshint', ['exports'], function (exports) {
   'use strict';
 
-  QUnit.module('JSHint - models/post.js');
+  QUnit.module('JSHint - models/posts.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/post.js should pass jshint.\nmodels/post.js: line 4, col 16, \'DS\' is not defined.\nmodels/post.js: line 5, col 13, \'DS\' is not defined.\nmodels/post.js: line 6, col 16, \'DS\' is not defined.\nmodels/post.js: line 7, col 13, \'DS\' is not defined.\nmodels/post.js: line 8, col 14, \'DS\' is not defined.\n\n5 errors');
+    assert.ok(true, 'models/posts.js should pass jshint.');
   });
 });
 define('ember-app/tests/resolver.jshint', ['exports'], function (exports) {
@@ -275,135 +275,6 @@ define('ember-app/tests/test-helper.jshint', ['exports'], function (exports) {
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass jshint.');
-  });
-});
-define('ember-app/tests/unit/controllers/unique-post-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('controller:unique-post', 'Unit | Controller | unique post', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  // Replace this with your real tests.
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var controller = this.subject();
-    assert.ok(controller);
-  });
-});
-define('ember-app/tests/unit/controllers/unique-post-test.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - unit/controllers/unique-post-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/controllers/unique-post-test.js should pass jshint.');
-  });
-});
-define('ember-app/tests/unit/models/posts-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForModel)('posts', 'Unit | Model | posts', {
-    // Specify the other units that are required for this test.
-    needs: []
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var model = this.subject();
-    // let store = this.store();
-    assert.ok(!!model);
-  });
-});
-define('ember-app/tests/unit/models/posts-test.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - unit/models/posts-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/models/posts-test.js should pass jshint.');
-  });
-});
-define('ember-app/tests/unit/models/unique-post-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleForModel)('unique-post', 'Unit | Model | unique post', {
-    // Specify the other units that are required for this test.
-    needs: []
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var model = this.subject();
-    // let store = this.store();
-    assert.ok(!!model);
-  });
-});
-define('ember-app/tests/unit/models/unique-post-test.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - unit/models/unique-post-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/models/unique-post-test.js should pass jshint.');
-  });
-});
-define('ember-app/tests/unit/routes/application-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:application', 'Unit | Route | application', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('ember-app/tests/unit/routes/application-test.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - unit/routes/application-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/application-test.js should pass jshint.');
-  });
-});
-define('ember-app/tests/unit/routes/posts-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:posts', 'Unit | Route | posts', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('ember-app/tests/unit/routes/posts-test.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - unit/routes/posts-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/posts-test.js should pass jshint.');
-  });
-});
-define('ember-app/tests/unit/routes/unique-post-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
-
-  (0, _emberQunit.moduleFor)('route:unique-post', 'Unit | Route | unique post', {
-    // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
-  });
-
-  (0, _emberQunit.test)('it exists', function (assert) {
-    var route = this.subject();
-    assert.ok(route);
-  });
-});
-define('ember-app/tests/unit/routes/unique-post-test.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - unit/routes/unique-post-test.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/unique-post-test.js should pass jshint.');
   });
 });
 /* jshint ignore:start */
