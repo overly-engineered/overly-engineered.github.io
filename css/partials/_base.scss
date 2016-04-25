@@ -52,5 +52,9 @@ img {
 	max-width: 100%;
 	max-height: 100%;
 }
+
+a::-moz-selection { background: $body-dark; }
+a::selection { background: $body-dark; }
+
 ::-moz-selection { background: $accent; }
 ::selection { background: $accent; }
