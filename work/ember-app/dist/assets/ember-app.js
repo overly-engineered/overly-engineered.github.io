@@ -209,7 +209,8 @@ define('ember-app/models/post', ['exports', 'ember-data/model'], function (expor
     blogHeading: DS.attr('string'),
     blogDate: DS.attr('string'),
     blogExcerpt: DS.attr('string'),
-    blogText: DS.attr('string')
+    blogText: DS.attr('string'),
+    blogImage: DS.attr('string')
   });
 });
 define('ember-app/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
@@ -323,7 +324,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
             "column": 0
           },
           "end": {
-            "line": 6,
+            "line": 8,
             "column": 0
           }
         },
@@ -336,14 +337,27 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("div");
-        dom.setAttribute(el1, "class", "");
+        dom.setAttribute(el1, "class", "col-12");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createElement("h2");
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("sub");
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("img");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
@@ -358,13 +372,17 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [0]);
-        var morphs = new Array(3);
-        morphs[0] = dom.createMorphAt(element0, 1, 1);
-        morphs[1] = dom.createMorphAt(element0, 3, 3);
-        morphs[2] = dom.createMorphAt(element0, 5, 5);
+        var element1 = dom.childAt(element0, [1]);
+        var element2 = dom.childAt(element0, [3, 1]);
+        var morphs = new Array(5);
+        morphs[0] = dom.createMorphAt(element1, 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
+        morphs[2] = dom.createAttrMorph(element2, 'src');
+        morphs[3] = dom.createAttrMorph(element2, 'alt');
+        morphs[4] = dom.createUnsafeMorphAt(element0, 5, 5);
         return morphs;
       },
-      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 2], [2, 29]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 2], [3, 26]]]], ["content", "unique-post.blogText", ["loc", [null, [4, 2], [4, 26]]]]],
+      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 6], [2, 33]]]], ["content", "unique-post.blogDate", ["loc", [null, [2, 38], [2, 62]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [4, 15], [4, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [4, 45], [4, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [6, 2], [6, 28]]]]],
       locals: [],
       templates: []
     };
@@ -381,12 +399,12 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 6,
-                "column": 6
+                "line": 11,
+                "column": 12
               },
               "end": {
-                "line": 6,
-                "column": 59
+                "line": 11,
+                "column": 65
               }
             },
             "moduleName": "ember-app/templates/posts.hbs"
@@ -408,7 +426,43 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["content", "post.blogHeading", ["loc", [null, [6, 39], [6, 59]]]]],
+          statements: [["content", "post.blogHeading", ["loc", [null, [11, 45], [11, 65]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      var child1 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.5",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 22,
+                "column": 12
+              },
+              "end": {
+                "line": 22,
+                "column": 54
+              }
+            },
+            "moduleName": "ember-app/templates/posts.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("Read more");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
           locals: [],
           templates: []
         };
@@ -424,7 +478,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
               "column": 2
             },
             "end": {
-              "line": 18,
+              "line": 28,
               "column": 2
             }
           },
@@ -436,64 +490,108 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("\n    ");
+          var el1 = dom.createTextNode("    ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "col-6");
           var el2 = dom.createTextNode("\n      ");
           dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "card");
+          var el3 = dom.createTextNode("\n        ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("div");
+          dom.setAttribute(el3, "class", "card--image");
+          var el4 = dom.createTextNode("\n          ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("img");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n        ");
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n        ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("div");
+          dom.setAttribute(el3, "class", "card--text");
+          var el4 = dom.createTextNode("\n          ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("h3");
+          dom.setAttribute(el4, "class", "npb");
+          var el5 = dom.createTextNode("\n            ");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createTextNode("\n          ");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n          ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("div");
+          dom.setAttribute(el4, "class", "blog-postDate");
+          var el5 = dom.createTextNode("\n            ");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createTextNode("\n          ");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n          ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("div");
+          dom.setAttribute(el4, "class", "blog-excerpt");
+          var el5 = dom.createTextNode("\n            ");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createElement("p");
+          var el6 = dom.createTextNode("\n              ");
+          dom.appendChild(el5, el6);
+          var el6 = dom.createComment("");
+          dom.appendChild(el5, el6);
+          var el6 = dom.createTextNode("\n            ");
+          dom.appendChild(el5, el6);
+          dom.appendChild(el4, el5);
+          var el5 = dom.createTextNode("\n          ");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n          ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("div");
+          dom.setAttribute(el4, "class", "blog-link npt");
+          var el5 = dom.createTextNode("\n            ");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createTextNode("\n          ");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n        ");
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n\n      ");
+          dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n    ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "");
-          var el2 = dom.createTextNode("\n      ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n    ");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n    ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "");
-          var el2 = dom.createTextNode("\n      ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n    ");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n    ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "");
-          var el2 = dom.createTextNode("\n      ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n    ");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n\n");
+          var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(4);
-          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
-          morphs[1] = dom.createMorphAt(dom.childAt(fragment, [3]), 1, 1);
-          morphs[2] = dom.createMorphAt(dom.childAt(fragment, [5]), 1, 1);
-          morphs[3] = dom.createMorphAt(dom.childAt(fragment, [7]), 1, 1);
+          var element0 = dom.childAt(fragment, [1, 1]);
+          var element1 = dom.childAt(element0, [1, 1]);
+          var element2 = dom.childAt(element0, [3]);
+          var morphs = new Array(6);
+          morphs[0] = dom.createAttrMorph(element1, 'src');
+          morphs[1] = dom.createAttrMorph(element1, 'alt');
+          morphs[2] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
+          morphs[3] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
+          morphs[4] = dom.createMorphAt(dom.childAt(element2, [5, 1]), 1, 1);
+          morphs[5] = dom.createMorphAt(dom.childAt(element2, [7]), 1, 1);
           return morphs;
         },
-        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [6, 30], [6, 37]]]]], [], 0, null, ["loc", [null, [6, 6], [6, 71]]]], ["content", "post.blogExcerpt", ["loc", [null, [9, 6], [9, 26]]]], ["content", "post.blogDate", ["loc", [null, [12, 6], [12, 23]]]], ["content", "post.id", ["loc", [null, [15, 6], [15, 17]]]]],
+        statements: [["attribute", "src", ["get", "post.blogImage", ["loc", [null, [7, 21], [7, 35]]]]], ["attribute", "alt", ["get", "post.blogHeading", ["loc", [null, [7, 44], [7, 60]]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [11, 36], [11, 43]]]]], [], 0, null, ["loc", [null, [11, 12], [11, 77]]]], ["content", "post.blogDate", ["loc", [null, [14, 12], [14, 29]]]], ["content", "post.blogExcerpt", ["loc", [null, [18, 14], [18, 34]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [22, 36], [22, 43]]]]], [], 1, null, ["loc", [null, [22, 12], [22, 66]]]]],
         locals: ["post"],
-        templates: [child0]
+        templates: [child0, child1]
       };
     })();
     return {
@@ -507,7 +605,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 20,
+            "line": 30,
             "column": 0
           }
         },
@@ -534,7 +632,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 10], [3, 15]]]]], [], 0, null, ["loc", [null, [3, 2], [18, 11]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 10], [3, 15]]]]], [], 0, null, ["loc", [null, [3, 2], [28, 11]]]]],
       locals: [],
       templates: [child0]
     };
@@ -667,7 +765,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+76818d8c"});
+  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+bc8dd870"});
 }
 
 /* jshint ignore:end */

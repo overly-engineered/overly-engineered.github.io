@@ -225,7 +225,7 @@ define('ember-app/tests/models/post.jshint', ['exports'], function (exports) {
   QUnit.module('JSHint - models/post.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/post.js should pass jshint.\nmodels/post.js: line 4, col 16, \'DS\' is not defined.\nmodels/post.js: line 5, col 13, \'DS\' is not defined.\nmodels/post.js: line 6, col 16, \'DS\' is not defined.\nmodels/post.js: line 7, col 13, \'DS\' is not defined.\n\n4 errors');
+    assert.ok(false, 'models/post.js should pass jshint.\nmodels/post.js: line 4, col 16, \'DS\' is not defined.\nmodels/post.js: line 5, col 13, \'DS\' is not defined.\nmodels/post.js: line 6, col 16, \'DS\' is not defined.\nmodels/post.js: line 7, col 13, \'DS\' is not defined.\nmodels/post.js: line 8, col 14, \'DS\' is not defined.\n\n5 errors');
   });
 });
 define('ember-app/tests/resolver.jshint', ['exports'], function (exports) {

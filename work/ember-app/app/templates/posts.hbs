@@ -4,7 +4,7 @@
     <div class="col-6">
       <div class="card">
         <div class="card--image">
-
+          <img src={{post.blogImage}} alt={{post.blogHeading}}/>
         </div>
         <div class="card--text">
           <h3 class="npb">
@@ -18,7 +18,7 @@
               {{post.blogExcerpt}}
             </p>
           </div>
-          <div class="blog-link">
+          <div class="blog-link npt">
             {{#link-to 'uniquePost' post.id}}Read more{{/link-to}}
           </div>
         </div>
