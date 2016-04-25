@@ -318,7 +318,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
             "column": 0
           },
           "end": {
-            "line": 9,
+            "line": 11,
             "column": 0
           }
         },
@@ -343,8 +343,14 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("small");
         dom.setAttribute(el2, "class", "mb1");
+        var el3 = dom.createTextNode("Posted on ");
+        dom.appendChild(el2, el3);
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("hr");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
@@ -359,6 +365,10 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
+        var el2 = dom.createElement("hr");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -370,16 +380,16 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [0]);
-        var element1 = dom.childAt(element0, [5, 1]);
+        var element1 = dom.childAt(element0, [7, 1]);
         var morphs = new Array(5);
         morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
         morphs[2] = dom.createAttrMorph(element1, 'src');
         morphs[3] = dom.createAttrMorph(element1, 'alt');
-        morphs[4] = dom.createUnsafeMorphAt(element0, 7, 7);
+        morphs[4] = dom.createUnsafeMorphAt(element0, 11, 11);
         return morphs;
       },
-      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 22], [2, 49]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 21], [3, 45]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [5, 15], [5, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [5, 45], [5, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [7, 2], [7, 28]]]]],
+      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 22], [2, 49]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]]],
       locals: [],
       templates: []
     };
