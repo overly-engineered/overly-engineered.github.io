@@ -667,7 +667,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+a502d508"});
+  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+76818d8c"});
 }
 
 /* jshint ignore:end */

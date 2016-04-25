@@ -16,9 +16,10 @@
       padding: 30px;
       color: $body-dark;
       border-top: 1px solid $body-dark;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
-  &:hover {
-    box-shadow: 0px 1px 20px -5px $body-dark;
-  }
+
 }
