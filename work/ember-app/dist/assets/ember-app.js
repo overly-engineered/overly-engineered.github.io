@@ -263,7 +263,7 @@ define("ember-app/templates/application", ["exports"], function (exports) {
       meta: {
         "fragmentReason": {
           "name": "missing-wrapper",
-          "problems": ["multiple-nodes", "wrong-type"]
+          "problems": ["wrong-type"]
         },
         "revision": "Ember@2.4.5",
         "loc": {
@@ -273,7 +273,7 @@ define("ember-app/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 2,
             "column": 0
           }
         },
@@ -285,13 +285,6 @@ define("ember-app/templates/application", ["exports"], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h2");
-        dom.setAttribute(el1, "id", "title");
-        var el2 = dom.createTextNode("Welcome to Ember");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -300,10 +293,11 @@ define("ember-app/templates/application", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [3, 0], [3, 10]]]]],
+      statements: [["content", "outlet", ["loc", [null, [1, 0], [1, 10]]]]],
       locals: [],
       templates: []
     };
@@ -324,7 +318,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
             "column": 0
           },
           "end": {
-            "line": 8,
+            "line": 9,
             "column": 0
           }
         },
@@ -337,21 +331,23 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("div");
-        dom.setAttribute(el1, "class", "col-12");
+        dom.setAttribute(el1, "class", "col-12 blog-text");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("h2");
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("sub");
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("small");
+        var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("div");
-        dom.setAttribute(el2, "class", "");
+        dom.setAttribute(el2, "class", "mt1 mb1");
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("img");
@@ -372,17 +368,16 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [0]);
-        var element1 = dom.childAt(element0, [1]);
-        var element2 = dom.childAt(element0, [3, 1]);
+        var element1 = dom.childAt(element0, [5, 1]);
         var morphs = new Array(5);
-        morphs[0] = dom.createMorphAt(element1, 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
-        morphs[2] = dom.createAttrMorph(element2, 'src');
-        morphs[3] = dom.createAttrMorph(element2, 'alt');
-        morphs[4] = dom.createUnsafeMorphAt(element0, 5, 5);
+        morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 0, 0);
+        morphs[2] = dom.createAttrMorph(element1, 'src');
+        morphs[3] = dom.createAttrMorph(element1, 'alt');
+        morphs[4] = dom.createUnsafeMorphAt(element0, 7, 7);
         return morphs;
       },
-      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 6], [2, 33]]]], ["content", "unique-post.blogDate", ["loc", [null, [2, 38], [2, 62]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [4, 15], [4, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [4, 45], [4, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [6, 2], [6, 28]]]]],
+      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 6], [2, 33]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 9], [3, 33]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [5, 15], [5, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [5, 45], [5, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [7, 2], [7, 28]]]]],
       locals: [],
       templates: []
     };
