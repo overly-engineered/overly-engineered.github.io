@@ -294,11 +294,11 @@ define("ember-app/templates/application", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[0] = dom.createUnsafeMorphAt(fragment, 0, 0, contextualElement);
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [1, 0], [1, 10]]]]],
+      statements: [["content", "outlet", ["loc", [null, [1, 0], [1, 12]]]]],
       locals: [],
       templates: []
     };
@@ -407,6 +407,46 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
+                "line": 5,
+                "column": 8
+              },
+              "end": {
+                "line": 5,
+                "column": 95
+              }
+            },
+            "moduleName": "ember-app/templates/posts.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createElement("img");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element0 = dom.childAt(fragment, [0]);
+            var morphs = new Array(2);
+            morphs[0] = dom.createAttrMorph(element0, 'src');
+            morphs[1] = dom.createAttrMorph(element0, 'alt');
+            return morphs;
+          },
+          statements: [["attribute", "src", ["get", "post.blogImage", ["loc", [null, [5, 52], [5, 66]]]]], ["attribute", "alt", ["get", "post.blogHeading", ["loc", [null, [5, 75], [5, 91]]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      var child1 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.5",
+            "loc": {
+              "source": null,
+              "start": {
                 "line": 9,
                 "column": 10
               },
@@ -439,7 +479,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           templates: []
         };
       })();
-      var child1 = (function () {
+      var child2 = (function () {
         return {
           meta: {
             "fragmentReason": false,
@@ -514,7 +554,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           dom.setAttribute(el3, "class", "card--image");
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
-          var el4 = dom.createElement("img");
+          var el4 = dom.createComment("");
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n      ");
           dom.appendChild(el3, el4);
@@ -587,21 +627,19 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element0 = dom.childAt(fragment, [1, 1]);
-          var element1 = dom.childAt(element0, [1, 1]);
-          var element2 = dom.childAt(element0, [3]);
-          var morphs = new Array(6);
-          morphs[0] = dom.createAttrMorph(element1, 'src');
-          morphs[1] = dom.createAttrMorph(element1, 'alt');
-          morphs[2] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
-          morphs[3] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
-          morphs[4] = dom.createMorphAt(dom.childAt(element2, [5, 1]), 1, 1);
-          morphs[5] = dom.createMorphAt(dom.childAt(element2, [7]), 1, 1);
+          var element1 = dom.childAt(fragment, [1, 1]);
+          var element2 = dom.childAt(element1, [3]);
+          var morphs = new Array(5);
+          morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 1, 1);
+          morphs[1] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
+          morphs[2] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
+          morphs[3] = dom.createMorphAt(dom.childAt(element2, [5, 1]), 1, 1);
+          morphs[4] = dom.createMorphAt(dom.childAt(element2, [7]), 1, 1);
           return morphs;
         },
-        statements: [["attribute", "src", ["get", "post.blogImage", ["loc", [null, [5, 19], [5, 33]]]]], ["attribute", "alt", ["get", "post.blogHeading", ["loc", [null, [5, 42], [5, 58]]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [9, 34], [9, 41]]]]], [], 0, null, ["loc", [null, [9, 10], [9, 75]]]], ["content", "post.blogDate", ["loc", [null, [12, 10], [12, 27]]]], ["content", "post.blogExcerpt", ["loc", [null, [16, 12], [16, 32]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [20, 34], [20, 41]]]]], [], 1, null, ["loc", [null, [20, 10], [20, 64]]]]],
+        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [5, 32], [5, 39]]]]], [], 0, null, ["loc", [null, [5, 8], [5, 107]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [9, 34], [9, 41]]]]], [], 1, null, ["loc", [null, [9, 10], [9, 75]]]], ["content", "post.blogDate", ["loc", [null, [12, 10], [12, 27]]]], ["content", "post.blogExcerpt", ["loc", [null, [16, 12], [16, 32]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [20, 34], [20, 41]]]]], [], 2, null, ["loc", [null, [20, 10], [20, 64]]]]],
         locals: ["post"],
-        templates: [child0, child1]
+        templates: [child0, child1, child2]
       };
     })();
     return {
@@ -774,7 +812,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+07a2324b"});
+  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+384f9684"});
 }
 
 /* jshint ignore:end */
