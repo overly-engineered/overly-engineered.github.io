@@ -16,4 +16,14 @@
   h2, p {
     margin-bottom: 1em;
   }
+  img {
+    margin: 0 auto 1em auto;
+    display: block;
+  }
+  .title {
+    font-size: 50px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    margin-bottom: .5em;
+  }
 }

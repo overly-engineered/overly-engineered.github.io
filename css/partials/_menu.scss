@@ -18,7 +18,7 @@
     		background-color: $menu;
     		cursor: pointer;
     		z-index: 10;
-    		
+
     		a {
     			width: 75px;
 			    height: 100%;
@@ -41,6 +41,7 @@
 					padding: 20px 20px;
 					display: block;
 					margin: 0px 10px;
+					text-decoration: none;
 					&:hover, &:focus {
 						color: $accent;
 					}
@@ -57,13 +58,13 @@
 						    background-color: white;
 						    content: "";
 							-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1); /* older webkit */
-							-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); 
-							   -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); 
-							     -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); 
+							-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650);
+							   -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650);
+							     -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650);
 							        transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); /* custom */
 	    			}
     				&:after {
-    					
+
     				}
 					&:hover:after, &:focus:after {
 						left: 40%;
@@ -109,13 +110,13 @@
 						    background-color: white;
 						    content: "";
 							-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1); /* older webkit */
-							-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); 
-							   -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); 
-							     -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); 
+							-webkit-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650);
+							   -moz-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650);
+							     -o-transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650);
 							        transition: all 500ms cubic-bezier(0.420, 0.000, 0.350, 1.650); /* custom */
 	    			}
     				&:after {
-    					
+
     				}
 					&:hover:after, &:focus:after {
 						left: 0%;

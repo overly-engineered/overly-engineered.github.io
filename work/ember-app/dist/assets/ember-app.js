@@ -336,7 +336,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("h2");
-        dom.setAttribute(el2, "class", "mt1 mb0");
+        dom.setAttribute(el2, "class", "mt1 title");
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
@@ -390,7 +390,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         morphs[4] = dom.createUnsafeMorphAt(element0, 11, 11);
         return morphs;
       },
-      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 22], [2, 49]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]]],
+      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 24], [2, 51]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]]],
       locals: [],
       templates: []
     };
