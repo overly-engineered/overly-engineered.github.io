@@ -219,6 +219,15 @@ define('ember-app/tests/helpers/unstub-firebase', ['exports', 'firebase'], funct
     }
   }
 });
+define('ember-app/tests/models/comment.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - models/comment.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'models/comment.js should pass jshint.\nmodels/comment.js: line 1, col 8, \'Ember\' is defined but never used.\n\n1 error');
+  });
+});
 define('ember-app/tests/models/posts.jshint', ['exports'], function (exports) {
   'use strict';
 

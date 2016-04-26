@@ -8,3 +8,14 @@
   <hr>
   {{{unique-post.blogText}}}
 </div>
+{{#each unique-post.comments as |comment|}}
+  <li>
+    <div>
+      <div>
+        <strong>{{comment.name}}</strong>
+        <em class="post-comment-date">{{comment.publishedDate}}</em>
+      </div>
+      {{comment.message}}
+    </div>
+  </li>
+{{/each}}

@@ -7,5 +7,6 @@ export default Model.extend({
   blogExcerpt: DS.attr('string'),
   blogText: DS.attr('string'),
   blogImage: DS.attr('string'),
-  blogSequence: DS.attr('number')
+  blogSequence: DS.attr('number'),
+  comments: DS.hasMany('comment', {async: true})
 });

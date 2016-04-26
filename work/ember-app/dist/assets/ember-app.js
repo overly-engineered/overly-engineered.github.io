@@ -204,6 +204,13 @@ define("ember-app/instance-initializers/ember-data", ["exports", "ember-data/-pr
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
+define('ember-app/models/comment', ['exports', 'ember', 'ember-data'], function (exports, _ember, _emberData) {
+  exports['default'] = _emberData['default'].Model.extend({
+    message: _emberData['default'].attr('string'),
+    date: _emberData['default'].attr('string'),
+    name: _emberData['default'].attr('string')
+  });
+});
 define('ember-app/models/posts', ['exports', 'ember-data/model', 'ember-data'], function (exports, _emberDataModel, _emberData) {
   exports['default'] = _emberDataModel['default'].extend({
     blogHeading: _emberData['default'].attr('string'),
@@ -211,7 +218,8 @@ define('ember-app/models/posts', ['exports', 'ember-data/model', 'ember-data'], 
     blogExcerpt: _emberData['default'].attr('string'),
     blogText: _emberData['default'].attr('string'),
     blogImage: _emberData['default'].attr('string'),
-    blogSequence: _emberData['default'].attr('number')
+    blogSequence: _emberData['default'].attr('number'),
+    comments: _emberData['default'].hasMany('comment', { async: true })
   });
 });
 define('ember-app/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
@@ -306,10 +314,88 @@ define("ember-app/templates/application", ["exports"], function (exports) {
 });
 define("ember-app/templates/components/post-view", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.5",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 21,
+              "column": 0
+            }
+          },
+          "moduleName": "ember-app/templates/components/post-view.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("li");
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("div");
+          var el4 = dom.createTextNode("\n        ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("strong");
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n        ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("em");
+          dom.setAttribute(el4, "class", "post-comment-date");
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n      ");
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n    ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element0 = dom.childAt(fragment, [1, 1]);
+          var element1 = dom.childAt(element0, [1]);
+          var morphs = new Array(3);
+          morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
+          morphs[1] = dom.createMorphAt(dom.childAt(element1, [3]), 0, 0);
+          morphs[2] = dom.createMorphAt(element0, 3, 3);
+          return morphs;
+        },
+        statements: [["content", "comment.name", ["loc", [null, [15, 16], [15, 32]]]], ["content", "comment.publishedDate", ["loc", [null, [16, 38], [16, 63]]]], ["content", "comment.message", ["loc", [null, [18, 6], [18, 25]]]]],
+        locals: ["comment"],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "fragmentReason": {
-          "name": "triple-curlies"
+          "name": "missing-wrapper",
+          "problems": ["multiple-nodes", "wrong-type"]
         },
         "revision": "Ember@2.4.5",
         "loc": {
@@ -319,7 +405,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
             "column": 0
           },
           "end": {
-            "line": 11,
+            "line": 22,
             "column": 0
           }
         },
@@ -377,22 +463,26 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element0 = dom.childAt(fragment, [0]);
-        var element1 = dom.childAt(element0, [7, 1]);
-        var morphs = new Array(5);
-        morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
-        morphs[2] = dom.createAttrMorph(element1, 'src');
-        morphs[3] = dom.createAttrMorph(element1, 'alt');
-        morphs[4] = dom.createUnsafeMorphAt(element0, 11, 11);
+        var element2 = dom.childAt(fragment, [0]);
+        var element3 = dom.childAt(element2, [7, 1]);
+        var morphs = new Array(6);
+        morphs[0] = dom.createMorphAt(dom.childAt(element2, [1]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
+        morphs[2] = dom.createAttrMorph(element3, 'src');
+        morphs[3] = dom.createAttrMorph(element3, 'alt');
+        morphs[4] = dom.createUnsafeMorphAt(element2, 11, 11);
+        morphs[5] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 24], [2, 51]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]]],
+      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 24], [2, 51]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]], ["block", "each", [["get", "unique-post.comments", ["loc", [null, [11, 8], [11, 28]]]]], [], 0, null, ["loc", [null, [11, 0], [21, 9]]]]],
       locals: [],
-      templates: []
+      templates: [child0]
     };
   })());
 });
