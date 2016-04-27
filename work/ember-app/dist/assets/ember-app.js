@@ -54,10 +54,10 @@ define('ember-app/components/post-view', ['exports', 'ember'], function (exports
     actions: {
       postComment: function postComment() {
         if (!this.commentIsValid()) {
-          this.toggleProperty('postError');
+          this.set('postError', true);
           return;
         }
-        // console.log(this.get('commentName'));
+        this.set('postError', false);
         var store = this.get('unique-post.store');
         var postID = this.get('unique-post.id');
         var comment = store.createRecord('comment', {
@@ -1268,7 +1268,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+768ab53c"});
+  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+c0f0a152"});
 }
 
 /* jshint ignore:end */

@@ -15,10 +15,10 @@ export default Ember.Component.extend({
   actions: {
     postComment: function() {
       if(!this.commentIsValid()){
-        this.toggleProperty('postError');
+        this.set('postError', true);
         return;
       }
-      // console.log(this.get('commentName'));
+      this.set('postError', false);
       var store = this.get('unique-post.store');
       var postID = this.get('unique-post.id');
       var comment = store.createRecord('comment', {
