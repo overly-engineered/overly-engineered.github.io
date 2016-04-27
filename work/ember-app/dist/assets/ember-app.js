@@ -465,11 +465,11 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
           "loc": {
             "source": null,
             "start": {
-              "line": 25,
+              "line": 27,
               "column": 2
             },
             "end": {
-              "line": 33,
+              "line": 37,
               "column": 2
             }
           },
@@ -481,34 +481,41 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("        ");
+          var el1 = dom.createTextNode("    ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createElement("p");
-          var el2 = dom.createTextNode("\n          ");
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "card");
+          var el2 = dom.createTextNode("\n      ");
           dom.appendChild(el1, el2);
-          var el2 = dom.createElement("strong");
-          var el3 = dom.createComment("");
+          var el2 = dom.createElement("p");
+          var el3 = dom.createTextNode("\n        ");
           dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n          ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("small");
-          var el3 = dom.createElement("em");
+          var el3 = dom.createElement("strong");
           var el4 = dom.createComment("");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n        ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("small");
+          var el4 = dom.createElement("em");
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n        ");
+          var el2 = dom.createTextNode("\n      ");
           dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n        ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("p");
-          var el2 = dom.createTextNode("\n          ");
+          var el2 = dom.createElement("p");
+          var el3 = dom.createTextNode("\n        ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n        ");
+          var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n");
@@ -517,13 +524,14 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var element0 = dom.childAt(fragment, [1]);
+          var element1 = dom.childAt(element0, [1]);
           var morphs = new Array(3);
-          morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
-          morphs[1] = dom.createMorphAt(dom.childAt(element0, [3, 0]), 0, 0);
-          morphs[2] = dom.createMorphAt(dom.childAt(fragment, [3]), 1, 1);
+          morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
+          morphs[1] = dom.createMorphAt(dom.childAt(element1, [3, 0]), 0, 0);
+          morphs[2] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
           return morphs;
         },
-        statements: [["content", "comment.name", ["loc", [null, [27, 18], [27, 34]]]], ["inline", "date", [["get", "comment.date", ["loc", [null, [28, 28], [28, 40]]]]], [], ["loc", [null, [28, 21], [28, 42]]]], ["content", "comment.message", ["loc", [null, [31, 10], [31, 29]]]]],
+        statements: [["content", "comment.name", ["loc", [null, [30, 16], [30, 32]]]], ["inline", "date", [["get", "comment.date", ["loc", [null, [31, 26], [31, 38]]]]], [], ["loc", [null, [31, 19], [31, 40]]]], ["content", "comment.message", ["loc", [null, [34, 8], [34, 27]]]]],
         locals: ["comment"],
         templates: []
       };
@@ -542,7 +550,7 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 40,
             "column": 0
           }
         },
@@ -622,13 +630,26 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
+        var el2 = dom.createElement("br");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
         var el2 = dom.createElement("button");
         var el3 = dom.createTextNode("Post");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
+        var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "comments-section--Comments");
+        var el3 = dom.createTextNode("\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -636,24 +657,24 @@ define("ember-app/templates/components/post-view", ["exports"], function (export
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element1 = dom.childAt(fragment, [0]);
-        var element2 = dom.childAt(element1, [7, 1]);
-        var element3 = dom.childAt(fragment, [2]);
-        var element4 = dom.childAt(element3, [7]);
+        var element2 = dom.childAt(fragment, [0]);
+        var element3 = dom.childAt(element2, [7, 1]);
+        var element4 = dom.childAt(fragment, [2]);
+        var element5 = dom.childAt(element4, [9]);
         var morphs = new Array(10);
-        morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element1, [3]), 1, 1);
-        morphs[2] = dom.createAttrMorph(element2, 'src');
-        morphs[3] = dom.createAttrMorph(element2, 'alt');
-        morphs[4] = dom.createUnsafeMorphAt(element1, 11, 11);
-        morphs[5] = dom.createMorphAt(dom.childAt(element3, [1]), 1, 1);
-        morphs[6] = dom.createMorphAt(element3, 3, 3);
-        morphs[7] = dom.createMorphAt(element3, 5, 5);
-        morphs[8] = dom.createElementMorph(element4);
-        morphs[9] = dom.createMorphAt(element3, 9, 9);
+        morphs[0] = dom.createMorphAt(dom.childAt(element2, [1]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element2, [3]), 1, 1);
+        morphs[2] = dom.createAttrMorph(element3, 'src');
+        morphs[3] = dom.createAttrMorph(element3, 'alt');
+        morphs[4] = dom.createUnsafeMorphAt(element2, 11, 11);
+        morphs[5] = dom.createMorphAt(dom.childAt(element4, [1]), 1, 1);
+        morphs[6] = dom.createMorphAt(element4, 3, 3);
+        morphs[7] = dom.createMorphAt(element4, 5, 5);
+        morphs[8] = dom.createElementMorph(element5);
+        morphs[9] = dom.createMorphAt(dom.childAt(element4, [11]), 1, 1);
         return morphs;
       },
-      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 24], [2, 51]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]], ["block", "if", [["get", "unique-post.comments", ["loc", [null, [15, 8], [15, 28]]]]], [], 0, 1, ["loc", [null, [15, 2], [19, 9]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "commentName", ["loc", [null, [22, 16], [22, 27]]]]], [], []], "placeholder", "name"], ["loc", [null, [22, 2], [22, 48]]]], ["inline", "textarea", [], ["value", ["subexpr", "@mut", [["get", "commentMessage", ["loc", [null, [23, 19], [23, 33]]]]], [], []], "placeholder", "Contribute to the conversation"], ["loc", [null, [23, 2], [23, 80]]]], ["element", "action", ["postComment"], [], ["loc", [null, [24, 10], [24, 34]]]], ["block", "each", [["get", "unique-post.comments", ["loc", [null, [25, 10], [25, 30]]]]], [], 2, null, ["loc", [null, [25, 2], [33, 11]]]]],
+      statements: [["content", "unique-post.blogHeading", ["loc", [null, [2, 24], [2, 51]]]], ["content", "unique-post.blogDate", ["loc", [null, [3, 31], [3, 55]]]], ["attribute", "src", ["get", "unique-post.blogImage", ["loc", [null, [6, 15], [6, 36]]]]], ["attribute", "alt", ["get", "unique-post.blogImage", ["loc", [null, [6, 45], [6, 66]]]]], ["content", "unique-post.blogText", ["loc", [null, [9, 2], [9, 28]]]], ["block", "if", [["get", "unique-post.comments", ["loc", [null, [15, 8], [15, 28]]]]], [], 0, 1, ["loc", [null, [15, 2], [19, 9]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "commentName", ["loc", [null, [22, 16], [22, 27]]]]], [], []], "placeholder", "name"], ["loc", [null, [22, 2], [22, 48]]]], ["inline", "textarea", [], ["value", ["subexpr", "@mut", [["get", "commentMessage", ["loc", [null, [23, 19], [23, 33]]]]], [], []], "placeholder", "Contribute to the conversation"], ["loc", [null, [23, 2], [23, 80]]]], ["element", "action", ["postComment"], [], ["loc", [null, [25, 10], [25, 34]]]], ["block", "each", [["get", "unique-post.comments", ["loc", [null, [27, 10], [27, 30]]]]], [], 2, null, ["loc", [null, [27, 2], [37, 11]]]]],
       locals: [],
       templates: [child0, child1, child2]
     };

@@ -21,14 +21,19 @@
 
   {{input value=commentName placeholder="name"}}
   {{textarea value=commentMessage placeholder="Contribute to the conversation"}}
+  <br>
   <button {{action "postComment"}}>Post</button>
+  <div class="comments-section--Comments">
   {{#each unique-post.comments as |comment|}}
-        <p>
-          <strong>{{comment.name}}</strong>
-          <small><em>{{date comment.date}}</em></small>
-        </p>
-        <p>
-          {{comment.message}}
-        </p>
+    <div class="card">
+      <p>
+        <strong>{{comment.name}}</strong>
+        <small><em>{{date comment.date}}</em></small>
+      </p>
+      <p>
+        {{comment.message}}
+      </p>
+    </div>
   {{/each}}
+  </div>
 </div>

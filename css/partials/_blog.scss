@@ -69,5 +69,13 @@
     outline: none;
     color: $body-dark;
     font-weight: 300;
+    font-size: 18px;
+  }
+  .comments-section--Comments {
+    margin-top: 1em;
+    .card {
+      margin-bottom: 1em;
+      padding:1em;
+    }
   }
 }
