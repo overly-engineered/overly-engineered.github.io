@@ -8,15 +8,17 @@
   <hr>
   {{{unique-post.blogText}}}
 </div>
-<h3>
-{{#if unique-post.comments}}
-  Comments
-{{else}}
-  Leave a comment!
-{{/if}}
-</h3>
-<hr>
+
 <div class="col-12 comments-section">
+
+  <h3>
+  {{#if unique-post.comments}}
+    Comments
+  {{else}}
+    Leave a comment!
+  {{/if}}
+  </h3>
+
   {{input value=commentName placeholder="name"}}
   {{textarea value=commentMessage placeholder="Contribute to the conversation"}}
   <button {{action "postComment"}}>Post</button>
