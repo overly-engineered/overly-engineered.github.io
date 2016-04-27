@@ -40,8 +40,8 @@
     width: 100%;
   }
 }
-.blog-text {
-  max-width: 1200px;
+.blog-text, .comments-section{
+  max-width: 960px;
   margin: auto;
   float: none;
   p {
