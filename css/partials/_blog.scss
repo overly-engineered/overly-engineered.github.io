@@ -12,6 +12,20 @@
     text-decoration: underline;
   }
 }
+.blogList, .blogSide {
+  float:left;
+}
+.blogList {
+  width:80%;
+}
+.blogSide {
+  width: 20%;
+}
+@media screen and (min-width: 900px) {
+  .blogSide {
+    display: none;
+  }
+}
 .blog-text {
   h2, p {
     margin-bottom: 1em;

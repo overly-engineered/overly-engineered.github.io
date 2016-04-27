@@ -498,11 +498,11 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
               "source": null,
               "start": {
                 "line": 5,
-                "column": 8
+                "column": 6
               },
               "end": {
                 "line": 5,
-                "column": 95
+                "column": 93
               }
             },
             "moduleName": "ember-app/templates/posts.hbs"
@@ -524,7 +524,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             morphs[1] = dom.createAttrMorph(element0, 'alt');
             return morphs;
           },
-          statements: [["attribute", "src", ["get", "post.blogImage", ["loc", [null, [5, 52], [5, 66]]]]], ["attribute", "alt", ["get", "post.blogHeading", ["loc", [null, [5, 75], [5, 91]]]]]],
+          statements: [["attribute", "src", ["get", "post.blogImage", ["loc", [null, [5, 50], [5, 64]]]]], ["attribute", "alt", ["get", "post.blogHeading", ["loc", [null, [5, 73], [5, 89]]]]]],
           locals: [],
           templates: []
         };
@@ -538,11 +538,11 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
               "source": null,
               "start": {
                 "line": 9,
-                "column": 10
+                "column": 8
               },
               "end": {
                 "line": 9,
-                "column": 63
+                "column": 61
               }
             },
             "moduleName": "ember-app/templates/posts.hbs"
@@ -564,7 +564,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["content", "post.blogHeading", ["loc", [null, [9, 43], [9, 63]]]]],
+          statements: [["content", "post.blogHeading", ["loc", [null, [9, 41], [9, 61]]]]],
           locals: [],
           templates: []
         };
@@ -578,11 +578,11 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
               "source": null,
               "start": {
                 "line": 20,
-                "column": 10
+                "column": 8
               },
               "end": {
                 "line": 20,
-                "column": 52
+                "column": 50
               }
             },
             "moduleName": "ember-app/templates/posts.hbs"
@@ -607,18 +607,16 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
       })();
       return {
         meta: {
-          "fragmentReason": {
-            "name": "triple-curlies"
-          },
+          "fragmentReason": false,
           "revision": "Ember@2.4.5",
           "loc": {
             "source": null,
             "start": {
-              "line": 1,
+              "line": 2,
               "column": 0
             },
             "end": {
-              "line": 25,
+              "line": 24,
               "column": 0
             }
           },
@@ -633,15 +631,26 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "col-6");
+          dom.setAttribute(el1, "class", "card");
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("div");
-          dom.setAttribute(el2, "class", "card");
+          dom.setAttribute(el2, "class", "card--image");
           var el3 = dom.createTextNode("\n      ");
           dom.appendChild(el2, el3);
-          var el3 = dom.createElement("div");
-          dom.setAttribute(el3, "class", "card--image");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n    ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "card--text");
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("h3");
+          dom.setAttribute(el3, "class", "npb");
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           var el4 = dom.createComment("");
@@ -652,11 +661,21 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           var el3 = dom.createTextNode("\n      ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("div");
-          dom.setAttribute(el3, "class", "card--text");
+          dom.setAttribute(el3, "class", "blog-postDate");
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
-          var el4 = dom.createElement("h3");
-          dom.setAttribute(el4, "class", "npb");
+          var el4 = dom.createComment("");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n      ");
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("div");
+          dom.setAttribute(el3, "class", "blog-excerpt");
+          var el4 = dom.createTextNode("\n        ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("p");
           var el5 = dom.createTextNode("\n          ");
           dom.appendChild(el4, el5);
           var el5 = dom.createComment("");
@@ -664,44 +683,16 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           var el5 = dom.createTextNode("\n        ");
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n      ");
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("div");
+          dom.setAttribute(el3, "class", "blog-link npt");
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
-          var el4 = dom.createElement("div");
-          dom.setAttribute(el4, "class", "blog-postDate");
-          var el5 = dom.createTextNode("\n          ");
-          dom.appendChild(el4, el5);
-          var el5 = dom.createComment("");
-          dom.appendChild(el4, el5);
-          var el5 = dom.createTextNode("\n        ");
-          dom.appendChild(el4, el5);
-          dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("\n        ");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createElement("div");
-          dom.setAttribute(el4, "class", "blog-excerpt");
-          var el5 = dom.createTextNode("\n          ");
-          dom.appendChild(el4, el5);
-          var el5 = dom.createElement("p");
-          var el6 = dom.createTextNode("\n            ");
-          dom.appendChild(el5, el6);
-          var el6 = dom.createComment("");
-          dom.appendChild(el5, el6);
-          var el6 = dom.createTextNode("\n          ");
-          dom.appendChild(el5, el6);
-          dom.appendChild(el4, el5);
-          var el5 = dom.createTextNode("\n        ");
-          dom.appendChild(el4, el5);
-          dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("\n        ");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createElement("div");
-          dom.setAttribute(el4, "class", "blog-link npt");
-          var el5 = dom.createTextNode("\n          ");
-          dom.appendChild(el4, el5);
-          var el5 = dom.createComment("");
-          dom.appendChild(el4, el5);
-          var el5 = dom.createTextNode("\n        ");
-          dom.appendChild(el4, el5);
+          var el4 = dom.createComment("");
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n      ");
           dom.appendChild(el3, el4);
@@ -717,7 +708,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element1 = dom.childAt(fragment, [1, 1]);
+          var element1 = dom.childAt(fragment, [1]);
           var element2 = dom.childAt(element1, [3]);
           var morphs = new Array(5);
           morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 1, 1);
@@ -727,16 +718,100 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           morphs[4] = dom.createMorphAt(dom.childAt(element2, [7]), 1, 1);
           return morphs;
         },
-        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [5, 32], [5, 39]]]]], [], 0, null, ["loc", [null, [5, 8], [5, 107]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [9, 34], [9, 41]]]]], [], 1, null, ["loc", [null, [9, 10], [9, 75]]]], ["content", "post.blogDate", ["loc", [null, [12, 10], [12, 27]]]], ["content", "post.blogExcerpt", ["loc", [null, [16, 12], [16, 32]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [20, 34], [20, 41]]]]], [], 2, null, ["loc", [null, [20, 10], [20, 64]]]]],
+        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [5, 30], [5, 37]]]]], [], 0, null, ["loc", [null, [5, 6], [5, 105]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [9, 32], [9, 39]]]]], [], 1, null, ["loc", [null, [9, 8], [9, 73]]]], ["content", "post.blogDate", ["loc", [null, [12, 8], [12, 25]]]], ["content", "post.blogExcerpt", ["loc", [null, [16, 10], [16, 30]]]], ["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [20, 32], [20, 39]]]]], [], 2, null, ["loc", [null, [20, 8], [20, 62]]]]],
         locals: ["post"],
         templates: [child0, child1, child2]
+      };
+    })();
+    var child1 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.5",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 30,
+                "column": 12
+              },
+              "end": {
+                "line": 30,
+                "column": 65
+              }
+            },
+            "moduleName": "ember-app/templates/posts.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [["content", "post.blogHeading", ["loc", [null, [30, 45], [30, 65]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.5",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 29,
+              "column": 6
+            },
+            "end": {
+              "line": 31,
+              "column": 6
+            }
+          },
+          "moduleName": "ember-app/templates/posts.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("li");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
+          return morphs;
+        },
+        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [30, 36], [30, 43]]]]], [], 0, null, ["loc", [null, [30, 12], [30, 77]]]]],
+        locals: ["post"],
+        templates: [child0]
       };
     })();
     return {
       meta: {
         "fragmentReason": {
           "name": "missing-wrapper",
-          "problems": ["wrong-type"]
+          "problems": ["multiple-nodes"]
         },
         "revision": "Ember@2.4.5",
         "loc": {
@@ -746,7 +821,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 26,
+            "line": 35,
             "column": 0
           }
         },
@@ -758,20 +833,50 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createComment("");
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "blogList");
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "blogSide");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "card");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("ul");
+        var el4 = dom.createTextNode("\n");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("    ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-        dom.insertBoundary(fragment, 0);
-        dom.insertBoundary(fragment, null);
+        var morphs = new Array(2);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1, 1]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [1, 8], [1, 13]]]]], [], 0, null, ["loc", [null, [1, 0], [25, 9]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [2, 8], [2, 13]]]]], [], 0, null, ["loc", [null, [2, 0], [24, 9]]]], ["block", "each", [["get", "model", ["loc", [null, [29, 14], [29, 19]]]]], [], 1, null, ["loc", [null, [29, 6], [31, 15]]]]],
       locals: [],
-      templates: [child0]
+      templates: [child0, child1]
     };
   })());
 });
@@ -902,7 +1007,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+384f9684"});
+  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+768ab53c"});
 }
 
 /* jshint ignore:end */
