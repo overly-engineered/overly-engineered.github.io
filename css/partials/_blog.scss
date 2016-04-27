@@ -41,12 +41,33 @@
   }
 }
 .blog-text {
-  h2, p {
+  max-width: 1200px;
+  margin: auto;
+  float: none;
+  p {
     margin-bottom: 1em;
   }
   img {
     margin: 0 auto 1em auto;
     display: block;
   }
-
+}
+.comments-section {
+  input, textarea {
+    width: 100%;
+    margin: 0 0 1em 0;
+    padding: 0.5em;
+    border: 1px solid #CCC;
+    font-weight: 300;
+  }
+  button {
+    padding: 0.5em 1em;
+    background-color: $accent;
+    border: none;
+    -webkit-transition: background-color 300ms;
+    transition: background-color 300ms;
+    outline: none;
+    color: $body-dark;
+    font-weight: 300;
+  }
 }

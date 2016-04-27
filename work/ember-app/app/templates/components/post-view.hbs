@@ -8,14 +8,25 @@
   <hr>
   {{{unique-post.blogText}}}
 </div>
-{{#each unique-post.comments as |comment|}}
-  <li>
-    <div>
-      <div>
-        <strong>{{comment.name}}</strong>
-        <em class="post-comment-date">{{comment.publishedDate}}</em>
-      </div>
-      {{comment.message}}
-    </div>
-  </li>
-{{/each}}
+<h3>
+{{#if unique-post.comments}}
+  Comments
+{{else}}
+  Leave a comment!
+{{/if}}
+</h3>
+<hr>
+<div class="col-12 comments-section">
+  {{input value=commentName placeholder="name"}}
+  {{textarea value=commentMessage placeholder="Contribute to the conversation"}}
+  <button {{action "postComment"}}>Post</button>
+  {{#each unique-post.comments as |comment|}}
+        <p>
+          <strong>{{comment.name}}</strong>
+          <small><em>{{date comment.date}}</em></small>
+        </p>
+        <p>
+          {{comment.message}}
+        </p>
+  {{/each}}
+</div>

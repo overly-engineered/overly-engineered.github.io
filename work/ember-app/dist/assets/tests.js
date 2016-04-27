@@ -16,6 +16,24 @@ define('ember-app/tests/app.jshint', ['exports'], function (exports) {
     assert.ok(true, 'app.js should pass jshint.');
   });
 });
+define('ember-app/tests/components/post-view.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - components/post-view.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/post-view.js should pass jshint.');
+  });
+});
+define('ember-app/tests/controllers/post-view.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/post-view.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'controllers/post-view.js should pass jshint.\ncontrollers/post-view.js: line 8, col 11, \'commentID\' is defined but never used.\ncontrollers/post-view.js: line 3, col 5, \'Promise\' is defined but never used.\n\n2 errors');
+  });
+});
 define('ember-app/tests/helpers/create-offline-ref', ['exports', 'firebase'], function (exports, _firebase) {
   exports['default'] = createOfflineRef;
 
@@ -45,6 +63,15 @@ define('ember-app/tests/helpers/create-offline-ref', ['exports', 'firebase'], fu
 
     return ref;
   }
+});
+define('ember-app/tests/helpers/date.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - helpers/date.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'helpers/date.js should pass jshint.\nhelpers/date.js: line 9, col 74, Missing semicolon.\n\n1 error');
+  });
 });
 define('ember-app/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
@@ -284,6 +311,28 @@ define('ember-app/tests/test-helper.jshint', ['exports'], function (exports) {
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass jshint.');
+  });
+});
+define('ember-app/tests/unit/controllers/post-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('controller:post', 'Unit | Controller | post', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var controller = this.subject();
+    assert.ok(controller);
+  });
+});
+define('ember-app/tests/unit/controllers/post-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/controllers/post-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/post-test.js should pass jshint.');
   });
 });
 define('ember-app/tests/unit/controllers/unique-post-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
