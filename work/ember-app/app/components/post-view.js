@@ -15,6 +15,7 @@ export default Ember.Component.extend({
   actions: {
     postComment: function() {
       if(!this.commentIsValid()){
+        this.toggleProperty('postError');
         return;
       }
       // console.log(this.get('commentName'));

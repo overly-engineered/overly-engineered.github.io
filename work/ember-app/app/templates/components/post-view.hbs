@@ -23,6 +23,9 @@
   {{textarea value=commentMessage placeholder="Contribute to the conversation"}}
   <br>
   <button {{action "postComment"}}>Post</button>
+  {{#if postError}}
+  <p class="postError"><strong>Uh oh...</strong> You need to leave a name and a message to post a comment</p>
+  {{/if}}
   <div class="comments-section--Comments">
   {{#each unique-post.comments as |comment|}}
     <div class="card">
