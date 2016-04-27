@@ -732,11 +732,11 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 30,
+                "line": 31,
                 "column": 12
               },
               "end": {
-                "line": 30,
+                "line": 31,
                 "column": 65
               }
             },
@@ -759,7 +759,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["content", "post.blogHeading", ["loc", [null, [30, 45], [30, 65]]]]],
+          statements: [["content", "post.blogHeading", ["loc", [null, [31, 45], [31, 65]]]]],
           locals: [],
           templates: []
         };
@@ -771,11 +771,11 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 29,
+              "line": 30,
               "column": 6
             },
             "end": {
-              "line": 31,
+              "line": 32,
               "column": 6
             }
           },
@@ -802,7 +802,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
           return morphs;
         },
-        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [30, 36], [30, 43]]]]], [], 0, null, ["loc", [null, [30, 12], [30, 77]]]]],
+        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [31, 36], [31, 43]]]]], [], 0, null, ["loc", [null, [31, 12], [31, 77]]]]],
         locals: ["post"],
         templates: [child0]
       };
@@ -821,7 +821,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 36,
             "column": 0
           }
         },
@@ -850,6 +850,12 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
         dom.setAttribute(el2, "class", "card");
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h3");
+        var el4 = dom.createTextNode("All blog posts:");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
         var el3 = dom.createElement("ul");
         dom.setAttribute(el3, "style", "list-style-type:none;");
         var el4 = dom.createTextNode("\n");
@@ -872,10 +878,10 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(2);
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
-        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1, 1]), 1, 1);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1, 3]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [2, 8], [2, 13]]]]], [], 0, null, ["loc", [null, [2, 0], [24, 9]]]], ["block", "each", [["get", "model", ["loc", [null, [29, 14], [29, 19]]]]], [], 1, null, ["loc", [null, [29, 6], [31, 15]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [2, 8], [2, 13]]]]], [], 0, null, ["loc", [null, [2, 0], [24, 9]]]], ["block", "each", [["get", "model", ["loc", [null, [30, 14], [30, 19]]]]], [], 1, null, ["loc", [null, [30, 6], [32, 15]]]]],
       locals: [],
       templates: [child0, child1]
     };

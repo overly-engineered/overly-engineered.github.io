@@ -25,6 +25,7 @@
 </div>
 <div class="blogSide">
   <div class="card">
+    <h3>All blog posts:</h3>
     <ul style="list-style-type:none;">
       {{#each model as |post|}}
         <li>{{#link-to 'uniquePost' post.id}}{{post.blogHeading}}{{/link-to}}</li>
