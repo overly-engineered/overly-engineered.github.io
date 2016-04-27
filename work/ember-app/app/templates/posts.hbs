@@ -29,6 +29,7 @@
     <ul style="list-style-type:none;">
       {{#each model as |post|}}
         <li>{{#link-to 'uniquePost' post.id}}{{post.blogHeading}}{{/link-to}}</li>
+        <small>{{post.blogDate}}</small>
       {{/each}}
     </ul>
   </div>

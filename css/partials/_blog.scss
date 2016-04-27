@@ -18,6 +18,13 @@
 }
 .blogList {
   width:70%;
+  .card {
+    margin-bottom: 1em;
+    img {
+      margin:auto;
+      display:block;
+    }
+  }
 }
 .blogSide {
   width: 30%;
@@ -31,9 +38,6 @@
   }
   .blogList {
     width: 100%;
-    .card {
-      margin-bottom: 1em;
-    }
   }
 }
 .blog-text {

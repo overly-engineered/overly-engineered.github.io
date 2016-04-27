@@ -775,7 +775,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
               "column": 6
             },
             "end": {
-              "line": 32,
+              "line": 33,
               "column": 6
             }
           },
@@ -793,16 +793,23 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("small");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(1);
+          var morphs = new Array(2);
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
+          morphs[1] = dom.createMorphAt(dom.childAt(fragment, [3]), 0, 0);
           return morphs;
         },
-        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [31, 36], [31, 43]]]]], [], 0, null, ["loc", [null, [31, 12], [31, 77]]]]],
+        statements: [["block", "link-to", ["uniquePost", ["get", "post.id", ["loc", [null, [31, 36], [31, 43]]]]], [], 0, null, ["loc", [null, [31, 12], [31, 77]]]], ["content", "post.blogDate", ["loc", [null, [32, 15], [32, 32]]]]],
         locals: ["post"],
         templates: [child0]
       };
@@ -821,7 +828,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 36,
+            "line": 37,
             "column": 0
           }
         },
@@ -881,7 +888,7 @@ define("ember-app/templates/posts", ["exports"], function (exports) {
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1, 3]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [2, 8], [2, 13]]]]], [], 0, null, ["loc", [null, [2, 0], [24, 9]]]], ["block", "each", [["get", "model", ["loc", [null, [30, 14], [30, 19]]]]], [], 1, null, ["loc", [null, [30, 6], [32, 15]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [2, 8], [2, 13]]]]], [], 0, null, ["loc", [null, [2, 0], [24, 9]]]], ["block", "each", [["get", "model", ["loc", [null, [30, 14], [30, 19]]]]], [], 1, null, ["loc", [null, [30, 6], [33, 15]]]]],
       locals: [],
       templates: [child0, child1]
     };
