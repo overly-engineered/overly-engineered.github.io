@@ -6,7 +6,8 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
     inlineContent: {
-      'body-footer' : 'app/templates/footer.html'
+      'body-footer' : 'app/templates/snippets/footer.html',
+      'body-top' : 'app/templates/snippets/header.html'
     }
   });
 
