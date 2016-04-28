@@ -61,6 +61,9 @@
     font-weight: 300;
     resize: none;
   }
+  textarea {
+    min-height: 5em;
+  }
   button {
     padding: 0.5em 1em;
     background-color: $accent;

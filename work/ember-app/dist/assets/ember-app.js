@@ -83,7 +83,6 @@ define('ember-app/controllers/post-view', ['exports', 'ember'], function (export
   exports['default'] = _ember['default'].Controller.extend({
     actions: {
       postComment: function postComment(post, comment) {
-        var commentID = comment.id;
         comment.save().then(function () {
           _ember['default'].RSVP.Promise.cast(post.get('comments')).then(function (comments) {
             comments.addObject(comment);
@@ -1268,7 +1267,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+c0f0a152"});
+  require("ember-app/app")["default"].create({"name":"ember-app","version":"0.0.0+94ff45ca"});
 }
 
 /* jshint ignore:end */

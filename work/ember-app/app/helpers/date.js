@@ -6,7 +6,7 @@ export default Ember.Helper.helper(function(params) {
   var timeOptions = { hour: "numeric", minute: "numeric" };
   if (content) {
     var date = new Date(content).toLocaleDateString('en-GB', dateOptions);
-    var time = new Date(content).toLocaleTimeString('en-GB', timeOptions)
+    var time = new Date(content).toLocaleTimeString('en-GB', timeOptions);
     var dateString = time + ' ' + date;
     return dateString;
   }
