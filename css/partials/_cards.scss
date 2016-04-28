@@ -3,20 +3,25 @@
   background: white;
   transition: .5s;
   box-shadow: 0px 1px 10px -5px #444;
+  width: 100%;
   .card--image {
     display: block;
     img {
       max-width: 100%;
       vertical-align: top;
+      display: block;
+      margin: auto;
     }
   }
   .card--text {
+    word-break: normal;
     h3 {
       width:100%;
       text-align: center;
       padding: 30px;
       color: $body-dark;
       border-top: 1px solid $body-dark;
+
       &:hover {
         text-decoration: underline;
       }

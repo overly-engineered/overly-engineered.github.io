@@ -82,3 +82,12 @@
 .white-text {
 	color: white;
 }
+
+.noFlex {
+	display: block !important;
+	flex: initial !important;
+}
+
+.flexDirection {
+	flex-direction: initial !important;
+}
