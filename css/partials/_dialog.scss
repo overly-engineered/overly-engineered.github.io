@@ -1,0 +1,32 @@
+#addDialog {
+  padding: 0;
+}
+#addContact {
+  width: 100%;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  margin: 0;
+  padding: 2em;
+  div {
+    margin-bottom: 1em;
+  }
+  button {
+    padding: 0.5em 1em;
+    background-color: $accent;
+    border: none;
+    -webkit-transition: background-color 300ms;
+    transition: background-color 300ms;
+    outline: none;
+    color: $body-dark;
+    font-weight: 300;
+    font-size: 18px;
+  }
+}
+.ui-widget-header {
+  background: $accent;
+  border: none;
+}
