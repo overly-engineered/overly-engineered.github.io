@@ -14,17 +14,6 @@
   div {
     margin-bottom: 1em;
   }
-  button {
-    padding: 0.5em 1em;
-    background-color: $accent;
-    border: none;
-    -webkit-transition: background-color 300ms;
-    transition: background-color 300ms;
-    outline: none;
-    color: $body-dark;
-    font-weight: 300;
-    font-size: 18px;
-  }
 }
 .ui-widget-header {
   background: $accent;

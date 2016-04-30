@@ -59,6 +59,18 @@ img {
 	max-height: 100%;
 }
 
+button {
+	padding: 0.5em 1em;
+	background-color: $accent;
+	border: none;
+	-webkit-transition: background-color 300ms;
+	transition: background-color 300ms;
+	outline: none;
+	color: $body-dark;
+	font-weight: 300;
+	font-size: 18px;
+}
+  
 a::-moz-selection { background: $body-dark; }
 a::selection { background: $body-dark; }
 

@@ -85,10 +85,10 @@ var DirectoryView = Backbone.View.extend({
 
   events: {
     "change #filter select" : "setFilter",
-    "click #addButton" : "addUser"
+    "click #addUserDialog" : "addUserDialog"
   },
 
-  addUser: function(e) {
+  addUserDialog: function(e) {
     $( "#addDialog" ).dialog({
       modal: true,
       closeText: ""
