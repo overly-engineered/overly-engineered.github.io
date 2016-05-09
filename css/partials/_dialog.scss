@@ -1,7 +1,9 @@
+@import 'colors';
 #addDialog {
   padding: 0;
+  display: none;
 }
-#addContact {
+#addUserForm {
   width: 100%;
   position: relative;
   top: 0;
@@ -13,6 +15,29 @@
   padding: 2em;
   div {
     margin-bottom: 1em;
+  }
+  label {
+    width: 50%;
+    float:left;
+  }
+  input, select {
+    width:50%;
+    padding: 1em;
+    border:1px solid $keyline;
+    border-radius: 5px;
+  }
+  select {
+    height: 37px;
+  }
+  input.error {
+    border: 1px solid #f2dede;
+    background: #f2dede;
+    color: #a94442;
+  }
+  input.success {
+    border: 1px solid #d6e9c6;
+    background: #dff0d8;
+    color: #3c763d;
   }
 }
 .ui-widget-header {

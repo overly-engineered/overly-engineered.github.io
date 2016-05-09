@@ -26,6 +26,11 @@
         text-decoration: underline;
       }
     }
+    h3.noHover {
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
 }

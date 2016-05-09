@@ -37,7 +37,24 @@ var EmployeeView = Backbone.View.extend({
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
-  }
+  },
+
+  events: {
+    "click button.delete" : "deleteEmployee"
+  },
+
+  deleteEmployee: function(e) {
+    var removedType = this.model.get("type").toLowerCase();
+
+    this.model.destroy();
+
+    this.remove();
+
+    if(_.indexOf(directory.getTypes(), removedType) === -1) {
+      directory.$el.find("#filter select").children("[value='" + removedType + "']").remove();
+    }
+  },
+
 });
 
 var DirectoryView = Backbone.View.extend({
@@ -49,6 +66,8 @@ var DirectoryView = Backbone.View.extend({
     this.$el.find('#filter').append(this.createSelect());
     this.on("change:filterType", this.filterByType, this);
     this.collection.on("reset", this.render, this);
+    this.collection.on("add", this.render, this);
+    this.collection.on("remove", this.removeContact, this);
   },
 
   render: function () {
@@ -85,14 +104,61 @@ var DirectoryView = Backbone.View.extend({
 
   events: {
     "change #filter select" : "setFilter",
-    "click #addUserDialog" : "addUserDialog"
+    "click #addUserDialog" : "addUserDialog",
+    "click #addUserFormButton" : "addUser",
+    "change #email" : "validateEmail"
   },
 
   addUserDialog: function(e) {
-    $( "#addDialog" ).dialog({
-      modal: true,
-      closeText: ""
+    $("#addDialog").slideToggle();
+  },
+
+  addUser: function(e) {
+    e.preventDefault();
+    var newUserData = {};
+    var validFlag = false;
+    $("#addUserForm").find("input").each(function (i, el) {
+      if ($(el).val() !== "") {
+        newUserData[el.id] = $(el).val();
+      } else {
+        validFlag = true;
+      }
     });
+    if(validFlag) {
+      $('#userError').slideDown();
+      $("#addUserForm").find("input").each(function (i, el) {
+        if ($(el).val() == "") {
+          $(el).addClass('error');
+        } else {
+          $(el).addClass('success');
+        }
+      });
+      return;
+    }
+    employees.push(newUserData);
+    if (_.indexOf(this.getTypes(), newUserData.type) === -1) {
+        this.collection.add(new Employee(newUserData));
+        this.$el.find("#filter").find("select").remove().end().append(this.createSelect());
+        $("#addDialog").slideToggle();
+        document.getElementById('addUserForm').reset();
+        $('#addUserForm').removeAttr("style");
+        $('#userError').hide();
+    } else {
+        this.collection.add(new Employee(newUserData));
+        $("#addDialog").slideToggle();
+        document.getElementById('addUserForm').reset();
+        $('#addUserForm').find('input').removeAttr("style");
+        $('#userError').hide();
+    }
+  },
+
+  validateEmail: function(e) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(re.test(e.target.value)) {
+      e.target.className += " success";
+    } else {
+      e.target.className += " error";
+    }
   },
 
   setFilter: function (e) {
@@ -113,7 +179,19 @@ var DirectoryView = Backbone.View.extend({
       this.collection.reset(filtered);
       EmployeeRouter.navigate("filter/" + filterType);
     }
-  }
+  },
+
+  removeContact: function (removedModel) {
+    var removed = removedModel.attributes;
+    if (removed.photo === "/img/placeholder.png") {
+        delete removed.photo;
+    }
+    _.each(employees, function (Employee) {
+        if (_.isEqual(Employee, removed)) {
+            contacts.splice(_.indexOf(employees, Employee), 1);
+        }
+    });
+  },
 
 });
 
