@@ -2,80 +2,129 @@
 @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Oswald:700);
 @import 'colors';
-html {
-	box-sizing:border-box;
+html
+{
+    box-sizing: border-box;
 }
-*, *:before, *:after {
-	padding: 0;
-	margin: 0;
-	box-sizing:inherit;
+*,
+*:before,
+*:after
+{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
-html, body {
-	height:100%;
+html,
+body
+{
+    height: 100%;
 }
-body {
-	background: rgb(241,242,242);
-	font-family: 'Lora', serif;
-	font-size:16px;
-	overflow-x:hidden;
+body
+{
+    font-family: 'Lora', serif;
+    font-size: 16px;
+
+    overflow-x: hidden;
+
+    background: rgb(241,242,242);
 }
-h1, h2, h3, h4, h5, h6, a{
-	font-family: 'Lora', sans-serif;
-	font-weight: 300;
-	margin-bottom: .6em;
-	color: $body-dark;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a
+{
+    font-family: 'Lora', sans-serif;
+    font-weight: 300;
+
+    margin-bottom: .6em;
+
+    color: $body-dark;
 }
-h1 a{
-	font-family: 'Lato', sans-serif !important;
-	text-decoration: none;
+h1 a
+{
+    font-family: 'Lato', sans-serif !important;
+
+    text-decoration: none;
 }
-h2 {
-	font-size: 30px;
-	font-style: italic;
+h2
+{
+    font-size: 30px;
+    font-style: italic;
 }
-h2.title {
-	font-size: 50px;
-	font-family: 'Lato', sans-serif;
-	font-style: normal;
-	margin-bottom: .5em;
+h2.title
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+
+    margin-bottom: .5em;
 }
-h2.under {
-	text-decoration: underline;
+h2.under
+{
+    text-decoration: underline;
 }
-p {
-	margin-bottom: 1em;
-	line-height: 1.5em;
+p
+{
+    line-height: 1.5em;
+
+    margin-bottom: 1em;
 }
-a{
-	font-family: 'Lora', serif;
-	text-decoration: underline;
+a
+{
+    font-family: 'Lora', serif;
+
+    text-decoration: underline;
 }
-strong {
-	font-weight: 900;
+strong
+{
+    font-weight: 900;
 }
 
-img {
-	max-width: 100%;
-	max-height: 100%;
+img
+{
+    max-width: 100%;
+    max-height: 100%;
 }
-.cta {
-	display: block;
-	margin-top: 1em;
-}
-button, .cta {
-	padding: 0.5em 1em;
-	background-color: $accent;
-	border: none;
-	-webkit-transition: background-color 300ms;
-	transition: background-color 300ms;
-	outline: none;
-	color: $body-dark;
-	font-weight: 300;
-	font-size: 18px;
-	cursor: pointer;
-}
-a::-moz-selection { background: $body-dark; }
-a::selection { background: $body-dark; }
+.cta
+{
+    display: block;
 
-::-moz-selection { background: $accent; }
-::selection { background: $accent; }
+    margin-top: 1em;
+}
+button,
+.cta
+{
+    font-size: 18px;
+    font-weight: 300;
+
+    padding: .5em 1em;
+
+    cursor: pointer;
+    -webkit-transition: background-color 300ms;
+            transition: background-color 300ms;
+
+    color: $body-dark;
+    border: none;
+    outline: none;
+    background-color: $accent;
+}
+a::-moz-selection
+{
+    background: $body-dark;
+}
+a::selection
+{
+    background: $body-dark;
+}
+
+::-moz-selection
+{
+    background: $accent;
+}
+::selection
+{
+    background: $accent;
+}

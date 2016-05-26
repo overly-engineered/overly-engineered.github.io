@@ -1,65 +1,89 @@
-.panel {
-	position:relative;
-	display:block;
-	width:100%;
-	&:hover {
+.panel
+{
+    position: relative;
 
-	}
-	.panel__text {
-		position:absolute;
-		width:100%;
-		height:40px;
-		top:0px;
-		color:white;
-		text-align: center;
-		overflow:auto;
-		margin:auto;
-		top: 0; left: 0; bottom: 0; right: 0;
-		h2{
-			font-weight: 900;
-			font-size: 30px;
-			color:white;
-			word-break: break-word;
-			margin-bottom: 0px;
-		}
-		p.cta {
-			//border:1px solid white;
-			padding:15px 20px;
-			width:150px;
-			height:50px;
-			position: relative;
-			margin:0 auto;
-			color:white;
-		}
+    display: block;
 
-	}
-	.panel__image {
-		width:100%;
-		img{
-			width:100%;
-			-webkit-filter:saturate(50%) blur(0.5px);
-			filter:saturate(80%) blur(0.5px);
-			transition:.5s all ease;
-		}
-	}
+    width: 100%;
 
-	&:hover, &:focus {
-		.panel__image img{
-			-webkit-filter:saturate(100%) blur(0px);
-			filter:saturate(100%) blur(0px);
-		}
-		.panel__text {
-			svg {
-				animation: dash 2s linear forwards;
-			}
-		}
-		svg {
-			animation: dash 1.5s linear forwards;
-			}
-	}
-	@keyframes dash {
-  		to {
-    		stroke-dashoffset: 0;
-  		}
-	}
+    .panel__text
+    {
+        position: absolute;
+        top: 0;
+        top: 0; right: 0;bottom: 0; left: 0;
+
+        overflow: auto;
+
+        width: 100%;
+        height: 40px;
+        margin: auto;
+
+        text-align: center;
+
+        color: white;
+        h2
+        {
+            font-size: 30px;
+            font-weight: 900;
+
+            margin-bottom: 0;
+
+            word-break: break-word;
+
+            color: white;
+        }
+        p.cta
+        {
+            position: relative;
+
+            width: 150px;
+            height: 50px;
+            margin: 0 auto;
+            //border:1px solid white;
+            padding: 15px 20px;
+
+            color: white;
+        }
+    }
+    .panel__image
+    {
+        width: 100%;
+        img
+        {
+            width: 100%;
+
+            transition: .5s all ease;
+
+            -webkit-filter: saturate(50%) blur(.5px);
+                    filter: saturate(80%) blur(.5px);
+        }
+    }
+
+    &:hover,
+    &:focus
+    {
+        .panel__image img
+        {
+            -webkit-filter: saturate(100%) blur(0px);
+                    filter: saturate(100%) blur(0px);
+        }
+        .panel__text
+        {
+            svg
+            {
+                animation: dash 2s linear forwards;
+            }
+        }
+        svg
+        {
+            animation: dash 1.5s linear forwards;
+        }
+    }
+    @keyframes dash
+    {
+        to
+        {
+            stroke-dashoffset: 0;
+        }
+    }
 }

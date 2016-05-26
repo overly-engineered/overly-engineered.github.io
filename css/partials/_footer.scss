@@ -1,15 +1,21 @@
-$footerHeight : 100px;
-.container.content {
-	margin-bottom: $footerHeight;
+$footerHeight: 100px;
+.container.content
+{
+    margin-bottom: $footerHeight;
 }
-.container.content:after {
-	content: "";
-  	display: block;
+.container.content:after
+{
+    display: block;
+
+    content: '';
 }
-footer .container.content:after{
-	height: $footerHeight;
+footer .container.content:after
+{
+    height: $footerHeight;
 }
-.copyright {
-	text-align: right;
-	margin-right: 10px;
+.copyright
+{
+    margin-right: 10px;
+
+    text-align: right;
 }

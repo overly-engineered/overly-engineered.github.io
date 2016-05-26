@@ -1,90 +1,119 @@
-@media screen and (min-width: 17.5em) and (max-width: 28em) {
+@media screen and (min-width: 17.5em) and (max-width: 28em)
+{
+    .container,
+    .container-full
+    {
+        @for $i from 1 through 12
+        {
+            .col-#{$i}
+            {
+                width: 100%;
+                max-width: 100%;
 
-	.container, .container-full {
-
-		@for $i from 1 through 12 {
-			.col-#{$i} {
-				width: 100%;
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
-		}
-
-	}
-
+                flex: 0 0 100%;
+            }
+        }
+    }
 }
-@media screen and (min-width: 28em) and (max-width: 40em) {
-	.container, .container-full {
-
-		.col-4.wideContent {
-			width:100% !important;
-		}
-	}
+@media screen and (min-width: 28em) and (max-width: 40em)
+{
+    .container,
+    .container-full
+    {
+        .col-4.wideContent
+        {
+            width: 100% !important;
+        }
+    }
 }
-@media screen and (min-width: 28em) and (max-width: 43.75em) {
+@media screen and (min-width: 28em) and (max-width: 43.75em)
+{
+    .container,
+    .container-full
+    {
+        @for $i from 1 through 12
+        {
+            .col-#{$i}
+            {
+                width: 100%;
+            }
+        }
+        .col-4.wideContent
+        {
+            width: calc(100% / 3);
+        }
+        .col-2,
+        .col-4,
+        .col-6,
+        .col-8,
+        .col-10
+        {
+            width: 50%;
+            max-width: 50%;
 
-	.container, .container-full {
+            flex: 0 0 100%;
+        }
+        .col-3
+        {
+            max-width: 50%;
+            max-width: 50%;
 
-		@for $i from 1 through 12 {
-			.col-#{$i} {
-				width: 100%;
-			}
-
-		}
-		.col-4.wideContent {
-			width: calc(100% / 3);
-		}
-		.col-2, .col-4, .col-6, .col-8, .col-10{
-				width: 50%;
-				flex: 0 0 100%;
-				max-width: 50%;
-		}
-		 .col-3 {
-			 flex: 0 0 50%;
-			 max-width: 50%;
-			 max-width: 50%;
-		 }
-	}
+            flex: 0 0 50%;
+        }
+    }
 }
 
 //break above 45
-@media screen and (min-width: 43.75em) and (max-width: 56em) {
+@media screen and (min-width: 43.75em) and (max-width: 56em)
+{
+    .container,
+    .container-full
+    {
+        .col-6
+        {
+            width: 50%;
+        }
+        .col-3
+        {
+            width: 50%;
+            max-width: 50%;
 
-	.container, .container-full {
+            flex: 0 0 50%;
+        }
+        .col-4
+        {
+            width: 50%;
+            max-width: 50%;
 
-		.col-6 {
-			width:50%;
-		}
-		.col-3 {
-			width: 50%;
-			flex: 0 0 50%;
-			max-width: 50%;
-		}
-		.col-4 {
-			width: 50%;
-			flex: 0 0 50%;
-			max-width: 50%;
-		}
-	}
+            flex: 0 0 50%;
+        }
+    }
 }
-@media screen and (min-width: 56em) and (max-width: 75em) {
+@media screen and (min-width: 56em) and (max-width: 75em)
+{
+    .container,
+    .container-full
+    {
+        @for $i from 1 through 12
+        {
+            .col-#{$i}
+            {
+                width: ($i/12) * 100%;
+            }
+        }
+        .col-3
+        {
+            max-width: 33%;
 
-	.container, .container-full {
-
-		@for $i from 1 through 12 {
-			.col-#{$i} {
-				width: ($i/12) * 100%;
-			}
-		}
-		.col-3 {
-			flex: 0 0 33%;
-			max-width: 33%;
-		}
-	}
+            flex: 0 0 33%;
+        }
+    }
 }
 
-@media screen and (min-width: 1600px) {
-	.container {
-		margin: 0 auto;
-	}
+@media screen and (min-width: 1600px)
+{
+    .container
+    {
+        margin: 0 auto;
+    }
 }

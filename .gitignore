@@ -14,3 +14,4 @@ npm-debug.log
 /work/ember-app/bower_components/*
 /work/ember-app/tests/*
 /work/ember-app/tmp/*
+/work/angular2/typings/*
