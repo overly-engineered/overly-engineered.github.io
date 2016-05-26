@@ -9,6 +9,7 @@
    	width: ($i/12) * 100%;
 		display: flex;
 		flex: 1;
+		max-width: ($i/12) * 100%;
 		flex-direction: column;
 	}
 }
