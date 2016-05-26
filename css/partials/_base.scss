@@ -58,8 +58,11 @@ img {
 	max-width: 100%;
 	max-height: 100%;
 }
-
-button {
+.cta {
+	display: block;
+	margin-top: 1em;
+}
+button, .cta {
 	padding: 0.5em 1em;
 	background-color: $accent;
 	border: none;
