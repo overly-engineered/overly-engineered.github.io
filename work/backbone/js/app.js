@@ -33,6 +33,7 @@ var EmployeeView = Backbone.View.extend({
   tagName: "section",
   className: "col-3 flexDirection",
   template: _.template($("#employeeTemplate").html()),
+  editTemplate: _.template($("#employeeEditTemplate").html()),
 
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
@@ -40,7 +41,11 @@ var EmployeeView = Backbone.View.extend({
   },
 
   events: {
-    "click button.delete" : "deleteEmployee"
+    "click button.delete" : "deleteEmployee",
+    "click button.edit" : "editEmployee",
+    "change select.type": "addType",
+    "click button.save": "saveEdits",
+    "click button.cancel": "cancelEdit"
   },
 
   deleteEmployee: function(e) {
@@ -53,6 +58,42 @@ var EmployeeView = Backbone.View.extend({
     if(_.indexOf(directory.getTypes(), removedType) === -1) {
       directory.$el.find("#filter select").children("[value='" + removedType + "']").remove();
     }
+  },
+
+  editEmployee: function (e) {
+    this.$el.html(this.editTemplate(this.model.toJSON()));
+
+    this.select = directory.createSelect().addClass("type")
+        .val(this.$el.find("#type").val()).insertAfter(this.$el.find(".address"));
+
+    this.$el.find("input[type='hidden']").remove();
+  },
+
+  cancelEdit: function(e) {
+    e.preventDefault();
+    this.render();
+  },
+
+  saveEdits: function(e) {
+    e.preventDefault();
+
+    var formData = {},
+      prev = this.model.previousAttributes();
+
+    $(e.target).closest("form").find(":input").not("button").each(function () {
+      var el = $(this);
+      formData[el.attr("class")] = el.val();
+  });
+
+    this.model.set(formData);
+
+    this.render();
+
+    _.each(employees, function (Employee) {
+        if (_.isEqual(Employee, prev)) {
+            contacts.splice(_.indexOf(employees, Employee), 1, formData);
+        }
+    });
   },
 
 });

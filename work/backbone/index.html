@@ -97,11 +97,35 @@
                   <p>Tel: <%= tel %></p>
                   <p>Email: <a href="mailto:<%= email %>"><%= email %></a></p>
                   <p>Pay: <%= pay %></p>
+                  <p>Address: <%= address %></p>
+                  <p>Type: <%= type %></p>
               </div>
               <div>
+                <button class="edit">Edit</button>
                 <button class="delete">Delete</button>
               </div>
             </div>
+          </div>
+        </script>
+        <script id="employeeEditTemplate" type="text/template">
+          <div class="card">
+            <div class="card--image mt1">
+              <img src="<%= photo %>" alt="<%= name %>" />
+            </div>
+            <form action="#">
+              <div class="card--text" style="padding:1em;">
+                <input type="text" class="fname" value="<%= fname %>" />
+                <input type="text" class="sname" value="<%= sname %>" /><br>
+                <input type="text" class="job" value="<%= job %>" /><br>
+                <input type="text" class="tel" value="<%= tel %>" /><br>
+                <input type="text" class="email" value="<%= email %>" /><br>
+                <input type="text" class="pay" value="<%= pay %>" /><br>
+                <input type="text" class="address" value="<%= address %>" /><br>
+                <input id="type" type="hidden" value="<%= type %>" />
+                <button class="save mt1">Save</button>
+                <button class="cancel mt1">Cancel</button>
+              </div>
+            </form>
           </div>
         </script>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

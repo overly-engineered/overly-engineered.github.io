@@ -31,6 +31,17 @@
         text-decoration: none;
       }
     }
+    input[type="text"] {
+      padding: 1em;
+      width: 100%;
+      font-size: 13px;
+    }
+    select.type {
+      width: 100%;
+      margin: 1em;
+      height: 20px;
+      margin-left: 0;
+    }
   }
 
 }
