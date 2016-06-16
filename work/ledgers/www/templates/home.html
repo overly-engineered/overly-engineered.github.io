@@ -1,0 +1,32 @@
+<ion-view view-title="Home" ng-controller="AppCtrl">
+  <ion-content class="home main">
+    <div class="sign-in-content" ng-if="!loggedIn">
+      <h1 class="pt1">Sign in to see your ledger</h1>
+      <div class="button button-light" ng-click="login();">Sign Up or Login</div>
+    </div>
+    <div class="main-content" ng-if="loggedIn">
+      <h1 class="pt1">{{displayName}}'s Summary</h1>
+      <div class="card mt1">
+        <a href="#/app/income"><div class="item item-divider">
+          Income
+        </div></a>
+        <div class="item item-text-wrap tar">
+          {{income}}
+        </div>
+        <a href="#/app/outgoings"><div class="item item-divider">
+          Outgoings
+        </div></a>
+        <div class="item item-text-wrap tar">
+          -{{totalOutgoings}}
+        </div>
+        <div class="item item-divider">
+          Remaining
+        </div>
+        <div class="item item-text-wrap tar">
+          {{remainder}}
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

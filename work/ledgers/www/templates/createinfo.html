@@ -1,0 +1,14 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Info</h1>
+    <div class="buttons">
+      <button class="button button" ng-click="closeUserModal();">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="main">
+    <div class="list">
+      <label class="item item-input"><input type="text" id="uname" name="uname" placeholder="{{displayName}}"></label>
+      <button class="button button-balanced mt1" ng-click="updateUser();" name="name">Update</button>
+    </div>
+  </ion-content>
+</ion-modal-view>
