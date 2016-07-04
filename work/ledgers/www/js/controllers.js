@@ -175,6 +175,7 @@ angular.module('starter.controllers', ['ionic', 'chart.js'])
 
             for (var key in $scope.outgoings) {
                 if (!$scope.outgoings.hasOwnProperty(key)) continue;
+
                 var obj = $scope.outgoings[key];
                 $scope.outgoings[key].uid = key;
                 $scope.totalOutgoings += parseInt(obj.cost);
