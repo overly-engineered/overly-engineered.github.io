@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,100,100italic,300,300italic,700,700italic,900,900italic);
-@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Oswald:700);
 @import 'colors';
 html
@@ -68,8 +67,7 @@ h2.under
 }
 p
 {
-    line-height: 1.5em;
-
+    line-height: 1.9em;
     margin-bottom: 1em;
 }
 a
@@ -113,11 +111,11 @@ button,
 }
 a::-moz-selection
 {
-    background: $body-dark;
+    background: $accent;
 }
 a::selection
 {
-    background: $body-dark;
+    background: $accent;
 }
 
 ::-moz-selection
