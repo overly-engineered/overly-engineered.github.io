@@ -104,4 +104,18 @@
       text-align: left;
       padding-left: 2em;
     }
+    @media screen and (max-width: 850px)
+    {
+      h1.title {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      h1.title {
+        text-align: left;
+        padding-left: 1em;
+        font-size:1.5em;
+      }
+    }
 }
