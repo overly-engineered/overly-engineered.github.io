@@ -82,7 +82,7 @@
 }
 .container-forty
 {
-    height: 40%;
+    height: 20%;
 
     @extend .container-full;
     .row
@@ -95,5 +95,13 @@
     &.top
     {
         box-shadow: 0 1px 6px black;
+    }
+
+    .icon-row {
+      display: none;
+    }
+    h1.title {
+      text-align: left;
+      padding-left: 2em;
     }
 }

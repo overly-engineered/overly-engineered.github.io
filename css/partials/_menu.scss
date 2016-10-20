@@ -106,6 +106,9 @@
             }
         }
     }
+    h1.title {
+      text-align: center !important;
+    }
 }
 @media screen and (min-width: 851px)
 {
@@ -114,8 +117,6 @@
         position: absolute;
         top: 5vh;
         right: 10vh;
-
-        width: 100%;
 
         .hamburger
         {
