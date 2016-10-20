@@ -1,7 +1,5 @@
 import Ember from 'ember';
 
-var Promise = Ember.RSVP.Promise;
-
 export default Ember.Controller.extend({
   actions: {
     postComment: function(post, comment) {
