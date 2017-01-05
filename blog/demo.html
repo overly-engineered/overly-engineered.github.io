@@ -1,29 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>J.Pettman Blog</title>
-    <meta name="description" content="J.Pettman Blog Pages">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript">
-  $.get('https://medium.com/feed/@jwrpettman', function (data) {
-    $(data).find("entry").each(function () { // or "item" or whatever suits your feed
-        var el = $(this);
-
-        console.log("------------------------");
-        console.log("title      : " + el.find("title").text());
-        console.log("author     : " + el.find("author").text());
-        console.log("description: " + el.find("description").text());
-    });
-  });
-  </script>
-  </head>
-  <body>
-
-  </body>
-</html>
+<div class=”postmetadata”>
+    Posted on <span class=”updated”>April 29, 2015</span>
+</div>
+<h2>The Third Party Debate</h2>
+<p>Is it better to let In-house staff take charge of development, or out-source everything to a third party company? </p>
+<p>The debate over the use of third parties has been going on for years, do you pay a company large sums to create something for you leaving you with little control but receiving the finished product much quicker. Or do you develop in-house and pay just
+    as much for staff with the technical ability but have much greater control over what they make even though you may have to wait longer for the product. </p>
+<p> There are many third party companies which do everything from full website creation and hosting, re-designs and modifications and code optimisation. What they can do or claim to be able to do covers nearly everything that you could probably want from
+    a website or web-application. But the chances are it's not bespoke, it is a project template which has been optimised for your use. </p>
+<p> In-House development gives you far more control over what it is you are developing. The initial costs are going to be higher. Hiring developers to create your every whim is not cheap and above the reach of many companies, however with the increase in
+    computing related graduates fighting to get some industry experience this may not be the case for long. </p>
+<h2>The Basic argument goes something like this:</h2>
+<p> Management: 'We don't trust that the in-house team are going to be able to keep up and or we don't think they are skilled enough to create said feature/product.'</p>
+<p>Technical Team: 'But with one more person we could do this.' <br> Management: 'But we don't want to hire anyone.' <br> Technical Team: 'But you're planning on paying for [Third Party Company] to do it, why can't we have those funds for a new team member
+    and improve the department as a whole?' <br> This Argument can go on for months, with third parties offering lower and lower quotes until the cost is less than hiring a new staff member. This undoubtedly can and will cause tension between the management
+    and the technical team.</p>
+<h2>Pros and cons of Third Parties:</h2>
+<p><strong>Pros:</strong> Quick Delivery, Cheaper than hiring staff, Complex projects can be based off other projects allowing for all the problems fixed already to be already solved, Army of developers.</p>
+<p><strong>Cons:</strong> Lack of Control over what is created and what priority it is. Upgrades or additional features will come with a cost. It's probably not bespoke. Changes can be problematic. CMS.</p>
+<h2>Pros and cons of In-house Development:</h2>
+<p><strong>Pros:</strong> Lots of control. Developer Costs. Free to upgrade when staff are in place. Developer Pride.</p>
+<p><strong>Cons:</strong> Means hiring more staff. Slower development cycle. Possibility of lack of bug fixing no how. Hidden costs of hardware and software.</p>
+<h2>Definite uses for third parties.</h2>
+<p>There are of course some times when using a third party is just good common sense. If the project is only required for a short time. If there is a free service which fits your criteria use it. <br> The Prime example of this would be video hosting. There
+    is no sense in building a custom video streaming service when there are so many to choose from, if you want it to reach the biggest audience possible go with YouTube. If you want to restrict access down to single domains or subdomains you should go
+    with Vimeo (Vimeo however is not used for advertising). Some services such as Vimeo charge for a Pro membership but this cost is utterly insignificant compared to the costs of creating such a complex system.</p>
+<h2>So what to do</h2>
+<p>Ultimately the decision about whether to go to a third party or develop In-house is probably out of your control. Speaking from personal experience if it's developed In-house there will be a large amount of personal pride to go along with the project,
+    whereas the feeling I have from third parties is that you are just another customer to them. <br> If it is vital that the project be delivered very quickly or you are on a tight budget and can't afford the extra staff then outsourcing is probably
+    the way to go but if you want a truly bespoke system that can be tailored to ever evolving needs then the only way to go is in-house development.</p>
