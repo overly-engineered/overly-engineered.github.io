@@ -1,4 +1,4 @@
-$.get('http://cors.io/?https://medium.com/feed/@jwrpettman', function (data) {
+$.get('https://medium.com/feed/@jwrpettman', function (data) {
     $(data).find("item").each(function () { // or "item" or whatever suits your feed
         $('#postLoad').fadeOut(100);
         var el = $(this);

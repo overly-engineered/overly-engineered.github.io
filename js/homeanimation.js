@@ -32,7 +32,7 @@ function create(){
 			sA: startAngle,
 			eA: endAngle,
 			direction: cDirection,
-			v: Math.random() + .2,
+			v: (Math.random() * .3) + .1,
 			color: "rgba("+Math.floor(((Math.random()*255) + 1))+","+Math.floor(((Math.random()*255) + 1))+","+Math.floor(((Math.random()*255) + 1))+"," + (Math.random() + .4) + ")"
 		});
 	}
@@ -84,17 +84,17 @@ function handleInteraction(e){
 		draw();
 }
 
-function handleClick(e){
-	interaction = true;
-	for(var i = 0; i < 33; i++){
-		ctx.clearRect(0,0,width,height);
-		circles.forEach(function(elem, j, arr){
-			elem.r += 1;
-			drawCircle(elem, j, arr)
-		});
-		draw();
-	}
-}
+// function handleClick(e){
+// 	interaction = true;
+// 	for(var i = 0; i < 33; i++){
+// 		ctx.clearRect(0,0,width,height);
+// 		circles.forEach(function(elem, j, arr){
+// 			elem.r += 1;
+// 			drawCircle(elem, j, arr)
+// 		});
+// 		draw();
+// 	}
+// }
 
 circles.forEach(function(elem, i){
 	ctx.beginPath();
