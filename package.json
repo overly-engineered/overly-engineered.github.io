@@ -1,0 +1,15 @@
+{
+  "name": "jpettman",
+  "version": "1.0.0",
+  "description": "The website for james pettman. web developer.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jpettman",
+  "license": "ISC",
+  "devDependencies": {
+    "connect": "^3.5.0",
+    "gulp-watch": "^4.3.9"
+  }
+}
