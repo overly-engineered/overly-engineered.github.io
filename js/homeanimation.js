@@ -60,7 +60,6 @@ function drawCircle(elem, i, arr){
 	} else if(elem.sA < -25){
 		elem.direction = true;
 	}
-	console.log(arr.length, i);
 	if((i+1) === arr.length && !interaction) {
 		interaction = false;
 		globalAnim = window.requestAnimationFrame(draw);
