@@ -17,7 +17,7 @@ var circleSpace = width < 700 ? 6 : 10;
 var circleAmount = radius/circleSpace;
 ctx.shadowColor = "rgba(0,0,0,1)";
 ctx.shadowBlur = 50;
-var itemsProcessed = 0;
+var ongoingTouches = [];
 window.onload = function(){
 	create();
 }
@@ -66,9 +66,9 @@ function drawCircle(elem, i, arr){
   }
 }
 
-function handleInteraction(e){
-	  interaction = true;
-		cancelAnimationFrame(globalAnim);
+function moveInteraction(e, bool){
+	console.log('here');
+	if(bool){
 		var rect = canvas.getBoundingClientRect();
 		var mouseX = e.clientX - rect.left;
 		var mouseY = e.clientY - rect.top;
@@ -81,19 +81,42 @@ function handleInteraction(e){
 			elem.eA = (angle + (difference/2)) + Math.PI;
 		});
 		draw();
+	} else {
+		var touches = e.changedTouches;
+		var rect = canvas.getBoundingClientRect();
+		var touchX = touches[0].clientX - rect.left;
+		var touchY = touches[0].clientY - rect.top;
+		var xOffset = touchX - (width/2);
+		var yOffset = touchY - (height/2);
+		var angle = Math.atan2(yOffset, xOffset);
+		circles.forEach(function(elem, i){
+			var difference = elem.eA - elem.sA;
+			elem.sA = (angle - (difference/2)) + Math.PI;
+			elem.eA = (angle + (difference/2)) + Math.PI;
+		});
+		draw();
+	}
+}
+function handleMouse(e){
+	  interaction = true;
+		cancelAnimationFrame(globalAnim);
+		moveInteraction(e, true);
 }
 
-// function handleClick(e){
-// 	interaction = true;
-// 	for(var i = 0; i < 33; i++){
-// 		ctx.clearRect(0,0,width,height);
-// 		circles.forEach(function(elem, j, arr){
-// 			elem.r += 1;
-// 			drawCircle(elem, j, arr)
-// 		});
-// 		draw();
-// 	}
-// }
+function handleTouch(e){
+	e.preventDefault();
+	interaction = true;
+	cancelAnimationFrame(globalAnim);
+	moveInteraction(e, false);
+
+}
+
+function handleTouchMove(e){
+	e.preventDefault();
+	interaction = true;
+	cancelAnimationFrame(globalAnim);
+	moveInteraction(e, false);
+}
 
 circles.forEach(function(elem, i){
 	ctx.beginPath();
@@ -102,12 +125,18 @@ circles.forEach(function(elem, i){
 	ctx.stroke();
 });
 function circleInit(){
-
-		document.getElementById('canvas').addEventListener("mousemove", function(evt){handleInteraction(evt);});
-		document.getElementById('canvas').addEventListener("mouseout", function(evt){
+		var can = document.getElementById('canvas');
+		can.addEventListener("mousemove", function(evt){handleMouse(evt);});
+		can.addEventListener("mouseout", function(evt){
 			interaction = false;
 			globalAnim = window.requestAnimationFrame(draw);
 		});
+		can.addEventListener("touchstart", handleTouch, false);
+		can.addEventListener("touchmove", handleTouch, false);
+		can.addEventListener("touchend", function(evt){
+			interaction = false;
+			globalAnim = window.requestAnimationFrame(draw);
+		})
 		globalAnim = window.requestAnimationFrame(draw);
 		//document.getElementById('canvas').addEventListener("click", function(evt){handleClick(evt);});
 
