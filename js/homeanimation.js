@@ -16,7 +16,7 @@ ctx.lineWidth = 3;
 var circleSpace = width < 700 ? 6 : 10;
 var circleAmount = radius/circleSpace;
 ctx.shadowColor = "rgba(0,0,0,1)";
-ctx.shadowBlur = 50;
+ctx.shadowBlur = 10;
 var ongoingTouches = [];
 window.onload = function(){
 	create();
