@@ -180,7 +180,6 @@ var createLights = function(){
 }
 
 
-createCamera();
 createRoom();
 createTable();
 createMultipleChairs();
