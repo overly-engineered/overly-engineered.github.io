@@ -63,7 +63,7 @@ var createTable = function(){
 
         var geometry = new THREE.CylinderGeometry( .08, .05, .5, 32 );
         var material = new THREE.MeshLambertMaterial({
-            color: legPosition[i].color,
+            color: 0xffffff,
             shading: THREE.SmoothShading
         });
         var leg = new THREE.Mesh(geometry, material);
