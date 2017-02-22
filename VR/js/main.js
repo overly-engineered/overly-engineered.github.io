@@ -37,7 +37,9 @@ effect.setSize( window.innerWidth, window.innerHeight );
 TODO: Create, position, and add 3d objects here
 */
 
-
+var tableGroup = new THREE.Group();
+var chairGroup = [];
+var roomGroup = new THREE.Group();
 var createTable = function(){
     var texture = new THREE.TextureLoader().load( "wood2.png" );
     texture.wrapS = THREE.RepeatWrapping;
@@ -177,6 +179,13 @@ var createLights = function(){
     scene.add(directionalLight);
 }
 
+
+createCamera();
+createRoom();
+createTable();
+createMultipleChairs();
+//createClock();
+createLights();
 
 /*
 Request animation frame loop function
