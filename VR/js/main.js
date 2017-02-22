@@ -41,17 +41,16 @@ var tableGroup = new THREE.Group();
 var chairGroup = [];
 var roomGroup = new THREE.Group();
 var createTable = function(){
-    var texture = new THREE.TextureLoader().load( "wood2.png" );
-    texture.wrapS = THREE.RepeatWrapping;
-    texture.wrapT = THREE.RepeatWrapping;
-    texture.repeat.set(10,10);
-    texture.minFilter = THREE.LinearFilter
+    // var texture = new THREE.TextureLoader().load( "wood2.png" );
+    // texture.wrapS = THREE.RepeatWrapping;
+    // texture.wrapT = THREE.RepeatWrapping;
+    // texture.repeat.set(10,10);
+    // texture.minFilter = THREE.LinearFilter
     //Top
     var geometry = new THREE.BoxGeometry(1, 0.1, 1);
     var material = new THREE.MeshBasicMaterial({
         color: 0xffffff,
-        shading: THREE.SmoothShading,
-        map: texture
+        shading: THREE.SmoothShading
     });
     var cube = new THREE.Mesh(geometry, material);
     cube.position.setY(-0.05);
@@ -114,7 +113,7 @@ var createMultipleChairs = function(){
 
 //Floor
 var createPlane = function(){
-    var geometry = new THREE.PlaneGeometry( 5, 5, 1 );
+    var geometry = new THREE.PlaneBufferGeometry( 5, 5, 1 );
     var material = new THREE.MeshLambertMaterial( {color: 0xFFFFCC} );
     var plane = new THREE.Mesh( geometry, material );
     plane.rotation.x = -(Math.PI / 2);
@@ -127,7 +126,7 @@ var createPlane = function(){
 var createWalls = function(){
     var wallPositions = [{y:.95,x:-2.5,z:0, rotation: Math.PI/2}, {y:.95,x:-0,z:2.5, rotation: Math.PI}, {y:.95,x:2.5,z:0, rotation: (Math.PI + (Math.PI/2))}, {y:.95,x:0,z:-2.5, rotation: 2*Math.PI}];
     for(var i = 0; i < 4; i++){
-        var geometry = new THREE.PlaneGeometry( 5, 3, 1 );
+        var geometry = new THREE.PlaneBufferGeometry( 5, 3, 1 );
         var material = new THREE.MeshLambertMaterial( {color: 0xFFFFF0} );
         var wall = new THREE.Mesh( geometry, material );
         wall.rotation.y = wallPositions[i].rotation;
