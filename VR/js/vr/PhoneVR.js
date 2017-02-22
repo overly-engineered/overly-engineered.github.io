@@ -9,11 +9,11 @@ function PhoneVR() {
     this.deviceGamma = null;
     this.deviceBeta = null;
 
-    // window.addEventListener('deviceorientation', function(orientation) {
-    //     this.deviceAlpha = orientation.alpha;
-    //     this.deviceGamma = orientation.gamma;
-    //     this.deviceBeta = orientation.beta;
-    // }.bind(this));
+    window.addEventListener('deviceorientation', function(orientation) {
+        this.deviceAlpha = orientation.alpha;
+        this.deviceGamma = orientation.gamma;
+        this.deviceBeta = orientation.beta;
+    }.bind(this));
 }
 
 PhoneVR.prototype.orientationIsAvailable = function() {

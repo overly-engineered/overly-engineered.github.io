@@ -48,7 +48,8 @@ var createTable = function(){
     var geometry = new THREE.BoxGeometry(1, 0.1, 1);
     var material = new THREE.MeshBasicMaterial({
         color: 0xffffff,
-        shading: THREE.SmoothShading
+        shading: THREE.SmoothShading,
+        map: texture
     });
     var cube = new THREE.Mesh(geometry, material);
     cube.position.setY(-0.05);
