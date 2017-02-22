@@ -1,15 +1,15 @@
 // Setup three.js WebGL renderer
 var renderer = new THREE.WebGLRenderer( { antialias: true } );
-renderer.shadowMap.enabled = true;
-renderer.shadowMapSoft = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.shadowCameraNear = 3;
-renderer.shadowCameraFar = camera.far;
-renderer.shadowCameraFov = 50;
-renderer.shadowMapBias = 0.0039;
-renderer.shadowMapDarkness = 0.5;
-renderer.shadowMapWidth = 1024;
-renderer.shadowMapHeight = 1024;
+// renderer.shadowMap.enabled = true;
+// renderer.shadowMapSoft = true;
+// renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+// renderer.shadowCameraNear = 3;
+// renderer.shadowCameraFar = camera.far;
+// renderer.shadowCameraFov = 50;
+// renderer.shadowMapBias = 0.0039;
+// renderer.shadowMapDarkness = 0.5;
+// renderer.shadowMapWidth = 1024;
+// renderer.shadowMapHeight = 1024;
 
 
 // Append the canvas element created by the renderer to document body element.
