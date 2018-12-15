@@ -7,9 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jpettman",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
     "connect": "^3.5.0",
-    "gulp-watch": "^4.3.9"
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "server-static": "^2.0.5"
   }
 }
