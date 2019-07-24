@@ -76,7 +76,7 @@ body {
 
 /* Header section starts here */
 .navBarDefault {
-  background-color: #372476;
+  background-color: rgb(255, 255, 255);
   border-radius: 0;
   border-top: 0;
   margin-bottom: 0;
@@ -87,7 +87,7 @@ body {
   -webkit-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
   -moz-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.8);
   -o-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
-  z-index: 0;
+  z-index: 1;
   padding: 15px;
 }
 
@@ -110,7 +110,7 @@ body {
 
 .navBarUL li a {
   font-family: "Roboto";
-  color: #fff !important;
+  color: #372476 !important;
   font-size: 16px;
   font-weight: 500;
   line-height: 1em;
@@ -232,11 +232,16 @@ pre {
 
 .subLevel:hover {
   background-color: #542683;
+  color: #fff;
+}
+
+.subLevel:hover a {
+  color: #fff;
 }
 
 .subLevel a {
   line-height: 1.5;
-  color: #fff;
+  color: #372476;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
@@ -245,15 +250,15 @@ pre {
 }
 
 .subLevel.active {
-  color: rgb(116, 76, 188);
+  color: #fff;
   border-color: rgb(230, 236, 241) !important;
   border-style: solid none solid solid;
   border-width: 1px 0px 1px 1px;
-  background-color: #fff;
+  background-color: #473485;
 }
 
 .subLevel.active a {
-  color: rgb(116, 76, 188);
+  color: #fff;
 }
 
 .titleWrapper {
