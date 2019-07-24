@@ -15,3 +15,5 @@ npm-debug.log
 /work/ember-app/tests/*
 /work/ember-app/tmp/*
 /work/angular2/typings/*
+
+.cache
