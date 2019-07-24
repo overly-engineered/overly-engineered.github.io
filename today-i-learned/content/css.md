@@ -3,4 +3,6 @@ title: "CSS"
 metaTitle: "TIL CSS"
 ---
 
-Css Snippets
+# Css Snippets
+
+All about the cascade
