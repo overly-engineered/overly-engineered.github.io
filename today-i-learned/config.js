@@ -1,6 +1,6 @@
 const config = {
   gatsby: {
-    pathPrefix: "/",
+    pathPrefix: "/til",
     siteUrl: "https://pettman.io",
     gaTrackingId: null
   },
