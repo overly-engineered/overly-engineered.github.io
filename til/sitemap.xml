@@ -4,6 +4,6 @@
 <url> <loc>https://pettman.io/til/js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://pettman.io/til/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://pettman.io/til/misc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pettman.io/til/misc/dependency-hoisting</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://pettman.io/til/js/isNan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://pettman.io/til/misc/dependency-hoisting</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>

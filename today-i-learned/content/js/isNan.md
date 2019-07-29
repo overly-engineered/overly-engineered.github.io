@@ -23,10 +23,10 @@ isNaN(NaN); // true
 Number.isNaN is more reliable at detecting what is NaN and what isnt.
 
 ```javascript
-isNaN(false); // false
-isNaN(true); // false
-isNaN(0); // false
-isNaN("string"); // false
-isNaN({}); // false
-isNaN(NaN); // true
+Number.isNaN(false); // false
+Number.isNaN(true); // false
+Number.isNaN(0); // false
+Number.isNaN("string"); // false
+Number.isNaN({}); // false
+Number.isNaN(NaN); // true
 ```
