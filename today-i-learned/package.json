@@ -47,7 +47,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths && rm -rf ../til && mv ./public ../til",
-    "deploy": "gatsby build --prefix-paths && cp -R ./public ../til && cd ../ && git add . && timestamp=$(date \"+%H:%M on %d-%m-%Y\") && git commit -m \"Auto generated: Updates TIL - $timestamp\" && git push"
+    "deploy": "gatsby build --prefix-paths && rm -rf ../til && mv ./public ../til && cd ../ && git add . && timestamp=$(date \"+%H:%M on %d-%m-%Y\") && git commit -m \"Auto generated: Updates TIL - $timestamp\" && git push"
   },
   "devDependencies": {
     "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
