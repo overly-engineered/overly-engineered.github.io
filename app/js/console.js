@@ -4,8 +4,7 @@
   window.jamie = {
     github: "https://github.com/overly-engineered",
     codePen: "https://codepen.io/overlyenginnered/",
-    email: "jwrpettman@gmail.com",
-    twitter: "https://twitter.com/PettmanJamie"
+    email: "jwrpettman@gmail.com"
   };
   console.log(window.jamie);
 })();
