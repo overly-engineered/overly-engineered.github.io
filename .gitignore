@@ -17,3 +17,4 @@ npm-debug.log
 /work/angular2/typings/*
 
 .cache
+.DS_Store
