@@ -1,10 +1,17 @@
 (function() {
-  console.log("Hey, my name is Jamie.");
-  console.log("I make web apps and websites.");
-  window.jamie = {
+  var me = {
     github: "https://github.com/overly-engineered",
-    codePen: "https://codepen.io/overlyenginnered/",
+    linkedIn: "https://www.linkedin.com/in/jamie-pettman-93319744/",
+    projects: {
+      chatter: {
+        code: "https://github.com/overly-engineered/chatter",
+        demo: "https://peaceful-ridge-05981.herokuapp.com/"
+      },
+      vueExpressBoilerplate: {
+        code: "https://github.com/overly-engineered/vue-express-boilerplate"
+      }
+    },
     email: "jwrpettman@gmail.com"
   };
-  console.log(window.jamie);
+  console.log(me);
 })();
