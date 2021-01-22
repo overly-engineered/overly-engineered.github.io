@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var me = {
     github: "https://github.com/overly-engineered",
     linkedIn: "https://www.linkedin.com/in/jamie-pettman-93319744/",
@@ -13,5 +13,5 @@
     },
     email: "jwrpettman@gmail.com"
   };
-  console.log(me);
+  console.log({ me });
 })();
