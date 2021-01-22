@@ -161,7 +161,7 @@ blockquote cite {
 .content-Section {
   padding:0px 10px;
 }
-body::before {
+/* body::before {
   content: '';
   position: absolute;
   left: 0;
@@ -179,7 +179,7 @@ body::before {
   text-align: center;
   line-height:50px;
   box-shadow: 0 4px 3px -4px rgba(0,0,0,.25);
-}
+} */
 
 #menu {
   height:100%;
