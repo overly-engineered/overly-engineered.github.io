@@ -4,11 +4,11 @@
     linkedIn: "https://www.linkedin.com/in/jamie-pettman-93319744/",
     projects: {
       chatter: {
-        code: "https://github.com/overly-engineered/chatter",
+        repo: "https://github.com/overly-engineered/chatter",
         demo: "https://peaceful-ridge-05981.herokuapp.com/"
       },
       vueExpressBoilerplate: {
-        code: "https://github.com/overly-engineered/vue-express-boilerplate"
+        repo: "https://github.com/overly-engineered/vue-express-boilerplate"
       }
     },
     email: "jwrpettman@gmail.com"
